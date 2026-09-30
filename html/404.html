@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 – Page Not Found</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/404.css">
+</head>
+<body>
+
+  <!-- Background grid + glow -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--two" aria-hidden="true"></div>
+
+  <!-- Floating data points -->
+  <div class="particles" aria-hidden="true">
+    <span style="--x: 8%;  --d: 14s; --delay: 0s;   --s: 6px"></span>
+    <span style="--x: 18%; --d: 18s; --delay: 3s;   --s: 4px"></span>
+    <span style="--x: 30%; --d: 12s; --delay: 6s;   --s: 5px"></span>
+    <span style="--x: 45%; --d: 20s; --delay: 1s;   --s: 3px"></span>
+    <span style="--x: 58%; --d: 15s; --delay: 8s;   --s: 6px"></span>
+    <span style="--x: 70%; --d: 17s; --delay: 4s;   --s: 4px"></span>
+    <span style="--x: 82%; --d: 13s; --delay: 2s;   --s: 5px"></span>
+    <span style="--x: 92%; --d: 19s; --delay: 7s;   --s: 3px"></span>
+  </div>
+
+  <!-- Header with logo placeholder -->
+  <header class="site-header">
+    <a href="index.html" class="logo" aria-label="Go to homepage">
+      <!-- Replace this placeholder with your logo:
+           <img src="images/your-logo.png" alt="Your Company"> -->
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+  </header>
+
+  <main class="error-wrap">
+    <section class="error-card">
+
+      <!-- Mini dashboard illustration -->
+      <div class="chart" aria-hidden="true">
+        <div class="chart__head">
+          <span class="dot dot--red"></span>
+          <span class="dot dot--yellow"></span>
+          <span class="dot dot--green"></span>
+          <span class="chart__label">query_result.csv</span>
+        </div>
+
+        <div class="chart__body">
+          <div class="bars">
+            <span style="--h: 55%"></span>
+            <span style="--h: 80%"></span>
+            <span style="--h: 40%"></span>
+            <span style="--h: 95%"></span>
+            <span style="--h: 65%"></span>
+            <span class="bar--empty" style="--h: 18%"></span>
+            <span class="bar--empty" style="--h: 8%"></span>
+          </div>
+
+          <svg class="line" viewBox="0 0 300 100" preserveAspectRatio="none">
+            <polyline points="0,70 50,45 100,60 150,25 200,40 240,85 300,98" />
+          </svg>
+
+          <div class="scanline"></div>
+          <div class="no-data">NULL</div>
+        </div>
+      </div>
+
+      <p class="error-tag">Error 404 · No data found</p>
+
+      <h1 class="error-code" aria-label="404">
+        <span class="digit digit--1" aria-hidden="true">4</span>
+        <span class="digit digit--zero" aria-hidden="true">0</span>
+        <span class="digit digit--3" aria-hidden="true">4</span>
+      </h1>
+
+      <h2 class="error-title">This page returned zero results</h2>
+
+      <p class="error-text">
+        The page you're looking for doesn't exist, may have been moved,
+        or the link you followed is out of date. Let's get you back to your insights.
+      </p>
+
+      <div class="actions">
+        <button type="button" class="btn btn--ghost" id="backBtn">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+          Go Back
+        </button>
+        <a href="index.html" class="btn btn--primary">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
+          Back to Home
+        </a>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>Need help? <a href="mailto:support@example.com">Contact support</a></p>
+  </footer>
+
+  <script>
+    // Back button: go to previous page, or home if there's no history
+    document.getElementById('backBtn').addEventListener('click', function () {
+      if (window.history.length > 1 && document.referrer !== '') {
+        window.history.back();
+      } else {
+        window.location.href = '/';
+      }
+    });
+  </script>
+</body>
+</html>

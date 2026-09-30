@@ -1,0 +1,1017 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Analytics Platform — Turn raw data into decisions</title>
+<meta name="description" content="Connect every data source, build live dashboards and share insights your whole team can act on.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/index.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER — bars build up while the page loads ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <div class="pl-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="pl-word" aria-label="STACKLY">
+      <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+    </div>
+    <div class="pl-text">Loading insights <b id="plPct">0%</b></div>
+  </div>
+</div>
+
+<!-- ============ HEADER — sticky at the top, turns solid on scroll ============ -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav wrap">
+    <!-- Logo placeholder — replace src with your logo, e.g. ../assets/Logo.webp -->
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="#hero" class="active">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <span class="nav-line" id="navLine" aria-hidden="true"></span>
+    </div>
+
+    <div class="nav-right">
+      <a href="login.html" class="nav-login">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+        Login
+      </a>
+      <a href="signup.html" class="btn btn-primary btn-sm nav-signup">
+        <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+        Sign Up
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>
+</header>
+
+<!-- ============ MOBILE MENU — slides in from the right ============ -->
+<div class="menu-scrim" id="menuScrim"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Menu">
+  <div class="mm-top">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+    <button class="mm-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mm-links">
+    <a href="#hero" class="active"><em>01</em>Home</a>
+    <a href="services.html"><em>02</em>Services</a>
+    <a href="about.html"><em>03</em>About</a>
+    <a href="blog.html"><em>04</em>Blog</a>
+    <a href="contact.html"><em>05</em>Contact</a>
+  </nav>
+  <div class="mm-actions">
+    <a href="login.html" class="btn btn-ghost">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+      Login
+    </a>
+    <a href="signup.html" class="btn btn-primary">
+      <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+      Sign Up
+    </a>
+  </div>
+  <p class="mm-note"><span class="live-dot"></span>All data pipelines live · 99.98% uptime</p>
+</aside>
+
+<main>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="hero">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="hero-glow g1" aria-hidden="true"></div>
+  <div class="hero-glow g2" aria-hidden="true"></div>
+
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow" data-reveal="up"><span class="live-dot"></span>Real-time analytics for modern teams</span>
+      <h1 class="hero-title" data-reveal="up" style="--d:.1s">
+        Turn raw data into
+        <span class="rotator" id="rotator" aria-live="polite">
+          <span class="rot-word is-on">decisions.</span>
+          <span class="rot-word">revenue.</span>
+          <span class="rot-word">growth.</span>
+          <span class="rot-word">clarity.</span>
+        </span>
+      </h1>
+      <p class="hero-sub" data-reveal="up" style="--d:.2s">Connect every data source in minutes, build live dashboards without code, and share insights your whole team can act on — all in one secure platform.</p>
+      <div class="hero-actions" data-reveal="up" style="--d:.3s">
+        <a href="signup.html" class="btn btn-primary btn-lg">Start free trial
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="404.html" class="btn btn-ghost btn-lg">
+          <span class="play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span>
+          Watch 2-min demo
+        </a>
+      </div>
+      <ul class="hero-points" data-reveal="up" style="--d:.4s">
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>14-day free trial</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>No credit card</li>
+        <li><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg>SOC 2 &amp; GDPR ready</li>
+      </ul>
+    </div>
+
+    <!-- Tilting live dashboard mock-up -->
+    <div class="hero-visual" data-reveal="zoom" style="--d:.25s">
+      <div class="mock" id="heroMock">
+        <div class="mock-bar">
+          <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+          <span class="mock-url">app.analytics / revenue-overview</span>
+        </div>
+        <div class="mock-body">
+          <div class="mock-kpis">
+            <div class="mk"><span>Revenue</span><b id="mkRev">$164,280</b><em class="up">▲ 12.4%</em></div>
+            <div class="mk"><span>Active users</span><b id="mkUsers">48,210</b><em class="up">▲ 8.1%</em></div>
+            <div class="mk"><span>Conversion</span><b>3.42%</b><em class="down">▼ 0.3%</em></div>
+          </div>
+          <div class="mock-chart">
+            <svg viewBox="0 0 400 150" preserveAspectRatio="none" aria-hidden="true">
+              <defs>
+                <linearGradient id="mkFill" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0" stop-color="#38bdf8" stop-opacity=".45"/>
+                  <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="mkStroke" x1="0" x2="1">
+                  <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#6366f1"/>
+                </linearGradient>
+              </defs>
+              <path class="mk-area" d="M0 120 L36 104 L72 110 L109 86 L145 92 L181 70 L218 76 L254 52 L290 60 L327 38 L363 44 L400 20 L400 150 L0 150Z" fill="url(#mkFill)"/>
+              <path class="mk-line" d="M0 120 L36 104 L72 110 L109 86 L145 92 L181 70 L218 76 L254 52 L290 60 L327 38 L363 44 L400 20" fill="none" stroke="url(#mkStroke)"/>
+              <circle class="mk-dot" cx="400" cy="20" r="5"/>
+            </svg>
+          </div>
+          <div class="mock-bottom">
+            <div class="mock-bars">
+              <i style="--h:45%"></i><i style="--h:70%"></i><i style="--h:55%"></i><i style="--h:85%"></i><i style="--h:62%"></i><i style="--h:95%"></i>
+            </div>
+            <div class="mock-donut"><span>68%</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="float-chip fc1"><span class="fc-ico up"><svg viewBox="0 0 24 24"><path d="M4 16l6-6 4 4 6-6M14 8h6v6"/></svg></span><span><small>Forecast Q4</small><b>+18.6%</b></span></div>
+      <div class="float-chip fc2"><span class="fc-ico"><svg viewBox="0 0 24 24"><path d="M12 3c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6"/></svg></span><span><small>Rows synced</small><b id="rowsLive">1,284,902</b></span></div>
+      <div class="float-chip fc3"><span class="live-dot"></span><span><small>Anomaly caught</small><b>Checkout −18%</b></span></div>
+    </div>
+  </div>
+
+  <!-- trusted by -->
+  <div class="wrap trusted" data-reveal="up">
+    <p>Trusted by 2,400+ data-driven teams</p>
+    <div class="trusted-logos">
+      <span>NORTHWIND</span><span>Brightpath</span><span>HALCYON</span><span>veda.health</span><span>ORBIT</span><span>Lumen</span>
+    </div>
+  </div>
+
+  
+</section>
+
+<!-- ============ 2. FEATURES — spotlight cards ============ -->
+<section class="section features" id="features">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="up">
+      <span class="kicker">Platform</span>
+      <h2>Everything you need, from <span class="grad">raw data to decision</span></h2>
+      <p>One platform replaces your pile of spreadsheets, BI tools and one-off scripts.</p>
+    </div>
+    <div class="feature-grid">
+      <article class="spot-card" data-reveal="up" style="--d:0s">
+        <span class="f-ico"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+        <h3>150+ connectors</h3>
+        <p>Plug in warehouses, databases, CRMs, ad platforms and spreadsheets in a few clicks.</p>
+      </article>
+      <article class="spot-card" data-reveal="up" style="--d:.08s">
+        <span class="f-ico"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v4h-7zM13 12h7v8h-7zM4 15h7v5H4z"/></svg></span>
+        <h3>Drag-and-drop dashboards</h3>
+        <p>Build live charts, KPIs and filters without writing a single line of code.</p>
+      </article>
+      <article class="spot-card" data-reveal="up" style="--d:.16s">
+        <span class="f-ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+        <h3>AI-powered insights</h3>
+        <p>Ask questions in plain English and get answers, charts and explanations instantly.</p>
+      </article>
+      <article class="spot-card" data-reveal="up" style="--d:0s">
+        <span class="f-ico"><svg viewBox="0 0 24 24"><path d="M4 16l6-6 4 4 6-6M14 8h6v6"/></svg></span>
+        <h3>Predictive forecasting</h3>
+        <p>Forecast revenue, churn and demand with models trained on your own history.</p>
+      </article>
+      <article class="spot-card" data-reveal="up" style="--d:.08s">
+        <span class="f-ico"><svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6M10.5 20a2 2 0 0 0 3 0"/></svg></span>
+        <h3>Smart alerts</h3>
+        <p>Get notified in Slack or email the moment a metric moves outside its normal range.</p>
+      </article>
+      <article class="spot-card" data-reveal="up" style="--d:.16s">
+        <span class="f-ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3zM9 12l2 2 4-4"/></svg></span>
+        <h3>Enterprise-grade security</h3>
+        <p>SSO, role-based access, row-level security and full audit logs built in.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. SHOWCASE — sticky image swaps as you scroll the steps ============ -->
+<section class="section showcase" id="showcase">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="up">
+      <span class="kicker">See it in action</span>
+      <h2>From question to answer in <span class="grad">three moves</span></h2>
+    </div>
+    <div class="show-grid">
+      <div class="show-steps">
+        <article class="show-step is-active" data-step="0">
+          <span class="step-no">01</span>
+          <h3>Explore every metric</h3>
+          <p>Slice revenue, users and funnels by any dimension. Drill from a yearly trend down to a single order in two clicks.</p>
+          <ul><li>Cross-filtering on every chart</li><li>Saved views for each team</li></ul>
+        </article>
+        <article class="show-step" data-step="1">
+          <span class="step-no">02</span>
+          <h3>Spot what changed</h3>
+          <p>Automatic anomaly detection highlights the spike or dip that matters, and tells you which segment caused it.</p>
+          <ul><li>Root-cause breakdowns</li><li>Plain-English explanations</li></ul>
+        </article>
+        <article class="show-step" data-step="2">
+          <span class="step-no">03</span>
+          <h3>Share and act</h3>
+          <p>Send live dashboards to stakeholders, schedule reports, and embed charts right inside your own product.</p>
+          <ul><li>Scheduled PDF &amp; Slack reports</li><li>White-label embedding</li></ul>
+        </article>
+      </div>
+      <div class="show-frame">
+        <div class="show-sticky">
+          <figure class="ph show-img is-active" data-img="0">
+            <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1100&q=70" alt="Analytics dashboard with charts on a laptop screen" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          </figure>
+          <figure class="ph show-img" data-img="1">
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1100&q=70" alt="Laptop showing performance graphs" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          </figure>
+          <figure class="ph show-img" data-img="2">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1100&q=70" alt="Team reviewing insights together in a meeting" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          </figure>
+          <div class="show-badge"><span class="live-dot"></span><span id="showLabel">Exploring metrics</span></div>
+          <div class="show-dots"><i class="on"></i><i></i><i></i></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. PROCESS — horizontal scroll on desktop ============ -->
+<section class="hscroll" id="process">
+  <div class="hs-sticky">
+    <div class="wrap hs-head">
+      <div>
+        <span class="kicker">How it works</span>
+        <h2>Live in a day, <span class="grad">not a quarter</span></h2>
+      </div>
+      <div class="hs-progress"><span id="hsBar"></span></div>
+    </div>
+    <div class="hs-track" id="hsTrack">
+      <article class="hs-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=900&q=70" alt="Rows of servers in a data centre" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="hs-body"><span class="hs-no">01</span><h3>Connect your data</h3><p>Securely link your warehouse, apps and files. We sync them on the schedule you choose.</p></div>
+      </article>
+      <article class="hs-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=900&q=70" alt="Data team working at their desks" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="hs-body"><span class="hs-no">02</span><h3>Model once</h3><p>Define metrics like revenue and churn a single time, so every chart uses the same numbers.</p></div>
+      </article>
+      <article class="hs-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=900&q=70" alt="Charts and graphs on a screen" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="hs-body"><span class="hs-no">03</span><h3>Visualise</h3><p>Pick from 40+ chart types or let AI suggest the best view for your question.</p></div>
+      </article>
+      <article class="hs-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=70" alt="Colleagues gathered around a laptop" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="hs-body"><span class="hs-no">04</span><h3>Share &amp; decide</h3><p>Publish dashboards, set alerts and schedule reports so everyone acts on the same truth.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. RESULTS — counters and bars ============ -->
+<section class="section results" id="results">
+  <div class="wrap">
+    <div class="results-grid">
+      <div class="results-copy" data-reveal="left">
+        <span class="kicker">Results</span>
+        <h2>Numbers our customers <span class="grad">actually see</span></h2>
+        <p>Measured across 2,400+ teams in their first six months on the platform.</p>
+        <div class="bars-compare">
+          <div class="bc-row">
+            <span>Time to build a report</span>
+            <div class="bc-track"><i class="bc-old" style="--w:100%">Before · 3 days</i></div>
+            <div class="bc-track"><i class="bc-new" style="--w:12%">Now · 2 hrs</i></div>
+          </div>
+          <div class="bc-row">
+            <span>Questions answered per week</span>
+            <div class="bc-track"><i class="bc-old" style="--w:28%">Before · 40</i></div>
+            <div class="bc-track"><i class="bc-new" style="--w:100%">Now · 145</i></div>
+          </div>
+        </div>
+      </div>
+      <div class="stat-grid">
+        <div class="stat" data-reveal="zoom" style="--d:0s"><b><span data-count="10">0</span>x</b><span>faster reporting</span></div>
+        <div class="stat" data-reveal="zoom" style="--d:.1s"><b><span data-count="38">0</span>%</b><span>less time on data prep</span></div>
+        <div class="stat" data-reveal="zoom" style="--d:.2s"><b>$<span data-count="2.4" data-decimals="1">0</span>M</b><span>average yearly savings</span></div>
+        <div class="stat" data-reveal="zoom" style="--d:.3s"><b><span data-count="99.98" data-decimals="2">0</span>%</b><span>platform uptime</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. USE CASES — tabs by team ============ -->
+<section class="section usecases" id="usecases">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="up">
+      <span class="kicker">Built for every team</span>
+      <h2>One source of truth, <span class="grad">many ways to use it</span></h2>
+    </div>
+    <div class="tabs" data-reveal="up" role="tablist" aria-label="Teams">
+      <button class="tab is-on" role="tab" aria-selected="true" data-tab="0">Sales</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="1">Marketing</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="2">Product</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="3">Finance</button>
+      <span class="tab-ind" id="tabInd"></span>
+    </div>
+    <div class="panels">
+      <div class="panel is-on" data-panel="0">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=70" alt="Sales team discussing results around a table" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="panel-copy">
+          <h3>Hit quota with a live pipeline view</h3>
+          <p>See every deal, rep and stage in one place. Forecast the quarter with confidence and spot slipping deals early.</p>
+          <ul class="ticks"><li>Pipeline and win-rate dashboards</li><li>Rep leaderboards and targets</li><li>Deal-risk scoring from CRM activity</li></ul>
+          <a href="404.html" class="text-link">Explore sales analytics <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="panel" data-panel="1">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=1000&q=70" alt="Laptop showing website traffic analytics" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="panel-copy">
+          <h3>Know which campaigns really pay off</h3>
+          <p>Blend ad spend, web traffic and revenue to see true return on every channel — not just clicks.</p>
+          <ul class="ticks"><li>Multi-touch attribution</li><li>Cost per acquisition by channel</li><li>Cohort and funnel analysis</li></ul>
+          <a href="404.html" class="text-link">Explore marketing analytics <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="panel" data-panel="2">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=1000&q=70" alt="Product team working together on laptops" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="panel-copy">
+          <h3>Build what users actually use</h3>
+          <p>Track feature adoption, retention and user paths so every roadmap decision is backed by evidence.</p>
+          <ul class="ticks"><li>Retention cohorts and stickiness</li><li>Feature adoption after release</li><li>User journey and drop-off maps</li></ul>
+          <a href="404.html" class="text-link">Explore product analytics <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+      <div class="panel" data-panel="3">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1000&q=70" alt="Financial documents with a calculator" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="panel-copy">
+          <h3>Close the books faster</h3>
+          <p>Automate P&amp;L, cash-flow and budget-versus-actual reporting straight from your finance systems.</p>
+          <ul class="ticks"><li>Live P&amp;L and cash flow</li><li>Budget vs actual by department</li><li>Board-ready monthly packs</li></ul>
+          <a href="404.html" class="text-link">Explore finance analytics <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. INTEGRATIONS — data flowing into the hub ============ -->
+<section class="section integrations" id="integrations">
+  <div class="wrap int-grid">
+    <div class="int-copy" data-reveal="left">
+      <span class="kicker">Integrations</span>
+      <h2>Works with the tools <span class="grad">you already use</span></h2>
+      <p>Native connectors keep data fresh automatically — no brittle scripts, no manual exports.</p>
+      <div class="int-stats">
+        <div><b data-count="150" data-suffix="+">0</b><span>connectors</span></div>
+        <div><b data-count="15" data-suffix=" min">0</b><span>fastest sync</span></div>
+      </div>
+      <a href="404.html" class="btn btn-ghost">Browse all integrations</a>
+    </div>
+    <div class="hub" data-reveal="zoom" aria-hidden="true">
+      <svg class="hub-lines" viewBox="0 0 400 400">
+        <path d="M200 200 L60 70"/><path d="M200 200 L340 70"/><path d="M200 200 L370 200"/>
+        <path d="M200 200 L340 330"/><path d="M200 200 L60 330"/><path d="M200 200 L30 200"/>
+        <path d="M200 200 L200 30"/><path d="M200 200 L200 370"/>
+      </svg>
+      <div class="hub-core"><span>Your<br>platform</span></div>
+      <span class="hub-node" style="--x:15%;--y:17.5%">Snowflake</span>
+      <span class="hub-node" style="--x:85%;--y:17.5%">BigQuery</span>
+      <span class="hub-node" style="--x:92.5%;--y:50%">Stripe</span>
+      <span class="hub-node" style="--x:85%;--y:82.5%">Salesforce</span>
+      <span class="hub-node" style="--x:15%;--y:82.5%">HubSpot</span>
+      <span class="hub-node" style="--x:7.5%;--y:50%">Postgres</span>
+      <span class="hub-node" style="--x:50%;--y:7.5%">Google Ads</span>
+      <span class="hub-node" style="--x:50%;--y:92.5%">Sheets</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. CASE STUDIES — cards stack as you scroll ============ -->
+<section class="section cases" id="cases">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="up">
+      <span class="kicker">Customer stories</span>
+      <h2>Real teams, <span class="grad">measurable wins</span></h2>
+    </div>
+    <div class="stack">
+      <article class="stack-card" style="--i:0">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1000&q=70" alt="Retail team in a planning meeting" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="sc-body">
+          <span class="sc-tag">Retail · Northwind</span>
+          <h3>Northwind cut stock-outs by 32% with live demand forecasts</h3>
+          <p>Store managers now see tomorrow's demand every morning instead of last month's report.</p>
+          <div class="sc-metrics"><div><b>32%</b><span>fewer stock-outs</span></div><div><b>$1.8M</b><span>saved per year</span></div></div>
+          <a href="404.html" class="text-link">Read the story <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="stack-card" style="--i:1">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=1000&q=70" alt="Analyst working on a computer" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="sc-body">
+          <span class="sc-tag">Healthcare · Veda Health</span>
+          <h3>Veda Health reduced patient wait times by 41%</h3>
+          <p>Scheduling teams balance clinics in real time using live appointment and staffing data.</p>
+          <div class="sc-metrics"><div><b>41%</b><span>shorter waits</span></div><div><b>9 hrs</b><span>saved weekly per clinic</span></div></div>
+          <a href="404.html" class="text-link">Read the story <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="stack-card" style="--i:2">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1000&q=70" alt="Global network of data connections over the earth" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="sc-body">
+          <span class="sc-tag">Fintech · Orbit Bank</span>
+          <h3>Orbit Bank flags fraud 6x faster with anomaly alerts</h3>
+          <p>Risk analysts get an alert within minutes when transaction patterns shift anywhere in the world.</p>
+          <div class="sc-metrics"><div><b>6x</b><span>faster detection</span></div><div><b>99.2%</b><span>alert accuracy</span></div></div>
+          <a href="404.html" class="text-link">Read the story <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. TESTIMONIALS — swipeable slider ============ -->
+<section class="section voices" id="voices">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="up">
+      <span class="kicker">What people say</span>
+      <h2>Loved by analysts <span class="grad">and executives</span></h2>
+    </div>
+    <div class="slider" data-reveal="up" id="slider">
+      <div class="slides" id="slides">
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>“We replaced four tools and a mountain of spreadsheets. Our weekly business review now takes 20 minutes instead of a full day.”</blockquote>
+          <figcaption>
+            <span class="q-av ph"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></span>
+            <span><b>Aisha Rahman</b><em>Head of Analytics, Northwind</em></span>
+          </figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>“The anomaly alerts paid for the platform in the first month. We caught a checkout bug before most customers noticed.”</blockquote>
+          <figcaption>
+            <span class="q-av ph"><img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></span>
+            <span><b>Leo Martins</b><em>VP Engineering, Halcyon Media</em></span>
+          </figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Finally one version of the truth. Finance, sales and product all look at the same revenue number now.”</blockquote>
+          <figcaption>
+            <span class="q-av ph"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=160&h=160&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></span>
+            <span><b>Nina Kowalski</b><em>CFO, Brightpath Insurance</em></span>
+          </figcaption>
+        </figure>
+        <figure class="quote">
+          <div class="stars">★★★★★</div>
+          <blockquote>“Setup took an afternoon. By Friday our whole team was building their own dashboards without asking the data team.”</blockquote>
+          <figcaption>
+            <span class="q-av ph"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&h=160&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></span>
+            <span><b>Samuel Osei</b><em>COO, Veda Health</em></span>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="slider-ctrl">
+        <button class="sl-btn" id="slPrev" aria-label="Previous testimonial"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+        <div class="sl-dots" id="slDots"></div>
+        <button class="sl-btn" id="slNext" aria-label="Next testimonial"><svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 10. PRICING — monthly / yearly toggle ============ -->
+<section class="section pricing" id="pricing">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="up">
+      <span class="kicker">Pricing</span>
+      <h2>Simple plans that <span class="grad">grow with you</span></h2>
+      <div class="bill-toggle" role="group" aria-label="Billing period">
+        <span class="bt-label is-on" data-bill="monthly">Monthly</span>
+        <button class="bt-switch" id="billSwitch" role="switch" aria-checked="false" aria-label="Yearly billing"><span></span></button>
+        <span class="bt-label" data-bill="yearly">Yearly <em>Save 20%</em></span>
+      </div>
+    </div>
+    <div class="price-grid">
+      <article class="price-card" data-reveal="up" style="--d:0s">
+        <h3>Starter</h3>
+        <p class="pc-desc">For small teams getting started with data.</p>
+        <div class="pc-price">$<b data-m="29" data-y="23">29</b><span>/ user / month</span></div>
+        <a href="signup.html" class="btn btn-ghost btn-block">Start free trial</a>
+        <ul class="ticks"><li>10 data sources</li><li>Unlimited dashboards</li><li>Daily data sync</li><li>Email support</li></ul>
+      </article>
+      <article class="price-card is-pop" data-reveal="up" style="--d:.1s">
+        <span class="pop-tag">Most popular</span>
+        <h3>Growth</h3>
+        <p class="pc-desc">For scaling teams that need speed and AI.</p>
+        <div class="pc-price">$<b data-m="79" data-y="63">79</b><span>/ user / month</span></div>
+        <a href="signup.html" class="btn btn-primary btn-block">Start free trial</a>
+        <ul class="ticks"><li>50 data sources</li><li>AI insights &amp; forecasting</li><li>Hourly data sync</li><li>Smart alerts in Slack</li><li>Priority support</li></ul>
+      </article>
+      <article class="price-card" data-reveal="up" style="--d:.2s">
+        <h3>Enterprise</h3>
+        <p class="pc-desc">For organisations with advanced security needs.</p>
+        <div class="pc-price pc-custom"><b>Custom</b></div>
+        <a href="contact.html" class="btn btn-ghost btn-block">Talk to sales</a>
+        <ul class="ticks"><li>Unlimited data sources</li><li>Real-time streaming</li><li>SSO, SCIM &amp; audit logs</li><li>Dedicated success manager</li><li>99.99% uptime SLA</li></ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 11. FAQ — accordion ============ -->
+<section class="section faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-copy" data-reveal="left">
+      <span class="kicker">FAQ</span>
+      <h2>Questions, <span class="grad">answered</span></h2>
+      <p>Can't find what you're looking for? Our team replies within an hour on working days.</p>
+      <a href="contact.html" class="btn btn-ghost">Contact support</a>
+    </div>
+    <div class="acc" data-reveal="right">
+      <div class="acc-item is-open">
+        <button class="acc-q" aria-expanded="true">How long does setup take?<i></i></button>
+        <div class="acc-a"><div><p>Most teams connect their first source and publish a dashboard on day one. Larger warehouses usually finish their first full sync within a few hours.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Do I need to know SQL?<i></i></button>
+        <div class="acc-a"><div><p>No. Business users build dashboards with drag-and-drop and plain-English questions. Analysts can still write SQL whenever they want full control.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Where is my data stored?<i></i></button>
+        <div class="acc-a"><div><p>You choose the region — US, EU, India or Singapore. Data is encrypted at rest and in transit, and we never sell or share it.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Can I cancel at any time?<i></i></button>
+        <div class="acc-a"><div><p>Yes. Monthly plans can be cancelled whenever you like. Yearly plans are refunded for any full months you haven't used.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Can I embed dashboards in my own app?<i></i></button>
+        <div class="acc-a"><div><p>Yes. Growth and Enterprise plans include white-label embedding with row-level security, so each of your customers only sees their own data.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 12. INSIGHTS — latest articles ============ -->
+<section class="section insights" id="insights">
+  <div class="wrap">
+    <div class="sec-head sec-head--row" data-reveal="up">
+      <div>
+        <span class="kicker">Insights</span>
+        <h2>Fresh from <span class="grad">the blog</span></h2>
+      </div>
+      <a href="blog.html" class="text-link">All articles <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+    <div class="post-grid">
+      <a href="blog.html" class="post" data-reveal="up" style="--d:0s">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=800&q=70" alt="Printed charts and analysis on a desk" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="post-body"><span class="post-meta">Guide · 6 min read</span><h3>The 12 KPIs every SaaS dashboard should track</h3><span class="post-more">Read article →</span></div>
+      </a>
+      <a href="blog.html" class="post" data-reveal="up" style="--d:.1s">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=70" alt="Modern open-plan office workspace" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="post-body"><span class="post-meta">Playbook · 8 min read</span><h3>How to build a data-driven culture in 90 days</h3><span class="post-more">Read article →</span></div>
+      </a>
+      <a href="blog.html" class="post" data-reveal="up" style="--d:.2s">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=800&q=70" alt="Tablet showing analytics charts" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="post-body"><span class="post-meta">Product · 4 min read</span><h3>Forecasting made simple: meet predictive metrics</h3><span class="post-more">Read article →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="footer-cta" data-reveal="up">
+      <h3>Ready to see your data clearly?</h3>
+      <a href="contact.html" class="btn btn-primary">Talk to our team
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="../assets/Logo.webp" alt="Company logo">
+        </a>
+        <p>Dashboards, forecasting and data pipelines — built for teams who want answers, not more spreadsheets.</p>
+        <div class="footer-social">
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 21v-7h2.5l.5-3H14V9.2c0-.9.3-1.7 1.7-1.7H17V5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2V11H8v3h2.6v7"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="#hero">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="404.html">Dashboards &amp; BI</a>
+        <a href="404.html">Data engineering</a>
+        <a href="404.html">Predictive analytics</a>
+        <a href="404.html">Data governance</a>
+        <a href="404.html">Embedded analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <a href="404.html">MMR Complex, Periyakollappatty,<br>Chinna Thirupathi, Salem, Tamil<br>Nadu 636008</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 5c0 8.8 6.2 15 15 15l2-3.5-5-2-1.5 2C11.5 15 9 12.5 8.5 9.5l2-1.5-2-5z"/></svg>
+            <a href="404.html">0712 371 2345</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="404.html">hello@stackly.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 STACKLY SOLUTIONS</span>
+      <span class="status-dot"><span class="live-dot"></span>All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top — the ring fills as you scroll -->
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg class="tt-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><circle class="tt-fill" id="ttFill" cx="24" cy="24" r="21"/></svg>
+  <svg class="tt-arrow" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<script>
+(function () {
+  'use strict';
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  /* ---------- Preloader: percentage climbs, then the page reveals ---------- */
+  var pre = $('#preloader'), pct = $('#plPct'), p = 0, done = false;
+  var tick = setInterval(function () {
+    p = Math.min(p + Math.random() * 18, done ? 100 : 92);
+    pct.textContent = Math.round(p) + '%';
+    if (p >= 100) finishLoad();
+  }, 120);
+  function finishLoad() {
+    clearInterval(tick);
+    pct.textContent = '100%';
+    pre.classList.add('is-done');
+    document.body.classList.remove('is-loading');
+    setTimeout(function () { pre.style.display = 'none'; }, 700);
+  }
+  window.addEventListener('load', function () { done = true; });
+  setTimeout(function () { done = true; }, 1600);       // never wait on slow images
+  setTimeout(finishLoad, 3500);                         // hard failsafe
+
+  /* ---------- Header: always visible (sticky); turns solid after 20px ---------- */
+  var header = $('#siteHeader'), bar = $('#scrollBar'), lastY = 0;
+  var toTop = $('#toTop'), ttFill = $('#ttFill'), ringLen = 2 * Math.PI * 21;
+  ttFill.style.strokeDasharray = ringLen;
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    var prog = max > 0 ? y / max : 0;
+    header.classList.toggle('is-solid', y > 20);
+    lastY = y;
+    bar.style.transform = 'scaleX(' + prog + ')';
+    ttFill.style.strokeDashoffset = ringLen * (1 - prog);
+    toTop.classList.toggle('is-on', y > 600);
+  }
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
+
+  /* ---------- Nav underline follows hover, rests on the active link ---------- */
+  var navLinks = $('#navLinks'), navLine = $('#navLine');
+  function moveLine(a) {
+    if (!a) return;
+    navLine.style.width = a.offsetWidth + 'px';
+    navLine.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+  }
+  $$('a', navLinks).forEach(function (a) { a.addEventListener('mouseenter', function () { moveLine(a); }); });
+  navLinks.addEventListener('mouseleave', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('load', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('resize', function () { moveLine($('a.active', navLinks)); });
+  moveLine($('a.active', navLinks));
+
+  /* ---------- Mobile menu (slides in from the right) ---------- */
+  var menu = $('#mobileMenu'), scrim = $('#menuScrim'), burger = $('#hamburger');
+  function openMenu() {
+    menu.classList.add('is-open'); scrim.classList.add('is-on');
+    document.body.classList.add('menu-open');
+    burger.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    menu.classList.remove('is-open'); scrim.classList.remove('is-on');
+    document.body.classList.remove('menu-open');
+    burger.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+  burger.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
+  $('#mobileMenuClose').addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  $$('a', menu).forEach(function (a) { a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', function () { if (innerWidth > 1024) closeMenu(); });
+
+  /* ---------- Smooth in-page anchors (offset for the header) ---------- */
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      var t = id.length > 1 && document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 70, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- Scroll reveals + counters ---------- */
+  function countUp(el) {
+    var target = parseFloat(el.dataset.count), dec = parseInt(el.dataset.decimals || 0, 10);
+    var suffix = el.dataset.suffix || '', start = null, dur = 1500;
+    if (REDUCED) { el.textContent = target.toFixed(dec) + suffix; return; }
+    function step(ts) {
+      if (!start) start = ts;
+      var k = Math.min(1, (ts - start) / dur), e = 1 - Math.pow(1 - k, 4);
+      var v = target * e;
+      el.textContent = (dec ? v.toFixed(dec) : Math.round(v).toLocaleString()) + suffix;
+      if (k < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        $$('[data-count]', en.target).forEach(function (c) { if (!c.dataset.done) { c.dataset.done = 1; countUp(c); } });
+        io.unobserve(en.target);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
+    $$('[data-reveal], .bars-compare, .stack-card, .hs-card').forEach(function (el) { io.observe(el); });
+  } else {
+    $$('[data-reveal]').forEach(function (el) { el.classList.add('in'); });
+  }
+
+  /* ---------- Hero: rotating word ---------- */
+  var words = $$('.rot-word'), wi = 0;
+  var rotator = $('#rotator');
+  function sizeRotator() {
+    var w = 0; words.forEach(function (x) { w = Math.max(w, x.offsetWidth); });
+    rotator.style.minWidth = w + 'px';
+  }
+  if (!REDUCED) {
+    setInterval(function () {
+      words[wi].classList.remove('is-on'); words[wi].classList.add('is-out');
+      var old = words[wi];
+      setTimeout(function () { old.classList.remove('is-out'); }, 600);
+      wi = (wi + 1) % words.length;
+      words[wi].classList.add('is-on');
+    }, 2600);
+  }
+
+  /* ---------- Hero: 3D tilt on the dashboard mock-up ---------- */
+  var mock = $('#heroMock'), visual = $('.hero-visual');
+  if (!REDUCED && matchMedia('(hover: hover)').matches) {
+    visual.addEventListener('mousemove', function (e) {
+      var r = visual.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - 0.5, y = (e.clientY - r.top) / r.height - 0.5;
+      mock.style.transform = 'rotateY(' + (x * 12) + 'deg) rotateX(' + (-y * 10) + 'deg)';
+    });
+    visual.addEventListener('mouseleave', function () { mock.style.transform = ''; });
+  }
+
+  /* ---------- Hero: live-ticking numbers ---------- */
+  var rows = 1284902, users = 48210;
+  setInterval(function () {
+    rows += Math.round(Math.random() * 900 + 200);
+    users += Math.round(Math.random() * 6 - 2);
+    $('#rowsLive').textContent = rows.toLocaleString();
+    $('#mkUsers').textContent = users.toLocaleString();
+  }, 1400);
+
+  /* ---------- Hero: particle network canvas ---------- */
+  var cv = $('#heroCanvas'), ctx = cv.getContext('2d'), pts = [], W, H, heroOn = true;
+  function sizeCanvas() {
+    var dpr = Math.min(devicePixelRatio || 1, 2);
+    W = cv.offsetWidth; H = cv.offsetHeight;
+    cv.width = W * dpr; cv.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    var n = Math.round(Math.min(70, W * H / 22000));
+    pts = [];
+    for (var i = 0; i < n; i++) pts.push({ x: Math.random() * W, y: Math.random() * H, vx: (Math.random() - .5) * .35, vy: (Math.random() - .5) * .35 });
+  }
+  function draw() {
+    if (!heroOn) return requestAnimationFrame(draw);
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < pts.length; i++) {
+      var a = pts[i];
+      a.x += a.vx; a.y += a.vy;
+      if (a.x < 0 || a.x > W) a.vx *= -1;
+      if (a.y < 0 || a.y > H) a.vy *= -1;
+      for (var j = i + 1; j < pts.length; j++) {
+        var b = pts[j], dx = a.x - b.x, dy = a.y - b.y, d = dx * dx + dy * dy;
+        if (d < 16000) {
+          ctx.strokeStyle = 'rgba(56,189,248,' + (0.16 * (1 - d / 16000)) + ')';
+          ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      ctx.fillStyle = 'rgba(125,211,252,.55)';
+      ctx.beginPath(); ctx.arc(a.x, a.y, 1.6, 0, 6.283); ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  }
+  sizeCanvas();
+  if (!REDUCED) {
+    requestAnimationFrame(draw);
+    new IntersectionObserver(function (e) { heroOn = e[0].isIntersecting; }).observe($('#hero'));
+  }
+
+  /* ---------- Spotlight cards follow the mouse ---------- */
+  $$('.spot-card, .price-card').forEach(function (c) {
+    c.addEventListener('mousemove', function (e) {
+      var r = c.getBoundingClientRect();
+      c.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      c.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
+
+  /* ---------- Showcase: the step in the middle of the screen picks the image ---------- */
+  var steps = $$('.show-step'), imgs = $$('.show-img'), sdots = $$('.show-dots i');
+  var labels = ['Exploring metrics', 'Anomaly detected', 'Shared with 14 people'];
+  function setStep(n) {
+    steps.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
+    imgs.forEach(function (s, i) { s.classList.toggle('is-active', i === n); });
+    sdots.forEach(function (s, i) { s.classList.toggle('on', i === n); });
+    $('#showLabel').textContent = labels[n];
+  }
+  if ('IntersectionObserver' in window) {
+    var so = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) { if (en.isIntersecting) setStep(+en.target.dataset.step); });
+    }, { rootMargin: '-45% 0px -45% 0px' });
+    steps.forEach(function (s) { so.observe(s); });
+  }
+
+  /* ---------- Horizontal scroll section (desktop only) ---------- */
+  var hs = $('#process'), track = $('#hsTrack'), hsBar = $('#hsBar');
+  function hsActive() { return innerWidth > 900 && !REDUCED; }
+  function sizeHs() {
+    if (!hsActive()) { hs.style.height = ''; track.style.transform = ''; return; }
+    var extra = track.scrollWidth - innerWidth + 80;
+    hs.style.height = (innerHeight + Math.max(extra, 0)) + 'px';
+  }
+  function onHs() {
+    if (!hsActive()) return;
+    var r = hs.getBoundingClientRect();
+    var total = hs.offsetHeight - innerHeight;
+    var k = Math.min(1, Math.max(0, -r.top / total));
+    var extra = track.scrollWidth - innerWidth + 80;
+    track.style.transform = 'translate3d(' + (-extra * k) + 'px,0,0)';
+    hsBar.style.transform = 'scaleX(' + k + ')';
+  }
+
+  /* ---------- Parallax + stacking cards on scroll ---------- */
+  var stackCards = $$('.stack-card');
+  function onStack() {
+    if (REDUCED || innerWidth <= 900) { stackCards.forEach(function (c) { c.style.transform = ''; }); return; }
+    stackCards.forEach(function (c, i) {
+      var next = stackCards[i + 1];
+      if (!next) return;
+      var nr = next.getBoundingClientRect(), cr = c.getBoundingClientRect();
+      var k = Math.min(1, Math.max(0, (cr.bottom - nr.top) / cr.height));
+      c.style.transform = 'scale(' + (1 - k * 0.06) + ')';
+      c.style.filter = 'brightness(' + (1 - k * 0.35) + ')';
+    });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { onScroll(); onHs(); onStack(); ticking = false; });
+  }, { passive: true });
+  window.addEventListener('resize', function () { sizeCanvas(); sizeHs(); onHs(); sizeRotator(); });
+  window.addEventListener('load', function () { sizeHs(); onHs(); sizeRotator(); });
+  sizeHs(); onScroll(); sizeRotator();
+
+  /* ---------- Use-case tabs ---------- */
+  var tabs = $$('.tab'), panels = $$('.panel'), tabInd = $('#tabInd');
+  function placeInd(t) { tabInd.style.width = t.offsetWidth + 'px'; tabInd.style.transform = 'translateX(' + t.offsetLeft + 'px)'; }
+  tabs.forEach(function (t, i) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.classList.remove('is-on'); x.setAttribute('aria-selected', 'false'); });
+      panels.forEach(function (x) { x.classList.remove('is-on'); });
+      t.classList.add('is-on'); t.setAttribute('aria-selected', 'true');
+      panels[i].classList.add('is-on');
+      placeInd(t);
+    });
+  });
+  placeInd(tabs[0]);
+  window.addEventListener('resize', function () { placeInd($('.tab.is-on')); });
+  window.addEventListener('load', function () { placeInd($('.tab.is-on')); });
+
+  /* ---------- Testimonials slider: buttons, dots, swipe, autoplay ---------- */
+  var slides = $('#slides'), quotes = $$('.quote', slides), dotsBox = $('#slDots'), si = 0, auto;
+  function perView() { return innerWidth > 1024 ? 2 : 1; }
+  function pages() { return quotes.length - perView() + 1; }
+  function buildDots() {
+    dotsBox.innerHTML = '';
+    for (var i = 0; i < pages(); i++) {
+      var d = document.createElement('button');
+      d.setAttribute('aria-label', 'Go to testimonial ' + (i + 1));
+      (function (n) { d.addEventListener('click', function () { go(n); restart(); }); })(i);
+      dotsBox.appendChild(d);
+    }
+  }
+  function go(n) {
+    si = (n + pages()) % pages();
+    var w = quotes[0].offsetWidth + parseFloat(getComputedStyle(slides).columnGap || 0);
+    slides.style.transform = 'translateX(' + (-si * w) + 'px)';
+    $$('button', dotsBox).forEach(function (d, i) { d.classList.toggle('on', i === si); });
+  }
+  function restart() { clearInterval(auto); if (!REDUCED) auto = setInterval(function () { go(si + 1); }, 5000); }
+  $('#slPrev').addEventListener('click', function () { go(si - 1); restart(); });
+  $('#slNext').addEventListener('click', function () { go(si + 1); restart(); });
+  var sx = null;
+  slides.addEventListener('pointerdown', function (e) { sx = e.clientX; });
+  slides.addEventListener('pointerup', function (e) {
+    if (sx === null) return;
+    var dx = e.clientX - sx; sx = null;
+    if (Math.abs(dx) > 40) { go(si + (dx < 0 ? 1 : -1)); restart(); }
+  });
+  $('#slider').addEventListener('mouseenter', function () { clearInterval(auto); });
+  $('#slider').addEventListener('mouseleave', restart);
+  buildDots(); go(0); restart();
+  window.addEventListener('resize', function () { buildDots(); go(Math.min(si, pages() - 1)); });
+
+  /* ---------- Pricing toggle ---------- */
+  var billSwitch = $('#billSwitch'), yearly = false;
+  function setBill(y) {
+    yearly = y;
+    billSwitch.classList.toggle('on', y);
+    billSwitch.setAttribute('aria-checked', String(y));
+    $$('.bt-label').forEach(function (l) { l.classList.toggle('is-on', (l.dataset.bill === 'yearly') === y); });
+    $$('.pc-price b[data-m]').forEach(function (b) {
+      b.classList.remove('flip'); void b.offsetWidth; b.classList.add('flip');
+      b.textContent = y ? b.dataset.y : b.dataset.m;
+    });
+  }
+  billSwitch.addEventListener('click', function () { setBill(!yearly); });
+  $$('.bt-label').forEach(function (l) { l.addEventListener('click', function () { setBill(l.dataset.bill === 'yearly'); }); });
+
+  /* ---------- FAQ accordion (one open at a time) ---------- */
+  $$('.acc-item').forEach(function (item) {
+    $('.acc-q', item).addEventListener('click', function () {
+      var open = item.classList.contains('is-open');
+      $$('.acc-item').forEach(function (x) { x.classList.remove('is-open'); $('.acc-q', x).setAttribute('aria-expanded', 'false'); });
+      if (!open) { item.classList.add('is-open'); $('.acc-q', item).setAttribute('aria-expanded', 'true'); }
+    });
+  });
+})();
+</script>
+</body>
+</html>

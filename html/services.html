@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services — Data Analytics Platform</title>
+<meta name="description" content="Dashboards, data engineering, forecasting, AI insights and governance — end-to-end data analytics services for modern teams.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/services.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER — same as home ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <div class="pl-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="pl-word" aria-label="STACKLY">
+      <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+    </div>
+    <div class="pl-text">Loading services <b id="plPct">0%</b></div>
+  </div>
+</div>
+
+<!-- ============ HEADER — same as home ============ -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav wrap">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <span class="nav-line" id="navLine" aria-hidden="true"></span>
+    </div>
+
+    <div class="nav-right">
+      <a href="login.html" class="nav-login">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+        Login
+      </a>
+      <a href="signup.html" class="btn btn-primary btn-sm nav-signup">
+        <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+        Sign Up
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="menu-scrim" id="menuScrim"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Menu">
+  <div class="mm-top">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+    <button class="mm-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mm-links">
+    <a href="index.html"><em>01</em>Home</a>
+    <a href="services.html" class="active"><em>02</em>Services</a>
+    <a href="about.html"><em>03</em>About</a>
+    <a href="blog.html"><em>04</em>Blog</a>
+    <a href="contact.html"><em>05</em>Contact</a>
+  </nav>
+  <div class="mm-actions">
+    <a href="login.html" class="btn btn-ghost">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+      Login
+    </a>
+    <a href="signup.html" class="btn btn-primary">
+      <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+      Sign Up
+    </a>
+  </div>
+  <p class="mm-note"><span class="live-dot"></span>All data pipelines live · 99.98% uptime</p>
+</aside>
+
+<main>
+
+<!-- ============ 1. SERVICES HERO ============ -->
+<section class="s-hero" id="top">
+  <div class="s-hero-bg ph" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=60" alt="" onerror="this.parentNode.classList.add('is-broken')">
+  </div>
+  <div class="s-grid-lines" aria-hidden="true"></div>
+  <div class="hero-glow g1" aria-hidden="true"></div>
+  <div class="hero-glow g2" aria-hidden="true"></div>
+
+  <div class="wrap s-hero-grid">
+    <div class="s-hero-copy">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        <span>Services</span>
+      </nav>
+      <span class="eyebrow"><span class="live-dot"></span>End-to-end data services</span>
+      <h1 class="s-title">
+        <span class="w"><span>Data</span></span>
+        <span class="w"><span>services</span></span>
+        <span class="w"><span>that</span></span>
+        <span class="w"><span>turn</span></span>
+        <span class="w"><span>numbers</span></span>
+        <span class="w"><span>into</span></span>
+        <span class="w"><span class="grad">momentum.</span></span>
+      </h1>
+      <p class="s-sub">From your first pipeline to board-ready forecasts, our specialists design, build and run the analytics stack your team relies on every single day.</p>
+      <div class="s-actions">
+        <a href="#services-grid" class="btn btn-primary btn-lg">Explore services
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="contact.html" class="btn btn-ghost btn-lg">Book a strategy call</a>
+      </div>
+    </div>
+
+    <div class="collage" id="collage">
+      <figure class="ph c-img c1"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=70" alt="Analytics dashboard with charts on a laptop" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <figure class="ph c-img c2"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=70" alt="Team reviewing data insights together" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <figure class="ph c-img c3"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=700&q=70" alt="Laptop showing performance graphs" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <div class="c-chip ch1">
+        <span class="chip-ico ok"><svg viewBox="0 0 24 24"><path d="M5 12l4 4 10-10"/></svg></span>
+        <span><small>Pipelines healthy</small><b>142 / 142</b></span>
+      </div>
+      <div class="c-chip ch2">
+        <span class="chip-ico"><svg viewBox="0 0 24 24"><path d="M4 16l6-6 4 4 6-6M14 8h6v6"/></svg></span>
+        <span><small>Forecast accuracy</small><b>96.4%</b></span>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="s-stats">
+      <div class="s-stat"><b data-num="12" data-suffix="+">12+</b><span>specialist services</span></div>
+      <div class="s-stat"><b data-num="2400" data-suffix="+">2,400+</b><span>teams served</span></div>
+      <div class="s-stat"><b data-num="38">38</b><span>countries</span></div>
+      <div class="s-stat"><b data-num="4.9" data-dec="1" data-suffix="/5">4.9/5</b><span>average client rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. SERVICES GRID — filter with GSAP Flip ============ -->
+<section class="section svc" id="services-grid">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Our services</span>
+      <h2>Everything your data needs, <span class="grad">under one roof</span></h2>
+      <p>Pick a single service or combine them into a complete analytics programme. Filter by what you need today.</p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filter services">
+      <button class="filter is-on" data-filter="all" aria-pressed="true">All</button>
+      <button class="filter" data-filter="analytics" aria-pressed="false">Analytics</button>
+      <button class="filter" data-filter="engineering" aria-pressed="false">Engineering</button>
+      <button class="filter" data-filter="ai" aria-pressed="false">AI &amp; ML</button>
+      <button class="filter" data-filter="governance" aria-pressed="false">Governance</button>
+    </div>
+
+    <div class="svc-grid" id="svcGrid">
+      <article class="svc-card" data-cat="analytics">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=70" alt="Business intelligence dashboard" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 4h7v7H4zM13 4h7v4h-7zM13 12h7v8h-7zM4 15h7v5H4z"/></svg></span>
+          <span class="svc-cat">Analytics</span>
+          <h3>Dashboards &amp; BI</h3>
+          <p>Live KPI dashboards designed around the decisions your leaders make every week.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="analytics">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=70" alt="Team exploring data on laptops" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M8 13v-2M11 13V9M14 13v-3"/></svg></span>
+          <span class="svc-cat">Analytics</span>
+          <h3>Self-serve analytics</h3>
+          <p>Give every team governed, drag-and-drop exploration so they stop waiting on the data team.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="analytics">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=800&q=70" alt="Website traffic analytics on a laptop" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 5h16l-6 7v6l-4 2v-8z"/></svg></span>
+          <span class="svc-cat">Analytics</span>
+          <h3>Product &amp; funnel analytics</h3>
+          <p>Track adoption, retention and drop-off so every roadmap decision is backed by evidence.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="engineering">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=70" alt="Rows of servers in a data centre" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 7h6v4H4zM14 13h6v4h-6zM10 9h2a2 2 0 0 1 2 2v2a2 2 0 0 0 2 2"/></svg></span>
+          <span class="svc-cat">Engineering</span>
+          <h3>Data pipelines &amp; ETL</h3>
+          <p>Reliable, monitored pipelines from 150+ sources into one clean, modelled warehouse.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="engineering">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=70" alt="Global network of data connections" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 3c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3zM4 6v12c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></span>
+          <span class="svc-cat">Engineering</span>
+          <h3>Cloud warehouse setup</h3>
+          <p>Snowflake, BigQuery or Databricks — architected for speed, cost control and scale.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="engineering">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=800&q=70" alt="Real-time charts on a screen" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+          <span class="svc-cat">Engineering</span>
+          <h3>Real-time streaming</h3>
+          <p>Event streams with sub-minute latency for live operations, fraud and IoT use cases.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="ai">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=70" alt="Forecast graphs on a laptop" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 16l6-6 4 4 6-6M14 8h6v6"/></svg></span>
+          <span class="svc-cat">AI &amp; ML</span>
+          <h3>Predictive forecasting</h3>
+          <p>Revenue, churn and demand models trained on your own history, refreshed automatically.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="ai">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=800&q=70" alt="Tablet showing analytics charts" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 3l1.9 5.1L19 10l-5.1 1.9L12 17l-1.9-5.1L5 10l5.1-1.9z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8z"/></svg></span>
+          <span class="svc-cat">AI &amp; ML</span>
+          <h3>AI insights &amp; anomaly alerts</h3>
+          <p>Ask questions in plain English and get alerted the moment a metric behaves unusually.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="svc-card" data-cat="governance">
+        <figure class="ph svc-img"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=70" alt="Modern office workspace" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="svc-body">
+          <span class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3zM9 12l2 2 4-4"/></svg></span>
+          <span class="svc-cat">Governance</span>
+          <h3>Data governance &amp; security</h3>
+          <p>Access control, lineage, data quality checks and audit trails that pass every review.</p>
+          <a href="404.html" class="text-link">Learn more <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. WHY US — 3D flip cards ============ -->
+<section class="section why" id="why">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Why teams choose us</span>
+      <h2>Four promises, <span class="grad">flipped open</span></h2>
+      <p>Every engagement is built on the same four commitments.</p>
+    </div>
+    <div class="flip-grid">
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="M8.5 14L7 22l5-3 5 3-1.5-8"/></svg></span>
+            <b class="flip-num">120+</b>
+            <h3>Certified experts</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Certified experts</h3>
+            <p>Every engineer is certified on Snowflake, dbt, BigQuery or Databricks, with eight years of average experience.</p>
+            <a href="404.html" class="flip-link">Meet the team →</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <b class="flip-num">6 wks</b>
+            <h3>Fixed timelines</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Fixed timelines</h3>
+            <p>Most projects ship in four to eight weeks, with a working demo every Friday so you always see progress.</p>
+            <a href="404.html" class="flip-link">See our process →</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg></span>
+            <b class="flip-num">SOC 2</b>
+            <h3>Security first</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Security first</h3>
+            <p>SOC 2 Type II and GDPR-ready processes. Your data stays in your own cloud — we never copy it out.</p>
+            <a href="404.html" class="flip-link">Security FAQ →</a>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg></span>
+            <b class="flip-num">100%</b>
+            <h3>Outcome focused</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Outcome focused</h3>
+            <p>We agree the success metrics before we start. If we miss them, the next sprint is on us.</p>
+            <a href="404.html" class="flip-link">View engagement models →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. DEEP DIVE — image reveals + parallax ============ -->
+<section class="section deep" id="deep">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Service deep dive</span>
+      <h2>What we build, <span class="grad">up close</span></h2>
+    </div>
+    <div class="deep-list">
+      <div class="deep-row">
+        <figure class="ph deep-media">
+          <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=1200&q=70" alt="Printed charts and analysis on a desk" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="deep-chip"><span class="live-dot"></span>312 dashboards live</span>
+        </figure>
+        <div class="deep-copy">
+          <span class="kicker">Dashboards &amp; BI</span>
+          <h3>Dashboards people actually open</h3>
+          <p>We interview the people who use the numbers, then design dashboards around their real questions — not around whatever data happens to be available.</p>
+          <ul class="ticks"><li>One certified metric layer for the whole company</li><li>Mobile-friendly views for managers on the move</li><li>Scheduled PDF and Slack reports</li></ul>
+          <div class="deep-metrics"><div><b>3 days → 2 hrs</b><span>time to build a report</span></div><div><b>87%</b><span>weekly active viewers</span></div></div>
+        </div>
+      </div>
+      <div class="deep-row is-rev">
+        <figure class="ph deep-media">
+          <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=1200&q=70" alt="Data engineers working at their desks" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="deep-chip"><span class="live-dot"></span>1.2B rows synced today</span>
+        </figure>
+        <div class="deep-copy">
+          <span class="kicker">Data engineering</span>
+          <h3>Pipelines that never miss a beat</h3>
+          <p>Tested, version-controlled pipelines with alerting built in. When a source changes, you hear about it from us — not from a broken board report.</p>
+          <ul class="ticks"><li>dbt models with automated tests</li><li>Freshness and volume monitoring</li><li>Cost dashboards for your warehouse</li></ul>
+          <div class="deep-metrics"><div><b>99.98%</b><span>pipeline uptime</span></div><div><b>−41%</b><span>average warehouse cost</span></div></div>
+        </div>
+      </div>
+      <div class="deep-row">
+        <figure class="ph deep-media">
+          <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1200&q=70" alt="Team discussing forecast results around a table" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="deep-chip"><span class="live-dot"></span>Q4 forecast updated</span>
+        </figure>
+        <div class="deep-copy">
+          <span class="kicker">Forecasting &amp; AI</span>
+          <h3>Forecasts you can plan around</h3>
+          <p>Machine-learning models that explain themselves. Every forecast shows its confidence range and the drivers behind it, so finance and ops can trust it.</p>
+          <ul class="ticks"><li>Revenue, demand and churn models</li><li>Scenario planning with one click</li><li>Automatic retraining every week</li></ul>
+          <div class="deep-metrics"><div><b>96.4%</b><span>forecast accuracy</span></div><div><b>32%</b><span>fewer stock-outs</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PROCESS — scroll-drawn timeline ============ -->
+<section class="section process" id="process">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">How we work</span>
+      <h2>From kick-off to impact <span class="grad">in five steps</span></h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <div class="tl-line" aria-hidden="true"><span class="tl-fill"></span></div>
+
+      <div class="tl-step">
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-top"><span class="tl-no">01</span><span class="tl-week">Week 1</span></div>
+          <h3>Discover</h3>
+          <p>Workshops with your stakeholders to map goals, data sources and the questions that matter most.</p>
+        </div>
+      </div>
+      <div class="tl-step is-right">
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-top"><span class="tl-no">02</span><span class="tl-week">Week 1–2</span></div>
+          <h3>Design</h3>
+          <p>We draft the data model, metric definitions and dashboard wireframes, and agree them with you.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-top"><span class="tl-no">03</span><span class="tl-week">Week 2–5</span></div>
+          <h3>Build</h3>
+          <p>Pipelines, models and dashboards built in weekly sprints, with a live demo every Friday.</p>
+        </div>
+      </div>
+      <div class="tl-step is-right">
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-top"><span class="tl-no">04</span><span class="tl-week">Week 6</span></div>
+          <h3>Launch</h3>
+          <p>Go-live with training sessions for every team, plus documentation and recorded walkthroughs.</p>
+        </div>
+      </div>
+      <div class="tl-step">
+        <span class="tl-dot" aria-hidden="true"></span>
+        <div class="tl-card">
+          <div class="tl-top"><span class="tl-no">05</span><span class="tl-week">Ongoing</span></div>
+          <h3>Grow</h3>
+          <p>Monthly reviews, new use cases and proactive monitoring so your analytics keep improving.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. TECH STACK — infinite marquee ============ -->
+<section class="section stack-sec" id="stack">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Technology</span>
+      <h2>Fluent in the <span class="grad">modern data stack</span></h2>
+      <p>We work with the tools you already own — and recommend new ones only when they pay for themselves.</p>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" data-dir="left">
+      <span class="m-item" style="--c:#38bdf8"><i></i>Snowflake</span>
+      <span class="m-item" style="--c:#6366f1"><i></i>BigQuery</span>
+      <span class="m-item" style="--c:#f87171"><i></i>Databricks</span>
+      <span class="m-item" style="--c:#fbbf24"><i></i>Redshift</span>
+      <span class="m-item" style="--c:#22d3ee"><i></i>PostgreSQL</span>
+      <span class="m-item" style="--c:#fb923c"><i></i>dbt</span>
+      <span class="m-item" style="--c:#34d399"><i></i>Airflow</span>
+      <span class="m-item" style="--c:#a78bfa"><i></i>Fivetran</span>
+      <span class="m-item" style="--c:#e6edf7"><i></i>Kafka</span>
+      <!-- duplicate set for a seamless loop -->
+      <span class="m-item" style="--c:#38bdf8" aria-hidden="true"><i></i>Snowflake</span>
+      <span class="m-item" style="--c:#6366f1" aria-hidden="true"><i></i>BigQuery</span>
+      <span class="m-item" style="--c:#f87171" aria-hidden="true"><i></i>Databricks</span>
+      <span class="m-item" style="--c:#fbbf24" aria-hidden="true"><i></i>Redshift</span>
+      <span class="m-item" style="--c:#22d3ee" aria-hidden="true"><i></i>PostgreSQL</span>
+      <span class="m-item" style="--c:#fb923c" aria-hidden="true"><i></i>dbt</span>
+      <span class="m-item" style="--c:#34d399" aria-hidden="true"><i></i>Airflow</span>
+      <span class="m-item" style="--c:#a78bfa" aria-hidden="true"><i></i>Fivetran</span>
+      <span class="m-item" style="--c:#e6edf7" aria-hidden="true"><i></i>Kafka</span>
+    </div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" data-dir="right">
+      <span class="m-item" style="--c:#fbbf24"><i></i>Power BI</span>
+      <span class="m-item" style="--c:#6366f1"><i></i>Looker</span>
+      <span class="m-item" style="--c:#38bdf8"><i></i>Tableau</span>
+      <span class="m-item" style="--c:#34d399"><i></i>Python</span>
+      <span class="m-item" style="--c:#f87171"><i></i>Spark</span>
+      <span class="m-item" style="--c:#22d3ee"><i></i>Salesforce</span>
+      <span class="m-item" style="--c:#fb923c"><i></i>HubSpot</span>
+      <span class="m-item" style="--c:#a78bfa"><i></i>Stripe</span>
+      <span class="m-item" style="--c:#e6edf7"><i></i>Google Ads</span>
+      <span class="m-item" style="--c:#fbbf24" aria-hidden="true"><i></i>Power BI</span>
+      <span class="m-item" style="--c:#6366f1" aria-hidden="true"><i></i>Looker</span>
+      <span class="m-item" style="--c:#38bdf8" aria-hidden="true"><i></i>Tableau</span>
+      <span class="m-item" style="--c:#34d399" aria-hidden="true"><i></i>Python</span>
+      <span class="m-item" style="--c:#f87171" aria-hidden="true"><i></i>Spark</span>
+      <span class="m-item" style="--c:#22d3ee" aria-hidden="true"><i></i>Salesforce</span>
+      <span class="m-item" style="--c:#fb923c" aria-hidden="true"><i></i>HubSpot</span>
+      <span class="m-item" style="--c:#a78bfa" aria-hidden="true"><i></i>Stripe</span>
+      <span class="m-item" style="--c:#e6edf7" aria-hidden="true"><i></i>Google Ads</span>
+    </div>
+  </div>
+  <p class="stack-note">Don't see your tool? <a href="contact.html" class="text-link">We build custom connectors in days <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></p>
+</section>
+
+<!-- ============ 7. INDUSTRIES — expanding image cards ============ -->
+<section class="section industries" id="industries">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Industries</span>
+      <h2>Proven in the sectors <span class="grad">that run on data</span></h2>
+    </div>
+    <div class="ind-grid">
+      <article class="ind-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=70" alt="Retail team in a planning meeting" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="ind-body">
+          <span class="ind-tag">01 · Retail</span>
+          <h3>Retail &amp; e-commerce</h3>
+          <div class="ind-more"><p>Demand forecasts, basket analysis and store performance in one live view.</p><b>32% fewer stock-outs</b></div>
+        </div>
+      </article>
+      <article class="ind-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=900&q=70" alt="Analyst working on a computer" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="ind-body">
+          <span class="ind-tag">02 · Healthcare</span>
+          <h3>Healthcare</h3>
+          <div class="ind-more"><p>Capacity planning and patient-flow dashboards built on HIPAA-ready pipelines.</p><b>41% shorter waits</b></div>
+        </div>
+      </article>
+      <article class="ind-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=900&q=70" alt="Financial documents with a calculator" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="ind-body">
+          <span class="ind-tag">03 · Fintech</span>
+          <h3>Banking &amp; fintech</h3>
+          <div class="ind-more"><p>Real-time risk, fraud and regulatory reporting with full audit trails.</p><b>6x faster fraud detection</b></div>
+        </div>
+      </article>
+      <article class="ind-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=900&q=70" alt="Colleagues gathered around a laptop" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div class="ind-body">
+          <span class="ind-tag">04 · SaaS</span>
+          <h3>SaaS &amp; technology</h3>
+          <div class="ind-more"><p>MRR, churn and product-usage analytics, plus dashboards embedded in your app.</p><b>18% lower churn</b></div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. ENGAGEMENT MODELS — cards flip up ============ -->
+<section class="section models" id="models">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Engagement models</span>
+      <h2>Work with us <span class="grad">your way</span></h2>
+      <p>Start small with a sprint, or let us run your analytics end to end.</p>
+    </div>
+    <div class="model-grid">
+      <article class="model">
+        <span class="model-ico"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span>
+        <h3>Launch Sprint</h3>
+        <p class="model-desc">A fixed-scope project that ships one high-value use case.</p>
+        <div class="model-price"><small>from</small>$4,900<span>one-off</span></div>
+        <div class="model-meta"><span>4–6 weeks</span><span>1 use case</span></div>
+        <ul class="ticks"><li>Discovery workshop</li><li>Pipelines for up to 5 sources</li><li>3 production dashboards</li><li>Team training session</li></ul>
+        <a href="contact.html" class="btn btn-ghost btn-block">Start a sprint</a>
+      </article>
+      <article class="model is-pop">
+        <span class="pop-tag">Most chosen</span>
+        <span class="model-ico"><svg viewBox="0 0 24 24"><path d="M4 16l6-6 4 4 6-6M14 8h6v6"/></svg></span>
+        <h3>Managed Analytics</h3>
+        <p class="model-desc">Your analytics stack, built and run by our team every month.</p>
+        <div class="model-price"><small>from</small>$2,400<span>/ month</span></div>
+        <div class="model-meta"><span>Monthly</span><span>Unlimited requests</span></div>
+        <ul class="ticks"><li>Everything in Launch Sprint</li><li>Pipeline monitoring 24/7</li><li>New dashboards every month</li><li>Forecasting &amp; AI insights</li><li>Named analytics lead</li></ul>
+        <a href="contact.html" class="btn btn-primary btn-block">Talk to us</a>
+      </article>
+      <article class="model">
+        <span class="model-ico"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c1.2-3.4 4-5 6.5-5s5.3 1.6 6.5 5M15.5 14.5c2.5 0 4.6 1.4 5.5 4.5"/></svg></span>
+        <h3>Embedded Data Team</h3>
+        <p class="model-desc">Dedicated engineers and analysts working inside your team.</p>
+        <div class="model-price model-custom">Custom</div>
+        <div class="model-meta"><span>3+ months</span><span>2–8 specialists</span></div>
+        <ul class="ticks"><li>Hand-picked specialists</li><li>Works in your tools &amp; rituals</li><li>Scale up or down monthly</li><li>Knowledge transfer included</li></ul>
+        <a href="contact.html" class="btn btn-ghost btn-block">Build your team</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. IMPACT — parallax image + counters ============ -->
+<section class="impact" id="impact">
+  <div class="impact-bg ph" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+  </div>
+  <div class="wrap impact-grid">
+    <div class="impact-copy">
+      <div data-head>
+        <span class="kicker">Impact</span>
+        <h2>Results our clients <span class="grad">can measure</span></h2>
+      </div>
+      <div class="impact-stats">
+        <div class="impact-stat"><b data-num="140" data-suffix="+">140+</b><span>projects delivered</span></div>
+        <div class="impact-stat"><b data-num="92" data-suffix="%">92%</b><span>clients renew each year</span></div>
+        <div class="impact-stat"><b data-num="6" data-suffix=" wks">6 wks</b><span>average time to value</span></div>
+        <div class="impact-stat"><b data-num="2.4" data-dec="1" data-prefix="$" data-suffix="M">$2.4M</b><span>average yearly savings</span></div>
+      </div>
+    </div>
+    <figure class="impact-quote">
+      <div class="stars">★★★★★</div>
+      <blockquote>“They rebuilt our whole reporting stack in six weeks. Finance, sales and product finally look at the same revenue number — and it updates every hour.”</blockquote>
+      <figcaption>
+        <span class="q-av ph"><img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=160&h=160&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></span>
+        <span><b>Nina Kowalski</b><em>CFO, Brightpath Insurance</em></span>
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ============ 10. FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-copy">
+      <span class="kicker">Services FAQ</span>
+      <h2>Good questions, <span class="grad">straight answers</span></h2>
+      <p>Still unsure which service fits? A 30-minute call with a solutions architect is free.</p>
+      <div class="faq-card">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=70" alt="Our data team at work" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <div>
+          <b>Talk to an expert</b>
+          <span>Replies within an hour on working days</span>
+        </div>
+      </div>
+      <a href="contact.html" class="btn btn-primary">Book a free call
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="acc">
+      <div class="acc-item is-open">
+        <button class="acc-q" aria-expanded="true">Which service should we start with?<i></i></button>
+        <div class="acc-a"><div><p>Most teams start with a Launch Sprint on their most painful report. It proves value in weeks and gives us a clean foundation to build everything else on.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Do you work with our existing tools?<i></i></button>
+        <div class="acc-a"><div><p>Yes. We work inside your current warehouse, BI tool and cloud account. We only suggest new tools when they clearly save money or time.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">How do you keep our data secure?<i></i></button>
+        <div class="acc-a"><div><p>Your data stays in your cloud. We use least-privilege access, SSO, encrypted connections and full audit logs, and our processes are SOC 2 Type II certified.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">What happens after the project ends?<i></i></button>
+        <div class="acc-a"><div><p>You own everything we build. We hand over documentation and training, and you can move to Managed Analytics if you'd like us to keep running it.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Can you work in our time zone?<i></i></button>
+        <div class="acc-a"><div><p>Yes. Our teams cover India, Europe and the US, so we schedule stand-ups and demos in your working hours.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER — same as home ============ -->
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="footer-cta">
+      <h3>Ready to see your data clearly?</h3>
+      <a href="contact.html" class="btn btn-primary">Talk to our team
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="../assets/Logo.webp" alt="Company logo">
+        </a>
+        <p>Dashboards, forecasting and data pipelines — built for teams who want answers, not more spreadsheets.</p>
+        <div class="footer-social">
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 21v-7h2.5l.5-3H14V9.2c0-.9.3-1.7 1.7-1.7H17V5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2V11H8v3h2.6v7"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="404.html">Dashboards &amp; BI</a>
+        <a href="404.html">Data engineering</a>
+        <a href="404.html">Predictive analytics</a>
+        <a href="404.html">Data governance</a>
+        <a href="404.html">Embedded analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <a href="404.html">MMR Complex, Periyakollappatty,<br>Chinna Thirupathi, Salem, Tamil<br>Nadu 636008</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 5c0 8.8 6.2 15 15 15l2-3.5-5-2-1.5 2C11.5 15 9 12.5 8.5 9.5l2-1.5-2-5z"/></svg>
+            <a href="404.html">0712 371 2345</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="404.html">hello@stackly.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 STACKLY SOLUTIONS</span>
+      <span class="status-dot"><span class="live-dot"></span>All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg class="tt-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><circle class="tt-fill" id="ttFill" cx="24" cy="24" r="21"/></svg>
+  <svg class="tt-arrow" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- GSAP + plugins -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Flip.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CAN_HOVER = window.matchMedia('(hover: hover)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
+  var HAS_FLIP = HAS_GSAP && !!window.Flip;
+  if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
+  if (HAS_FLIP) gsap.registerPlugin(Flip);
+  if (!HAS_GSAP) document.documentElement.classList.add('no-gsap');
+  var ANIM = HAS_GSAP && !REDUCED;
+
+  /* ---------- Number helpers (counters) ---------- */
+  function fmt(el, v) {
+    var dec = parseInt(el.dataset.dec || 0, 10);
+    return (el.dataset.prefix || '') + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString()) + (el.dataset.suffix || '');
+  }
+  function zero(el) { el.textContent = fmt(el, 0); }
+  function countNum(el) {
+    var o = { v: 0 }, target = parseFloat(el.dataset.num);
+    gsap.to(o, { v: target, duration: 1.8, ease: 'power2.out', onUpdate: function () { el.textContent = fmt(el, o.v); } });
+  }
+
+  /* ---------- Hero timeline (plays when the preloader lifts) ---------- */
+  var heroTl = null;
+  if (ANIM) {
+    $$('.s-stats [data-num]').forEach(zero);
+    heroTl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+    heroTl
+      .from('.crumbs, .s-hero .eyebrow', { y: 20, opacity: 0, duration: .6, stagger: .08 })
+      .from('.s-title .w > span', { yPercent: 110, rotationX: -85, opacity: 0, transformPerspective: 600, transformOrigin: '50% 100%', duration: .9, stagger: .06 }, '-=.3')
+      .from('.s-sub', { y: 24, opacity: 0, duration: .7 }, '-=.5')
+      .from('.s-actions .btn', { y: 20, opacity: 0, duration: .6, stagger: .1 }, '-=.5')
+      .from('.c-img', { rotationY: -75, scale: .8, opacity: 0, transformPerspective: 1200, transformOrigin: '0% 50%', duration: 1.2, stagger: .15, ease: 'expo.out' }, .35)
+      .from('.c-chip', { scale: 0, opacity: 0, duration: .6, stagger: .15, ease: 'back.out(2)' }, '-=.6')
+      .from('.s-stat', { y: 30, opacity: 0, duration: .7, stagger: .08 }, '-=.6')
+      .add(function () { $$('.s-stats [data-num]').forEach(countNum); }, '-=.5');
+  }
+
+  /* ---------- Preloader ---------- */
+  var pre = $('#preloader'), pct = $('#plPct'), p = 0, done = false, finished = false;
+  var tick = setInterval(function () {
+    p = Math.min(p + Math.random() * 18, done ? 100 : 92);
+    pct.textContent = Math.round(p) + '%';
+    if (p >= 100) finishLoad();
+  }, 120);
+  function finishLoad() {
+    if (finished) return;
+    finished = true;
+    clearInterval(tick);
+    pct.textContent = '100%';
+    pre.classList.add('is-done');
+    document.body.classList.remove('is-loading');
+    setTimeout(function () { pre.style.display = 'none'; }, 700);
+    if (heroTl) heroTl.play();
+    if (HAS_GSAP) setTimeout(function () { ScrollTrigger.refresh(); }, 720);
+  }
+  window.addEventListener('load', function () { done = true; });
+  setTimeout(function () { done = true; }, 1600);
+  setTimeout(finishLoad, 3500);
+
+  /* ---------- Header, progress bar, back-to-top ---------- */
+  var header = $('#siteHeader'), bar = $('#scrollBar');
+  var toTop = $('#toTop'), ttFill = $('#ttFill'), ringLen = 2 * Math.PI * 21;
+  ttFill.style.strokeDasharray = ringLen;
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    var prog = max > 0 ? y / max : 0;
+    header.classList.toggle('is-solid', y > 20);
+    bar.style.transform = 'scaleX(' + prog + ')';
+    ttFill.style.strokeDashoffset = ringLen * (1 - prog);
+    toTop.classList.toggle('is-on', y > 600);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { onScroll(); ticking = false; });
+  }, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
+
+  /* ---------- Nav underline ---------- */
+  var navLinks = $('#navLinks'), navLine = $('#navLine');
+  function moveLine(a) {
+    if (!a) return;
+    navLine.style.width = a.offsetWidth + 'px';
+    navLine.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+  }
+  $$('a', navLinks).forEach(function (a) { a.addEventListener('mouseenter', function () { moveLine(a); }); });
+  navLinks.addEventListener('mouseleave', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('load', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('resize', function () { moveLine($('a.active', navLinks)); });
+  moveLine($('a.active', navLinks));
+
+  /* ---------- Mobile menu ---------- */
+  var menu = $('#mobileMenu'), scrim = $('#menuScrim'), burger = $('#hamburger');
+  function openMenu() {
+    menu.classList.add('is-open'); scrim.classList.add('is-on');
+    document.body.classList.add('menu-open');
+    burger.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    menu.classList.remove('is-open'); scrim.classList.remove('is-on');
+    document.body.classList.remove('menu-open');
+    burger.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+  burger.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
+  $('#mobileMenuClose').addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  $$('a', menu).forEach(function (a) { a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', function () { if (innerWidth > 1024) closeMenu(); });
+
+  /* ---------- Smooth in-page anchors ---------- */
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      var t = id.length > 1 && document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 70, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- Services filter — GSAP Flip ---------- */
+  var cards = $$('.svc-card'), filters = $$('.filter');
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      if (btn.classList.contains('is-on')) return;
+      filters.forEach(function (b) { var on = b === btn; b.classList.toggle('is-on', on); b.setAttribute('aria-pressed', String(on)); });
+      var f = btn.dataset.filter;
+      var useFlip = HAS_FLIP && !REDUCED;
+      var state = useFlip ? Flip.getState(cards) : null;
+      cards.forEach(function (c) { c.style.display = (f === 'all' || c.dataset.cat === f) ? '' : 'none'; });
+      if (useFlip) {
+        Flip.from(state, {
+          duration: .7, ease: 'power3.inOut', scale: true, absolute: true, stagger: .03,
+          onEnter: function (els) { return gsap.fromTo(els, { opacity: 0, rotationY: -90, scale: .85, transformPerspective: 900 }, { opacity: 1, rotationY: 0, scale: 1, duration: .6, ease: 'power3.out', stagger: .05 }); },
+          onLeave: function (els) { return gsap.to(els, { opacity: 0, rotationY: 90, scale: .85, transformPerspective: 900, duration: .45 }); },
+          onComplete: function () { ScrollTrigger.refresh(); }
+        });
+      } else if (HAS_GSAP) {
+        ScrollTrigger.refresh();
+      }
+    });
+  });
+
+  /* ---------- Flip cards: tap to flip on touch, Enter/Space on keyboard ---------- */
+  $$('.flip-card').forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      if (CAN_HOVER || e.target.closest('a')) return;
+      card.classList.toggle('is-flipped');
+    });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('is-flipped'); }
+    });
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  $$('.acc-item').forEach(function (item) {
+    $('.acc-q', item).addEventListener('click', function () {
+      var open = item.classList.contains('is-open');
+      $$('.acc-item').forEach(function (x) { x.classList.remove('is-open'); $('.acc-q', x).setAttribute('aria-expanded', 'false'); });
+      if (!open) { item.classList.add('is-open'); $('.acc-q', item).setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  if (!ANIM) return;
+
+  /* ---------- Hero: mouse parallax on the image collage ---------- */
+  if (CAN_HOVER) {
+    var col = $('#collage');
+    var depth = [['.c1', 16], ['.c2', -24], ['.c3', 30]];
+    col.addEventListener('mousemove', function (e) {
+      var r = col.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+      depth.forEach(function (d) { gsap.to(d[0], { x: x * d[1], y: y * d[1], rotationY: x * 8, rotationX: -y * 8, duration: .8, ease: 'power2.out' }); });
+    });
+    col.addEventListener('mouseleave', function () {
+      gsap.to('.c-img', { x: 0, y: 0, rotationY: 0, rotationX: 0, duration: 1, ease: 'power3.out' });
+    });
+  }
+
+  /* ---------- Marquee (runs on all screen sizes) ---------- */
+  $$('.marquee-track').forEach(function (tr) {
+    var right = tr.dataset.dir === 'right';
+    var tw = gsap.fromTo(tr, { xPercent: right ? -50 : 0 }, { xPercent: right ? 0 : -50, duration: 38, ease: 'none', repeat: -1 });
+    tr.parentNode.addEventListener('mouseenter', function () { gsap.to(tw, { timeScale: .2, duration: .6 }); });
+    tr.parentNode.addEventListener('mouseleave', function () { gsap.to(tw, { timeScale: 1, duration: .6 }); });
+  });
+
+  /* ---------- Scroll animations (rebuilt when switching desktop ↔ mobile) ---------- */
+  var mm = gsap.matchMedia();
+  mm.add({ desk: '(min-width: 901px)', mob: '(max-width: 900px)' }, function (ctx) {
+    var desk = ctx.conditions.desk;
+
+    // Hero background drifts slower than the page
+    gsap.to('.s-hero-bg img', { yPercent: 18, ease: 'none', scrollTrigger: { trigger: '.s-hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+    // Section headings
+    $$('[data-head]').forEach(function (h) {
+      gsap.from(h.children, { y: 40, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 85%' } });
+    });
+
+    // 2. Service cards flip up into place
+    gsap.from('.filter', { y: 20, opacity: 0, duration: .6, stagger: .06, ease: 'power3.out', scrollTrigger: { trigger: '.filters', start: 'top 88%' } });
+    gsap.from('.svc-card', {
+      rotationX: -70, y: 60, opacity: 0, transformPerspective: 1000, transformOrigin: '50% 0%',
+      duration: 1, stagger: desk ? .08 : .05, ease: 'power3.out', clearProps: 'transform,opacity',
+      scrollTrigger: { trigger: '#svcGrid', start: 'top 82%' }
+    });
+
+    // 3. Why-us cards spin in around their Y axis
+    gsap.from('.flip-card', {
+      rotationY: -120, opacity: 0, transformPerspective: 1200, duration: 1.2, stagger: .15, ease: 'expo.out',
+      scrollTrigger: { trigger: '.flip-grid', start: 'top 82%' }
+    });
+
+    // 4. Deep-dive rows: image wipes in, text slides, chip pops, image parallax
+    $$('.deep-row').forEach(function (row) {
+      var fig = $('.deep-media', row), img = $('img', fig), rev = row.classList.contains('is-rev');
+      var from = desk ? (rev ? 'inset(0% 0% 0% 100%)' : 'inset(0% 100% 0% 0%)') : 'inset(100% 0% 0% 0%)';
+      var tl = gsap.timeline({ scrollTrigger: { trigger: row, start: 'top 78%' } });
+      tl.fromTo(fig, { clipPath: from }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'expo.inOut' })
+        .from(img, { scale: 1.35, duration: 1.6, ease: 'expo.out' }, 0)
+        .from($('.deep-copy', row).children, { x: desk ? (rev ? -50 : 50) : 0, y: desk ? 0 : 30, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out' }, .3)
+        .from($('.deep-chip', row), { scale: 0, rotation: -12, opacity: 0, duration: .6, ease: 'back.out(2)' }, .9);
+      gsap.fromTo(img, { yPercent: -7 }, { yPercent: 7, ease: 'none', scrollTrigger: { trigger: row, start: 'top bottom', end: 'bottom top', scrub: true } });
+    });
+
+    // 5. Timeline line draws with scroll, cards flip in from the sides
+    gsap.fromTo('.tl-fill', { scaleY: 0 }, { scaleY: 1, ease: 'none', scrollTrigger: { trigger: '#timeline', start: 'top 70%', end: 'bottom 70%', scrub: true } });
+    $$('.tl-step').forEach(function (s) {
+      var right = s.classList.contains('is-right');
+      gsap.from($('.tl-card', s), {
+        x: desk ? (right ? 80 : -80) : 40, rotationY: desk ? (right ? -30 : 30) : -20, opacity: 0,
+        transformPerspective: 1000, duration: 1, ease: 'power3.out',
+        scrollTrigger: { trigger: s, start: 'top 82%', toggleActions: 'play none none reverse' }
+      });
+      ScrollTrigger.create({ trigger: s, start: 'top 65%', toggleClass: { targets: s, className: 'is-on' } });
+    });
+
+    // 7. Industry cards wipe up
+    gsap.fromTo('.ind-card', { clipPath: 'inset(100% 0% 0% 0%)' }, {
+      clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, stagger: .12, ease: 'expo.inOut', clearProps: 'clipPath',
+      scrollTrigger: { trigger: '.ind-grid', start: 'top 80%' }
+    });
+    gsap.from('.ind-body', { y: 40, opacity: 0, duration: .8, stagger: .12, delay: .5, ease: 'power3.out', scrollTrigger: { trigger: '.ind-grid', start: 'top 80%' } });
+
+    // 8. Engagement models flip down like a board
+    gsap.from('.model', {
+      rotationX: -95, opacity: 0, transformOrigin: '50% 0%', transformPerspective: 1400,
+      duration: 1.2, stagger: .15, ease: 'expo.out', clearProps: 'transform',
+      scrollTrigger: { trigger: '.model-grid', start: 'top 80%' }
+    });
+
+    // 9. Impact: parallax background, stats flip up, counters, quote swings in
+    gsap.fromTo('.impact-bg img', { yPercent: -10 }, { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.impact', start: 'top bottom', end: 'bottom top', scrub: true } });
+    var impactNums = $$('.impact [data-num]');
+    impactNums.forEach(zero);
+    gsap.from('.impact-stat', {
+      y: 50, rotationX: -50, opacity: 0, transformPerspective: 900, duration: .9, stagger: .1, ease: 'power3.out',
+      scrollTrigger: { trigger: '.impact-stats', start: 'top 82%', onEnter: function () { impactNums.forEach(countNum); } }
+    });
+    gsap.from('.impact-quote', { x: desk ? 70 : 0, y: desk ? 0 : 40, rotationY: desk ? -25 : 0, opacity: 0, transformPerspective: 1000, duration: 1.1, ease: 'power3.out', scrollTrigger: { trigger: '.impact-quote', start: 'top 85%' } });
+
+    // 10. FAQ
+    gsap.from('.faq-copy > *', { y: 30, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out', scrollTrigger: { trigger: '.faq-copy', start: 'top 85%' } });
+    gsap.from('.acc-item', { y: 30, rotationX: -30, opacity: 0, transformPerspective: 800, duration: .7, stagger: .08, ease: 'power3.out', scrollTrigger: { trigger: '.acc', start: 'top 85%' } });
+
+    // Footer CTA
+    gsap.from('.footer-cta', { y: 40, scale: .96, opacity: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: '.footer-cta', start: 'top 90%' } });
+
+    return function () { impactNums.forEach(function (el) { el.textContent = fmt(el, parseFloat(el.dataset.num)); }); };
+  });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

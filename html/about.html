@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us — Data Analytics Platform</title>
+<meta name="description" content="Meet the team behind the platform — our story, milestones, values and the people helping 2,400+ teams see their data clearly.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/about.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER — same as home ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <div class="pl-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="pl-word" aria-label="STACKLY">
+      <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+    </div>
+    <div class="pl-text">Loading our story <b id="plPct">0%</b></div>
+  </div>
+</div>
+
+<!-- ============ HEADER — same as home ============ -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav wrap">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html" class="active">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <span class="nav-line" id="navLine" aria-hidden="true"></span>
+    </div>
+
+    <div class="nav-right">
+      <a href="login.html" class="nav-login">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+        Login
+      </a>
+      <a href="signup.html" class="btn btn-primary btn-sm nav-signup">
+        <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+        Sign Up
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="menu-scrim" id="menuScrim"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Menu">
+  <div class="mm-top">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+    <button class="mm-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mm-links">
+    <a href="index.html"><em>01</em>Home</a>
+    <a href="services.html"><em>02</em>Services</a>
+    <a href="about.html" class="active"><em>03</em>About</a>
+    <a href="blog.html"><em>04</em>Blog</a>
+    <a href="contact.html"><em>05</em>Contact</a>
+  </nav>
+  <div class="mm-actions">
+    <a href="login.html" class="btn btn-ghost">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+      Login
+    </a>
+    <a href="signup.html" class="btn btn-primary">
+      <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+      Sign Up
+    </a>
+  </div>
+  <p class="mm-note"><span class="live-dot"></span>All data pipelines live · 99.98% uptime</p>
+</aside>
+
+<main>
+
+<!-- ============ 1. ABOUT HERO — photo cards fan out and flip ============ -->
+<section class="a-hero" id="top">
+  <div class="a-orbits" aria-hidden="true"><span></span><span></span><span></span></div>
+  <div class="hero-glow g1" aria-hidden="true"></div>
+  <div class="hero-glow g2" aria-hidden="true"></div>
+
+  <div class="wrap a-hero-top">
+    <nav class="crumbs" aria-label="Breadcrumb">
+      <a href="index.html">Home</a>
+      <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      <span>About us</span>
+    </nav>
+    <span class="eyebrow"><span class="live-dot"></span>The people behind the platform</span>
+    <h1 class="a-title">
+      <span class="w"><span>We</span></span>
+      <span class="w"><span>help</span></span>
+      <span class="w"><span>teams</span></span>
+      <span class="w"><span>see</span></span>
+      <span class="w"><span>their</span></span>
+      <span class="w"><span>data</span></span>
+      <span class="w"><span class="grad">clearly.</span></span>
+    </h1>
+    <p class="a-sub">Since 2016 we've been building analytics that people actually use — from a two-person team in Salem to 180 specialists serving 2,400+ companies in 38 countries.</p>
+  </div>
+
+  <div class="fan" id="fan">
+    <div class="fan-card">
+      <div class="fan-inner">
+        <figure class="fan-face fan-front ph"><img src="https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=600&q=70" alt="Data engineers working together" onerror="this.parentNode.classList.add('is-broken')"><figcaption class="fan-label">Engineering</figcaption></figure>
+        <div class="fan-face fan-back" aria-hidden="true"><span class="fan-bars"><i></i><i></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="fan-card">
+      <div class="fan-inner">
+        <figure class="fan-face fan-front ph"><img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=600&q=70" alt="Laptop showing performance graphs" onerror="this.parentNode.classList.add('is-broken')"><figcaption class="fan-label">Insights</figcaption></figure>
+        <div class="fan-face fan-back" aria-hidden="true"><span class="fan-bars"><i></i><i></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="fan-card">
+      <div class="fan-inner">
+        <figure class="fan-face fan-front ph"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=600&q=70" alt="Our team reviewing results in a meeting" onerror="this.parentNode.classList.add('is-broken')"><figcaption class="fan-label">Our team</figcaption></figure>
+        <div class="fan-face fan-back" aria-hidden="true"><span class="fan-bars"><i></i><i></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="fan-card">
+      <div class="fan-inner">
+        <figure class="fan-face fan-front ph"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=70" alt="Analytics dashboard on a laptop" onerror="this.parentNode.classList.add('is-broken')"><figcaption class="fan-label">Dashboards</figcaption></figure>
+        <div class="fan-face fan-back" aria-hidden="true"><span class="fan-bars"><i></i><i></i><i></i><i></i></span></div>
+      </div>
+    </div>
+    <div class="fan-card">
+      <div class="fan-inner">
+        <figure class="fan-face fan-front ph"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=600&q=70" alt="Colleagues gathered around a laptop" onerror="this.parentNode.classList.add('is-broken')"><figcaption class="fan-label">Culture</figcaption></figure>
+        <div class="fan-face fan-back" aria-hidden="true"><span class="fan-bars"><i></i><i></i><i></i><i></i></span></div>
+      </div>
+    </div>
+
+    <span class="a-tag t1"><b>2016</b>founded</span>
+    <span class="a-tag t2"><b>180+</b>people</span>
+    <span class="a-tag t3"><b>38</b>countries</span>
+  </div>
+</section>
+
+<!-- ============ 2. OUR STORY — words light up as you scroll ============ -->
+<section class="section story" id="story">
+  <div class="wrap story-grid">
+    <div class="story-media">
+      <figure class="ph st-img1"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1000&q=70" alt="Our open-plan office" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <figure class="ph st-img2"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=700&q=70" alt="Team working on laptops" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <div class="st-badge"><b>10</b><span>years of turning<br>data into decisions</span></div>
+    </div>
+    <div class="story-copy">
+      <span class="kicker">Our story</span>
+      <p class="story-lead">We started with one frustration: smart teams were drowning in spreadsheets and still couldn't answer simple questions. So we built the platform we wished we had — fast, honest and easy enough for everyone to use.</p>
+      <p class="story-text">What began as a two-person consultancy in Salem, Tamil Nadu is now a global platform and services team. Our engineers, analysts and designers work side by side with customers, so every feature we ship comes from a real problem someone had on a Monday morning.</p>
+      <div class="story-sign">
+        <span class="sign-av ph"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=70" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></span>
+        <span><b>Priya Nair</b><em>Co-founder &amp; CEO</em></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. MILESTONES — pinned horizontal scroll on desktop ============ -->
+<section class="ms" id="milestones">
+  <div class="wrap ms-head">
+    <div>
+      <span class="kicker">Milestones</span>
+      <h2>A decade of <span class="grad">building in public</span></h2>
+    </div>
+    <div class="ms-progress" aria-hidden="true"><span id="msBar"></span></div>
+  </div>
+  <div class="ms-track" id="msTrack">
+    <article class="ms-card">
+      <figure class="ph"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=70" alt="Small team working on laptops" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <span class="ms-year">2016</span>
+      <div class="ms-body"><h3>Two founders, one laptop</h3><p>Started as a data consultancy in Salem, building dashboards for local retailers.</p></div>
+    </article>
+    <article class="ms-card">
+      <figure class="ph"><img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=800&q=70" alt="Servers in a data centre" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <span class="ms-year">2018</span>
+      <div class="ms-body"><h3>The platform is born</h3><p>Turned our internal tools into a product — 40 connectors and the first drag-and-drop builder.</p></div>
+    </article>
+    <article class="ms-card">
+      <figure class="ph"><img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=800&q=70" alt="Global network of data connections" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <span class="ms-year">2020</span>
+      <div class="ms-body"><h3>Going global</h3><p>Opened offices in Europe and the US, and passed 500 customers across 15 countries.</p></div>
+    </article>
+    <article class="ms-card">
+      <figure class="ph"><img src="https://images.unsplash.com/photo-1543286386-713bdd548da4?auto=format&fit=crop&w=800&q=70" alt="Charts on a screen" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <span class="ms-year">2022</span>
+      <div class="ms-body"><h3>Forecasting &amp; AI</h3><p>Launched predictive models and anomaly alerts, now used by more than half our customers.</p></div>
+    </article>
+    <article class="ms-card">
+      <figure class="ph"><img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=800&q=70" alt="Team discussing results" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <span class="ms-year">2024</span>
+      <div class="ms-body"><h3>SOC 2 Type II</h3><p>Completed our security certification and launched white-label embedded analytics.</p></div>
+    </article>
+    <article class="ms-card">
+      <figure class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=800&q=70" alt="Planning meeting" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      <span class="ms-year">2026</span>
+      <div class="ms-body"><h3>2,400+ teams</h3><p>180 people in 38 countries — and still answering support tickets within the hour.</p></div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ 4. MISSION, VISION & VALUES — flip cards ============ -->
+<section class="section values" id="values">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">What drives us</span>
+      <h2>Mission, vision and <span class="grad">the way we work</span></h2>
+    </div>
+    <div class="mv-grid">
+      <article class="mv-card mv-left">
+        <span class="kicker">Our mission</span>
+        <h3>Make every decision a data-informed one.</h3>
+        <p>We give every person in a company — not just analysts — fast, trustworthy answers from their own data.</p>
+        <svg class="mv-art" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></svg>
+      </article>
+      <article class="mv-card mv-right">
+        <span class="kicker">Our vision</span>
+        <h3>A world where no one waits a week for a number.</h3>
+        <p>Analytics should be as easy as sending a message — live, clear and available to anyone who needs it.</p>
+        <svg class="mv-art" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+      </article>
+    </div>
+    <div class="flip-grid">
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21.2l8.8-8.8a5.5 5.5 0 0 0 0-7.8z"/></svg></span>
+            <b class="flip-num">01</b>
+            <h3>Customer obsessed</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Customer obsessed</h3>
+            <p>Every engineer joins customer calls each month. We build from real problems, not guesses.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4"/></svg></span>
+            <b class="flip-num">02</b>
+            <h3>Radical clarity</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Radical clarity</h3>
+            <p>Simple words, honest numbers and no jargon — in our product, our pricing and our meetings.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3zM9 12l2 2 4-4"/></svg></span>
+            <b class="flip-num">03</b>
+            <h3>Own the outcome</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Own the outcome</h3>
+            <p>We measure success by our customers' results, and we fix problems before anyone has to ask.</p>
+          </div>
+        </div>
+      </div>
+      <div class="flip-card" tabindex="0">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <span class="flip-ico"><svg viewBox="0 0 24 24"><path d="M2 8l10-5 10 5-10 5z"/><path d="M6 10v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg></span>
+            <b class="flip-num">04</b>
+            <h3>Keep learning</h3>
+            <span class="flip-hint"><span class="h-hover">Hover to flip</span><span class="h-tap">Tap to flip</span> ↻</span>
+          </div>
+          <div class="flip-face flip-back">
+            <h3>Keep learning</h3>
+            <p>Every teammate gets a yearly learning budget and one Friday a month to explore new ideas.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. BY THE NUMBERS — bento grid ============ -->
+<section class="section numbers" id="numbers">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">By the numbers</span>
+      <h2>Small team, <span class="grad">big footprint</span></h2>
+    </div>
+    <div class="bento">
+      <div class="b-tile b-wide b-accent"><b data-num="2400" data-suffix="+">2,400+</b><span>teams run their analytics with us</span></div>
+      <div class="b-tile b-tall b-img">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?auto=format&fit=crop&w=700&q=70" alt="Tablet showing analytics charts" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+        <span class="b-cap"><span class="live-dot"></span>312 dashboards opened right now</span>
+      </div>
+      <div class="b-tile"><b data-num="38">38</b><span>countries</span></div>
+      <div class="b-tile"><b data-num="180" data-suffix="+">180+</b><span>people on the team</span></div>
+      <div class="b-tile"><b data-num="14">14</b><span>nationalities</span></div>
+      <div class="b-tile b-wide"><b data-num="1.2" data-dec="1" data-suffix="B">1.2B</b><span>rows of data processed every day</span></div>
+      <div class="b-tile b-img">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=700&q=70" alt="Analyst working on a computer" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"></figure>
+      </div>
+      <div class="b-tile"><b data-num="4.9" data-dec="1" data-suffix="/5">4.9/5</b><span>customer rating</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. LEADERSHIP TEAM ============ -->
+<section class="section team" id="team">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Leadership</span>
+      <h2>The people <span class="grad">steering the ship</span></h2>
+      <p>A team of engineers, analysts and operators who have lived the problems we solve.</p>
+    </div>
+    <div class="team-grid">
+      <article class="member">
+        <figure class="ph m-photo">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&h=660&q=70" alt="Priya Nair" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="m-social"><a href="404.html" aria-label="Priya Nair on LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a></span>
+        </figure>
+        <div class="m-body"><b>Priya Nair</b><span class="m-role">Co-founder &amp; CEO</span><p>Former analytics lead at a national retail chain. Believes every chart should answer a question.</p></div>
+      </article>
+      <article class="member">
+        <figure class="ph m-photo">
+          <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&h=660&q=70" alt="Daniel Brooks" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="m-social"><a href="404.html" aria-label="Daniel Brooks on LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a></span>
+        </figure>
+        <div class="m-body"><b>Daniel Brooks</b><span class="m-role">Co-founder &amp; CTO</span><p>Has built data platforms for 15 years. Obsessed with pipelines that never break.</p></div>
+      </article>
+      <article class="member">
+        <figure class="ph m-photo">
+          <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&h=660&q=70" alt="Meera Iyer" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="m-social"><a href="404.html" aria-label="Meera Iyer on LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a></span>
+        </figure>
+        <div class="m-body"><b>Meera Iyer</b><span class="m-role">Head of Data Science</span><p>Leads our forecasting and AI work. PhD in statistics, fan of explainable models.</p></div>
+      </article>
+      <article class="member">
+        <figure class="ph m-photo">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&h=660&q=70" alt="Arjun Rao" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+          <span class="m-social"><a href="404.html" aria-label="Arjun Rao on LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a></span>
+        </figure>
+        <div class="m-body"><b>Arjun Rao</b><span class="m-role">VP Customer Success</span><p>Makes sure every customer hits their goals. Answers support tickets himself on Fridays.</p></div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. LIFE AT STACKLY — parallax gallery ============ -->
+<section class="section life" id="life">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Life at Stackly</span>
+      <h2>Where curious people <span class="grad">do their best work</span></h2>
+      <p>Hybrid teams, monthly hack days and a lot of whiteboards.</p>
+    </div>
+    <div class="gal">
+      <div class="gal-col">
+        <figure class="ph g-tall"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=700&q=70" alt="Team workshop" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><figcaption>Quarterly planning</figcaption></figure>
+        <figure class="ph g-short"><img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?auto=format&fit=crop&w=700&q=70" alt="Printed charts on a desk" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><figcaption>Data review</figcaption></figure>
+      </div>
+      <div class="gal-col">
+        <figure class="ph g-short"><img src="https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&w=700&q=70" alt="Laptop with analytics" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><figcaption>Hack day</figcaption></figure>
+        <figure class="ph g-tall"><img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=700&q=70" alt="Colleagues around a laptop" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><figcaption>Pairing sessions</figcaption></figure>
+      </div>
+      <div class="gal-col">
+        <figure class="ph g-tall"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=700&q=70" alt="Team in a meeting room" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><figcaption>Customer workshops</figcaption></figure>
+        <figure class="ph g-short"><img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=700&q=70" alt="Finance documents" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><figcaption>Board prep</figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. JOIN US — careers ============ -->
+<section class="join" id="careers">
+  <div class="join-bg ph" aria-hidden="true">
+    <img src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1800&q=60" alt="" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+  </div>
+  <div class="wrap join-grid">
+    <div class="join-copy">
+      <span class="kicker">Careers</span>
+      <h2>Build the future of <span class="grad">analytics with us</span></h2>
+      <p>We're hiring engineers, analysts and designers who care about making data simple.</p>
+      <ul class="ticks">
+        <li>Hybrid and remote-friendly</li>
+        <li>Yearly learning budget</li>
+        <li>Health cover for you and your family</li>
+      </ul>
+      <a href="contact.html" class="btn btn-primary">See all open roles
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="roles">
+      <a href="contact.html" class="role">
+        <span><b>Senior Data Engineer</b><span class="role-meta"><span>Engineering</span><span>Salem / Remote</span></span></span>
+        <span class="role-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="contact.html" class="role">
+        <span><b>Analytics Consultant</b><span class="role-meta"><span>Services</span><span>Bengaluru</span></span></span>
+        <span class="role-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="contact.html" class="role">
+        <span><b>Machine Learning Engineer</b><span class="role-meta"><span>AI &amp; ML</span><span>Remote</span></span></span>
+        <span class="role-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a href="contact.html" class="role">
+        <span><b>Product Designer</b><span class="role-meta"><span>Design</span><span>London / Remote</span></span></span>
+        <span class="role-go"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER — same as home ============ -->
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="footer-cta">
+      <h3>Ready to see your data clearly?</h3>
+      <a href="contact.html" class="btn btn-primary">Talk to our team
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="../assets/Logo.webp" alt="Company logo">
+        </a>
+        <p>Dashboards, forecasting and data pipelines — built for teams who want answers, not more spreadsheets.</p>
+        <div class="footer-social">
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 21v-7h2.5l.5-3H14V9.2c0-.9.3-1.7 1.7-1.7H17V5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2V11H8v3h2.6v7"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="404.html">Dashboards &amp; BI</a>
+        <a href="404.html">Data engineering</a>
+        <a href="404.html">Predictive analytics</a>
+        <a href="404.html">Data governance</a>
+        <a href="404.html">Embedded analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <a href="404.html">MMR Complex, Periyakollappatty,<br>Chinna Thirupathi, Salem, Tamil<br>Nadu 636008</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 5c0 8.8 6.2 15 15 15l2-3.5-5-2-1.5 2C11.5 15 9 12.5 8.5 9.5l2-1.5-2-5z"/></svg>
+            <a href="404.html">0712 371 2345</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="404.html">hello@stackly.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 STACKLY SOLUTIONS</span>
+      <span class="status-dot"><span class="live-dot"></span>All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg class="tt-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><circle class="tt-fill" id="ttFill" cx="24" cy="24" r="21"/></svg>
+  <svg class="tt-arrow" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CAN_HOVER = window.matchMedia('(hover: hover)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
+  if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
+  var ANIM = HAS_GSAP && !REDUCED;
+
+  /* ---------- Counters ---------- */
+  function fmt(el, v) {
+    var dec = parseInt(el.dataset.dec || 0, 10);
+    return (el.dataset.prefix || '') + (dec ? v.toFixed(dec) : Math.round(v).toLocaleString()) + (el.dataset.suffix || '');
+  }
+  function countNum(el) {
+    var o = { v: 0 }, target = parseFloat(el.dataset.num);
+    gsap.to(o, { v: target, duration: 1.8, ease: 'power2.out', onUpdate: function () { el.textContent = fmt(el, o.v); } });
+  }
+
+  /* ---------- Hero timeline: words rise, cards fan out and flip face-up ---------- */
+  var heroTl = null;
+  if (ANIM) {
+    heroTl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+    heroTl
+      .from('.a-hero .crumbs, .a-hero .eyebrow', { y: 20, opacity: 0, duration: .6, stagger: .08 })
+      .from('.a-title .w > span', { yPercent: 120, opacity: 0, filter: 'blur(8px)', duration: 1, stagger: .07 }, '-=.3')
+      .from('.a-sub', { y: 24, opacity: 0, duration: .7 }, '-=.6')
+      .from('.fan-card', { x: 0, y: 260, rotation: 0, opacity: 0, duration: 1.2, stagger: { each: .08, from: 'center' }, ease: 'expo.out', clearProps: 'transform,opacity' }, '-=.5')
+      .from('.fan-inner', { rotationY: 180, duration: 1, stagger: { each: .1, from: 'center' }, ease: 'power2.inOut', clearProps: 'transform' }, '-=.6')
+      .from('.a-tag', { scale: 0, opacity: 0, duration: .6, stagger: .12, ease: 'back.out(2)' }, '-=.4');
+  }
+
+  /* ---------- Preloader ---------- */
+  var pre = $('#preloader'), pct = $('#plPct'), p = 0, done = false, finished = false;
+  var tick = setInterval(function () {
+    p = Math.min(p + Math.random() * 18, done ? 100 : 92);
+    pct.textContent = Math.round(p) + '%';
+    if (p >= 100) finishLoad();
+  }, 120);
+  function finishLoad() {
+    if (finished) return;
+    finished = true;
+    clearInterval(tick);
+    pct.textContent = '100%';
+    pre.classList.add('is-done');
+    document.body.classList.remove('is-loading');
+    setTimeout(function () { pre.style.display = 'none'; }, 700);
+    if (heroTl) heroTl.play();
+    if (HAS_GSAP) setTimeout(function () { ScrollTrigger.refresh(); }, 720);
+  }
+  window.addEventListener('load', function () { done = true; });
+  setTimeout(function () { done = true; }, 1600);
+  setTimeout(finishLoad, 3500);
+
+  /* ---------- Header, progress bar, back-to-top ---------- */
+  var header = $('#siteHeader'), bar = $('#scrollBar');
+  var toTop = $('#toTop'), ttFill = $('#ttFill'), ringLen = 2 * Math.PI * 21;
+  ttFill.style.strokeDasharray = ringLen;
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    var prog = max > 0 ? y / max : 0;
+    header.classList.toggle('is-solid', y > 20);
+    bar.style.transform = 'scaleX(' + prog + ')';
+    ttFill.style.strokeDashoffset = ringLen * (1 - prog);
+    toTop.classList.toggle('is-on', y > 600);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { onScroll(); ticking = false; });
+  }, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
+
+  /* ---------- Nav underline ---------- */
+  var navLinks = $('#navLinks'), navLine = $('#navLine');
+  function moveLine(a) {
+    if (!a) return;
+    navLine.style.width = a.offsetWidth + 'px';
+    navLine.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+  }
+  $$('a', navLinks).forEach(function (a) { a.addEventListener('mouseenter', function () { moveLine(a); }); });
+  navLinks.addEventListener('mouseleave', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('load', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('resize', function () { moveLine($('a.active', navLinks)); });
+  moveLine($('a.active', navLinks));
+
+  /* ---------- Mobile menu ---------- */
+  var menu = $('#mobileMenu'), scrim = $('#menuScrim'), burger = $('#hamburger');
+  function openMenu() {
+    menu.classList.add('is-open'); scrim.classList.add('is-on');
+    document.body.classList.add('menu-open');
+    burger.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    menu.classList.remove('is-open'); scrim.classList.remove('is-on');
+    document.body.classList.remove('menu-open');
+    burger.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+  burger.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
+  $('#mobileMenuClose').addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  $$('a', menu).forEach(function (a) { a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', function () { if (innerWidth > 1024) closeMenu(); });
+
+  /* ---------- Smooth in-page anchors ---------- */
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      var t = id.length > 1 && document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 70, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- Value flip cards: tap on touch, Enter/Space on keyboard ---------- */
+  $$('.flip-card').forEach(function (card) {
+    card.addEventListener('click', function () { if (!CAN_HOVER) card.classList.toggle('is-flipped'); });
+    card.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); card.classList.toggle('is-flipped'); }
+    });
+  });
+
+  if (!ANIM) return;
+
+  /* Split the story lead into words so they can light up on scroll */
+  var lead = $('.story-lead');
+  lead.innerHTML = lead.textContent.trim().split(/\s+/).map(function (w) { return '<span class="sw">' + w + '</span>'; }).join(' ');
+
+  /* Bento counters start from zero */
+  var bentoNums = $$('.bento [data-num]');
+
+  /* ---------- Scroll animations (rebuilt when switching desktop ↔ mobile) ---------- */
+  var mm = gsap.matchMedia();
+  mm.add({ desk: '(min-width: 901px)', mob: '(max-width: 900px)' }, function (ctx) {
+    var desk = ctx.conditions.desk;
+
+    // Hero: heading drifts up, card fan sinks and shrinks as you scroll away
+    gsap.to('.a-hero-top', { yPercent: -25, opacity: .3, ease: 'none', scrollTrigger: { trigger: '.a-hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.fan', { y: 90, scale: .9, ease: 'none', scrollTrigger: { trigger: '.a-hero', start: 'top top', end: 'bottom top', scrub: true } });
+
+    // Section headings
+    $$('[data-head]').forEach(function (h) {
+      gsap.from(h.children, { y: 40, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 85%' } });
+    });
+
+    // 2. Story: images swing in, badge pops, words light up with scroll
+    var st = gsap.timeline({ scrollTrigger: { trigger: '.story-media', start: 'top 78%' } });
+    st.fromTo('.st-img1', { clipPath: 'inset(0% 100% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'expo.inOut' })
+      .from('.st-img2', { rotationY: -70, x: 60, opacity: 0, transformPerspective: 1200, transformOrigin: '100% 50%', duration: 1.1, ease: 'expo.out' }, .4)
+      .from('.st-badge', { scale: 0, rotation: -15, opacity: 0, duration: .7, ease: 'back.out(2)' }, .9);
+    gsap.fromTo('.st-img2', { y: 40 }, { y: -40, ease: 'none', scrollTrigger: { trigger: '.story', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.fromTo('.sw', { opacity: .15 }, { opacity: 1, stagger: .1, ease: 'none', scrollTrigger: { trigger: '.story-lead', start: 'top 80%', end: 'bottom 45%', scrub: true } });
+    gsap.from('.story-copy .kicker, .story-text, .story-sign', { y: 30, opacity: 0, duration: .8, stagger: .12, ease: 'power3.out', scrollTrigger: { trigger: '.story-copy', start: 'top 80%' } });
+
+    // 3. Milestones: pinned horizontal scroll on desktop, swipe row on mobile
+    gsap.from('.ms-card', {
+      rotationY: -70, opacity: 0, transformPerspective: 1200, transformOrigin: '0% 50%',
+      duration: 1, stagger: .1, ease: 'expo.out', clearProps: 'transform,opacity',
+      scrollTrigger: { trigger: '#msTrack', start: 'top 85%' }
+    });
+    if (desk) {
+      var track = $('#msTrack'), msBar = $('#msBar');
+      var dist = function () { return Math.max(0, track.scrollWidth - innerWidth); };
+      var hTween = gsap.to(track, {
+        x: function () { return -dist(); }, ease: 'none',
+        scrollTrigger: {
+          trigger: '#milestones', start: 'top top', end: function () { return '+=' + dist(); },
+          pin: true, scrub: 1, invalidateOnRefresh: true,
+          onUpdate: function (self) { msBar.style.transform = 'scaleX(' + self.progress + ')'; }
+        }
+      });
+      $$('.ms-card img').forEach(function (img) {
+        gsap.fromTo(img, { xPercent: -6 }, { xPercent: 6, ease: 'none', scrollTrigger: { trigger: img.closest('.ms-card'), containerAnimation: hTween, start: 'left right', end: 'right left', scrub: true } });
+      });
+    }
+
+    // 4. Mission & vision slide in from the sides, value cards spin in
+    gsap.from('.mv-left', { x: desk ? -80 : 0, y: desk ? 0 : 40, rotationY: desk ? 20 : 0, opacity: 0, transformPerspective: 1200, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: '.mv-grid', start: 'top 82%' } });
+    gsap.from('.mv-right', { x: desk ? 80 : 0, y: desk ? 0 : 40, rotationY: desk ? -20 : 0, opacity: 0, transformPerspective: 1200, duration: 1, delay: desk ? 0 : .15, ease: 'power3.out', scrollTrigger: { trigger: '.mv-grid', start: 'top 82%' } });
+    gsap.from('.flip-card', { rotationY: -120, opacity: 0, transformPerspective: 1200, duration: 1.2, stagger: .15, ease: 'expo.out', scrollTrigger: { trigger: '.flip-grid', start: 'top 82%' } });
+
+    // 5. Bento tiles flip in from random directions, then count up
+    bentoNums.forEach(function (el) { el.textContent = fmt(el, 0); });
+    gsap.from('.b-tile', {
+      rotationY: function (i) { return i % 2 ? 90 : -90; }, opacity: 0, transformPerspective: 1000,
+      duration: 1, stagger: { each: .08, from: 'random' }, ease: 'expo.out', clearProps: 'transform',
+      scrollTrigger: { trigger: '.bento', start: 'top 80%', onEnter: function () { bentoNums.forEach(countNum); } }
+    });
+
+    // 6. Team cards open like doors
+    gsap.from('.member', {
+      rotationY: -90, opacity: 0, transformPerspective: 1200, transformOrigin: '0% 50%',
+      duration: 1.1, stagger: .12, ease: 'expo.out', clearProps: 'transform',
+      scrollTrigger: { trigger: '.team-grid', start: 'top 82%' }
+    });
+
+    // 7. Gallery: photos wipe in, columns move at different speeds
+    $$('.gal figure').forEach(function (f) {
+      gsap.fromTo(f, { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'expo.inOut', clearProps: 'clipPath', scrollTrigger: { trigger: f, start: 'top 90%' } });
+    });
+    if (desk) {
+      [60, -70, 90].forEach(function (d, i) {
+        gsap.fromTo('.gal-col:nth-child(' + (i + 1) + ')', { y: d }, { y: -d, ease: 'none', scrollTrigger: { trigger: '.gal', start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+    }
+
+    // 8. Careers: background drifts, roles flip down one by one
+    gsap.fromTo('.join-bg img', { yPercent: -10 }, { yPercent: 10, ease: 'none', scrollTrigger: { trigger: '.join', start: 'top bottom', end: 'bottom top', scrub: true } });
+    gsap.from('.join-copy > *', { y: 30, opacity: 0, duration: .8, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.join-copy', start: 'top 82%' } });
+    gsap.from('.role', {
+      rotationX: -85, opacity: 0, transformPerspective: 1000, transformOrigin: '50% 0%',
+      duration: .9, stagger: .12, ease: 'power3.out', clearProps: 'transform',
+      scrollTrigger: { trigger: '.roles', start: 'top 82%' }
+    });
+
+    // Footer CTA
+    gsap.from('.footer-cta', { y: 40, scale: .96, opacity: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: '.footer-cta', start: 'top 90%' } });
+
+    return function () { bentoNums.forEach(function (el) { el.textContent = fmt(el, parseFloat(el.dataset.num)); }); };
+  });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

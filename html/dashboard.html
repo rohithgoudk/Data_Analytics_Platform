@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Overview – Data Analytics Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+
+  <!-- Background -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--two" aria-hidden="true"></div>
+
+  <!-- ============ SIDEBAR (fixed on desktop, drawer on tablet/phone) ============ -->
+  <div class="scrim" id="scrim"></div>
+  <aside class="dock" id="sidebar" aria-label="Main menu">
+    <div class="dock-head">
+      <!-- Logo placeholder — replace src with your logo, e.g. images/logo.png -->
+      <button class="brand" data-nav="dashboard" aria-label="Go to overview">
+        <img class="brand-img" src="../assets/Logo.webp" alt="Company logo">
+      </button>
+      <button class="dock-close" id="dock-close" aria-label="Close menu">
+        <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="dock-status">
+      <span class="live-dot"></span>
+      <div>
+        <span class="dock-status-title">All pipelines live</span>
+        <span class="dock-status-sub">Last sync 2 min ago · 7 sources</span>
+      </div>
+    </div>
+
+    <div class="dock-scroll" id="nav-drawer"></div>
+
+    <div class="dock-foot">
+      <div class="dock-user">
+        <span class="avatar" id="sidebar-user-avatar">–</span>
+        <div class="dock-user-info">
+          <span class="dock-user-name" id="sidebar-user-name">Signed out</span>
+          <span class="dock-user-email" id="sidebar-user-email">—</span>
+        </div>
+      </div>
+      <button class="dock-signout" id="logout-btn" aria-label="Sign out" title="Sign out">
+        <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ============ TOP BAR ============ -->
+  <header class="head" id="topbar">
+    <div class="head-left">
+      <button class="burger" id="hamburger-btn" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+        <span></span><span></span><span></span>
+      </button>
+      <button class="brand brand--head" data-nav="dashboard" aria-label="Go to overview">
+        <img class="brand-img" src="../assets/Logo.webp " alt="Company logo">
+      </button>
+      <span class="range-badge"><svg viewBox="0 0 24 24"><path d="M4 6h16v14H4zM4 10h16M8 3v4M16 3v4"/></svg>Last 30 days</span>
+    </div>
+
+    <div class="head-right">
+      <form class="finder" id="topbar-search" autocomplete="off" role="search">
+        <button type="submit" class="finder-go" aria-label="Search">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+        </button>
+        <input id="topbar-search-input" placeholder="Search dashboards, reports, queries…">
+        <kbd class="finder-key">/</kbd>
+      </form>
+
+      <button class="icon-btn" id="notif-btn" aria-label="Alerts">
+        <svg viewBox="0 0 24 24"><path d="M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6"/><path d="M10.5 20a2 2 0 0 0 3 0"/></svg>
+        <span class="icon-dot"></span>
+      </button>
+
+      <div class="whoami" id="topbar-user">
+        <button class="whoami-btn" id="topbar-user-btn" aria-haspopup="true" aria-expanded="false">
+          <span class="avatar sm" id="topbar-user-avatar">–</span>
+          <span class="whoami-text">
+            <span class="whoami-name" id="topbar-user-name">Signed out</span>
+            <span class="whoami-role" id="topbar-user-role">Analyst</span>
+          </span>
+          <svg class="whoami-caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div class="whoami-menu" id="topbar-user-menu">
+          <div class="whoami-menu-head">
+            <span>Signed in as</span>
+            <span class="whoami-menu-email" id="topbar-user-email">—</span>
+          </div>
+          <button class="whoami-item" data-nav="settings">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1"/></svg>
+            Settings
+          </button>
+          <button class="whoami-item danger" id="topbar-logout-btn">
+            <svg viewBox="0 0 24 24"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><path d="M10 17l5-5-5-5M15 12H3"/></svg>
+            Sign out
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ PAGE ============ -->
+  <main class="page">
+    <div class="page-head">
+      <div>
+        <p class="page-kicker" id="page-kicker">Analytics</p>
+        <h1 id="page-title-text">Overview</h1>
+        <p class="page-sub" id="page-sub-text"></p>
+      </div>
+      <div class="page-actions" id="page-actions"></div>
+    </div>
+    <div class="content" id="content-area"></div>
+  </main>
+
+  <div class="chart-tip" id="chart-tip" role="status"></div>
+
+  <script>
+  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+  window.scrollTo(0, 0);
+
+  /* =========================================================
+     ICONS
+     ========================================================= */
+  const ICONS = {
+    grid:     'M4 4h7v7H4zM13 4h7v4h-7zM13 12h7v8h-7zM4 15h7v5H4z',
+    layout:   'M3 4h18v16H3zM3 9h18M9 9v11',
+    doc:      'M6 3h8l4 4v14H6zM14 3v4h4M9 12h6M9 16h5',
+    code:     'M8 8l-4 4 4 4M16 8l4 4-4 4M13.5 5l-3 14',
+    db:       'M12 3c4.4 0 8 1.3 8 3s-3.6 3-8 3-8-1.3-8-3 3.6-3 8-3zM4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6',
+    bell:     'M18 9a6 6 0 1 0-12 0c0 5-2 6-2 6h16s-2-1-2-6M10.5 20a2 2 0 0 0 3 0',
+    gear:     'M12 9.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M12 2.5v3M12 18.5v3M2.5 12h3M18.5 12h3M5.3 5.3l2.1 2.1M16.6 16.6l2.1 2.1M18.7 5.3l-2.1 2.1M7.4 16.6l-2.1 2.1',
+    dollar:   'M12 3v18M17 7.5c0-1.9-2.2-3-5-3s-5 1.1-5 3 2.2 2.7 5 3.5 5 1.6 5 3.5-2.2 3-5 3-5-1.1-5-3',
+    users:    'M9 11a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7M2.5 20c.8-3.5 3.5-5.5 6.5-5.5s5.7 2 6.5 5.5M16 4.5a3.5 3.5 0 0 1 0 6.5M18 14.5c2 .7 3.2 2.6 3.5 5.5',
+    target:   'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10M12 11a1 1 0 1 0 0 2 1 1 0 0 0 0-2',
+    clock:    'M12 3a9 9 0 1 0 0 18 9 9 0 0 0 0-18M12 7v5l3 2',
+    alert:    'M12 4l9 16H3zM12 10v4.2M12 17.4v.4',
+    pulse:    'M3 12h4l2-6 4 12 2-6h6',
+    plus:     'M12 5v14M5 12h14',
+    download: 'M12 4v11M7 10l5 5 5-5M5 20h14',
+    star:     'M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z',
+    pie:      'M12 3v9h9A9 9 0 1 1 12 3zM15 3.5A9 9 0 0 1 20.5 9H15z',
+    link:     'M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1',
+    refresh:  'M20 11a8 8 0 0 0-14.9-3M4 5v4h4M4 13a8 8 0 0 0 14.9 3M20 19v-4h-4',
+    play:     'M7 4l13 8-13 8z',
+    filter:   'M4 5h16l-6 8v6l-4-2v-4z'
+  };
+  function ico(name, cls) {
+    return `<svg class="${cls || 'ico'}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="${ICONS[name] || ICONS.grid}"/></svg>`;
+  }
+
+  /* =========================================================
+     DEMO DATA — a product analytics workspace
+     ========================================================= */
+  const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+  const revenue  = [82, 91, 88, 104, 112, 109, 126, 134, 129, 142, 151, 164];   // $k this year
+  const lastYear = [70, 76, 80, 85, 90, 94, 98, 101, 105, 110, 114, 120];        // $k last year
+
+  const traffic = [
+    { name: 'Organic search', v: 38, color: '#38bdf8' },
+    { name: 'Paid ads',       v: 24, color: '#6366f1' },
+    { name: 'Social',         v: 18, color: '#22d3ee' },
+    { name: 'Referral',       v: 12, color: '#a78bfa' },
+    { name: 'Email',          v: 8,  color: '#fbbf24' }
+  ];
+
+  const topPages = [
+    { path: '/pricing',          views: 18420, conv: 6.8 },
+    { path: '/features',         views: 14210, conv: 4.1 },
+    { path: '/blog/data-guide',  views: 11830, conv: 2.3 },
+    { path: '/signup',           views: 9640,  conv: 21.4 },
+    { path: '/docs/connectors',  views: 7120,  conv: 3.2 }
+  ];
+
+  const funnel = [
+    { step: 'Visited site',     n: 48200 },
+    { step: 'Viewed pricing',   n: 18420 },
+    { step: 'Started trial',    n: 4310 },
+    { step: 'Connected source', n: 2680 },
+    { step: 'Became paying',    n: 1105 }
+  ];
+
+  const categoryColor = { Sales: '#38bdf8', Marketing: '#a78bfa', Product: '#22d3ee', Finance: '#fbbf24' };
+  const dashboards = [
+    { name: 'Revenue performance',   category: 'Sales',     owner: 'Aisha Rahman',  updated: '5m ago',    views: 1284, starred: true,  spark: [4,6,5,8,7,9,11,10,13] },
+    { name: 'Campaign attribution',  category: 'Marketing', owner: 'Leo Martins',   updated: '1h ago',    views: 842,  starred: true,  spark: [6,5,7,6,8,7,9,8,10] },
+    { name: 'Product engagement',    category: 'Product',   owner: 'Nina Kowalski', updated: '20m ago',   views: 967,  starred: false, spark: [3,4,6,5,7,9,8,10,12] },
+    { name: 'Monthly P&L',           category: 'Finance',   owner: 'Samuel Osei',   updated: 'Yesterday', views: 412,  starred: false, spark: [8,7,8,9,8,10,9,11,11] },
+    { name: 'Sales pipeline',        category: 'Sales',     owner: 'Priya Menon',   updated: '2h ago',    views: 731,  starred: false, spark: [5,7,6,9,8,7,10,12,11] },
+    { name: 'Retention cohorts',     category: 'Product',   owner: 'Nina Kowalski', updated: '3h ago',    views: 588,  starred: true,  spark: [9,8,8,7,8,7,7,6,7] },
+    { name: 'SEO & content',         category: 'Marketing', owner: 'Omar Haddad',   updated: 'Mon',       views: 356,  starred: false, spark: [2,3,3,4,5,6,6,8,9] },
+    { name: 'Cash flow forecast',    category: 'Finance',   owner: 'Samuel Osei',   updated: 'Fri',       views: 294,  starred: false, spark: [6,6,7,6,8,8,9,9,10] }
+  ];
+
+  const sources = [
+    { name: 'Production DB',     type: 'PostgreSQL',       status: 'Connected', rows: '48.2M', sync: '2m ago',  freq: 'Every 15 min' },
+    { name: 'Data warehouse',    type: 'Snowflake',        status: 'Connected', rows: '312M',  sync: '10m ago', freq: 'Hourly' },
+    { name: 'Web analytics',     type: 'Google Analytics', status: 'Syncing',   rows: '9.4M',  sync: 'Now',     freq: 'Every 30 min' },
+    { name: 'CRM',               type: 'Salesforce',       status: 'Connected', rows: '1.2M',  sync: '25m ago', freq: 'Hourly' },
+    { name: 'Payments',          type: 'Stripe',           status: 'Error',     rows: '860K',  sync: '6h ago',  freq: 'Hourly' },
+    { name: 'Events stream',     type: 'BigQuery',         status: 'Connected', rows: '1.8B',  sync: '1m ago',  freq: 'Real-time' },
+    { name: 'Budget sheet',      type: 'CSV upload',       status: 'Paused',    rows: '4.2K',  sync: '3d ago',  freq: 'Manual' }
+  ];
+  const sourceStatus = { Connected: 'good', Syncing: 'info', Error: 'bad', Paused: 'muted' };
+
+  const queries = [
+    { id: 'Q-1042', name: 'Monthly recurring revenue by plan',  source: 'Snowflake',        owner: 'Aisha Rahman',  runtime: '1.8s', last: '5m ago',  status: 'Success' },
+    { id: 'Q-1047', name: 'Weekly active users by country',     source: 'BigQuery',         owner: 'Nina Kowalski', runtime: '4.2s', last: '20m ago', status: 'Success' },
+    { id: 'Q-1051', name: 'Refunds over $500 last 7 days',      source: 'Stripe',           owner: 'Samuel Osei',   runtime: '—',    last: '6h ago',  status: 'Failed' },
+    { id: 'Q-1055', name: 'Campaign spend vs signups',          source: 'Google Analytics', owner: 'Leo Martins',   runtime: '12.6s',last: 'Now',     status: 'Running' },
+    { id: 'Q-1058', name: 'Churned accounts with open tickets', source: 'PostgreSQL',       owner: 'Priya Menon',   runtime: '0.9s', last: '1h ago',  status: 'Success' },
+    { id: 'Q-1063', name: 'Deals closed by sales rep',          source: 'Salesforce',       owner: 'Priya Menon',   runtime: '2.4s', last: '2h ago',  status: 'Success' },
+    { id: 'Q-1066', name: 'Feature adoption after release',     source: 'BigQuery',         owner: 'Nina Kowalski', runtime: '6.1s', last: 'Yesterday', status: 'Success' },
+    { id: 'Q-1070', name: 'Budget vs actual by department',     source: 'CSV upload',       owner: 'Samuel Osei',   runtime: '—',    last: '3d ago',  status: 'Failed' }
+  ];
+  const queryStatus = { Success: 'good', Failed: 'bad', Running: 'info' };
+
+  const reports = [
+    { title: 'Daily KPI summary',             owner: 'Analytics team', cadence: 'Daily',   last: 'Today 07:00', status: 'Ready' },
+    { title: 'Weekly revenue pack',           owner: 'Aisha Rahman',   cadence: 'Weekly',  last: 'Mon 09:00',   status: 'Ready' },
+    { title: 'Marketing attribution review',  owner: 'Leo Martins',    cadence: 'Weekly',  last: 'Fri 16:30',   status: 'In review' },
+    { title: 'Monthly board metrics',         owner: 'Finance',        cadence: 'Monthly', last: '1 Sep',       status: 'Ready' },
+    { title: 'Product usage deep-dive',       owner: 'Nina Kowalski',  cadence: 'Monthly', last: 'Draft',       status: 'Draft' },
+    { title: 'Q3 churn investigation',        owner: 'Priya Menon',    cadence: 'One-off', last: 'Yesterday',   status: 'In review' }
+  ];
+  const reportStatusColor = { 'Ready': '#34d399', 'In review': '#fbbf24', 'Draft': '#8b9bb8' };
+
+  const alerts = [
+    { text: 'Payments sync failing — Stripe API key expired',      metric: 'Data freshness', level: 'critical', owner: 'Samuel Osei',  time: '12m ago' },
+    { text: 'Checkout conversion dropped 18% vs last Tuesday',     metric: 'Conversion rate', level: 'critical', owner: 'Leo Martins',  time: '40m ago' },
+    { text: 'Query Q-1055 running longer than 10 seconds',         metric: 'Query runtime',  level: 'warning',  owner: 'Leo Martins',  time: '1h ago' },
+    { text: 'Mobile bounce rate above 55% for 3 days',             metric: 'Bounce rate',    level: 'warning',  owner: 'Nina Kowalski', time: '3h ago' },
+    { text: 'Signups beat weekly target by 12%',                   metric: 'Signups',        level: 'info',     owner: 'Aisha Rahman', time: 'Yesterday' }
+  ];
+
+  const activity = [
+    { text: 'Aisha shared “Revenue performance” with Sales team', time: '8m ago' },
+    { text: 'New data source connected: Events stream (BigQuery)', time: '40m ago' },
+    { text: 'Weekly revenue pack sent to 14 recipients',          time: '2h ago' },
+    { text: 'Nina created dashboard “Retention cohorts”',         time: 'Yesterday' },
+    { text: 'Scheduled report “Daily KPI summary” ran successfully', time: 'Today 07:00' }
+  ];
+
+  /* =========================================================
+     NAVIGATION
+     ========================================================= */
+  const navGroups = {
+    analyze:   [ { label: 'Overview',     id: 'dashboard',  icon: 'grid' },
+                 { label: 'Dashboards',   id: 'dashboards', icon: 'layout' },
+                 { label: 'Reports',      id: 'reports',    icon: 'doc' },
+                 { label: 'Queries',      id: 'queries',    icon: 'code', badge: () => queries.filter(q => q.status === 'Failed').length } ],
+    data:      [ { label: 'Data sources', id: 'sources',    icon: 'db',   badge: () => sources.filter(s => s.status === 'Error').length },
+                 { label: 'Alerts',       id: 'alerts',     icon: 'bell', badge: () => alerts.filter(a => a.level === 'critical').length } ],
+    workspace: [ { label: 'Settings',     id: 'settings',   icon: 'gear' } ]
+  };
+  const groupLabels = { analyze: 'Analyze', data: 'Data', workspace: 'Workspace' };
+
+  const pageMap = {
+    dashboard:  { title: 'Overview',     sub: 'How the business is performing right now' },
+    dashboards: { title: 'Dashboards',   sub: 'Every dashboard in your workspace' },
+    reports:    { title: 'Reports',      sub: 'Scheduled and one-off reports' },
+    queries:    { title: 'Queries',      sub: 'Saved SQL queries and their last run' },
+    sources:    { title: 'Data sources', sub: 'Connections, sync status and volume' },
+    alerts:     { title: 'Alerts',       sub: 'Metric thresholds and pipeline issues' },
+    settings:   { title: 'Settings',     sub: 'Your profile and preferences' }
+  };
+  const pageActions = {
+    dashboard:  `<button class="btn btn-ghost" onclick="go404()">${ico('download')}Export</button><button class="btn btn-solid" onclick="go404()">${ico('plus')}New dashboard</button>`,
+    dashboards: `<button class="btn btn-solid" onclick="go404()">${ico('plus')}New dashboard</button>`,
+    reports:    `<button class="btn btn-solid" onclick="go404()">${ico('plus')}Schedule report</button>`,
+    queries:    `<button class="btn btn-solid" onclick="go404()">${ico('plus')}New query</button>`,
+    sources:    `<button class="btn btn-solid" onclick="go404()">${ico('link')}Connect source</button>`,
+    alerts:     `<button class="btn btn-solid" onclick="go404()">${ico('plus')}New alert</button>`
+  };
+
+  /* =========================================================
+     SIGNED-IN USER (from login page → localStorage "user")
+     Checks the usual key names in localStorage then
+     sessionStorage; accepts a JSON object or a bare email.
+     ========================================================= */
+  const EMAIL_RE = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
+  const USER_KEYS = ['user', 'currentUser', 'loggedInUser', 'authUser', 'userData', 'profile', 'account', 'session', 'userEmail', 'email'];
+  let foundUserKey = null;
+
+  function asEmail(v) { return typeof v === 'string' && EMAIL_RE.test(v.trim()) ? v.trim() : null; }
+  function findEmailIn(obj, depth) {
+    if (!obj || depth > 4) return null;
+    if (typeof obj === 'string') {
+      const e = asEmail(obj); if (e) return { email: e };
+      try { return findEmailIn(JSON.parse(obj), depth + 1); } catch (err) { return null; }
+    }
+    if (typeof obj !== 'object') return null;
+    for (const k in obj) { const e = asEmail(obj[k]); if (e) return Object.assign({}, obj, { email: e }); }
+    for (const k in obj) { const hit = findEmailIn(obj[k], depth + 1); if (hit) return Object.assign({}, obj, hit); }
+    return null;
+  }
+  function getCurrentUser() {
+    const stores = [];
+    try { stores.push(localStorage); } catch (e) {}
+    try { stores.push(sessionStorage); } catch (e) {}
+    for (const s of stores) { try { if (s.getItem('isAuthenticated') === 'false') return null; } catch (e) {} }
+    for (const s of stores) {
+      for (const key of USER_KEYS) {
+        let hit = null;
+        try { hit = findEmailIn(s.getItem(key), 0); } catch (e) {}
+        if (hit) { foundUserKey = key; return hit; }
+      }
+    }
+    return null;
+  }
+
+  const currentUser = getCurrentUser();
+  const currentEmail = currentUser ? currentUser.email : '';
+  const storedName = currentUser && typeof currentUser.name === 'string' ? currentUser.name : '';
+  const currentUsername = storedName || (currentEmail ? currentEmail.split('@')[0] : '');
+  const currentInitial = ((currentUsername || currentEmail || '?').charAt(0) || '?').toUpperCase();
+  const currentRole = currentUser ? (currentUser.role === 'admin' ? 'Administrator' : 'Analyst') : 'Not signed in';
+
+  function paintUserChrome() {
+    const name = currentUsername || 'Signed out';
+    const email = currentEmail || '—';
+    document.querySelectorAll('#sidebar-user-avatar, #topbar-user-avatar').forEach(el => el.textContent = currentInitial);
+    const sName = document.getElementById('sidebar-user-name');
+    sName.textContent = name; sName.title = name;
+    const sEmail = document.getElementById('sidebar-user-email');
+    sEmail.textContent = email; sEmail.title = email;
+    document.getElementById('topbar-user-name').textContent = name;
+    document.getElementById('topbar-user-email').textContent = email;
+    document.getElementById('topbar-user-role').textContent = currentRole;
+  }
+
+  function logout() {
+    const keys = ['user', 'isAuthenticated', 'activeNav', 'settings'].concat(USER_KEYS);
+    if (foundUserKey && keys.indexOf(foundUserKey) === -1) keys.push(foundUserKey);
+    keys.forEach(k => {
+      try { localStorage.removeItem(k); } catch (e) {}
+      try { sessionStorage.removeItem(k); } catch (e) {}
+    });
+    window.location.href = 'login.html';
+  }
+
+  /* =========================================================
+     STATE
+     ========================================================= */
+  function readStore(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+  function writeStore(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+  function loadSettings() {
+    const d = { anomalyAlerts: true, weeklyDigest: false, compactRows: false, language: 'English', currency: 'USD ($)' };
+    try { const raw = readStore('settings'); if (raw) return Object.assign(d, JSON.parse(raw)); } catch (e) {}
+    return d;
+  }
+  function saveSettings() { writeStore('settings', JSON.stringify(state.settings)); }
+
+  const saved = readStore('activeNav');
+  let state = {
+    activeNav: saved && pageMap[saved] ? saved : 'dashboard',
+    dashCategory: 'All',
+    sourceStatus: 'All',
+    querySearch: '',
+    settings: loadSettings()
+  };
+
+  function go404() { window.location.href = '404.html'; }
+  function fmt(n) { return n.toLocaleString(); }
+
+  /* =========================================================
+     SHARED PIECES
+     ========================================================= */
+  function kpiRow(items) {
+    return `<section class="kpis">${items.map((k, i) => `
+      <article class="kpi anim" style="--c:${k.color || '#38bdf8'};--i:${i}" onclick="go404()">
+        <div class="kpi-top">
+          <span class="kpi-ico">${ico(k.icon || 'pulse')}</span>
+          ${k.trend ? `<span class="kpi-trend ${k.trend.good === false ? 'trend-bad' : 'trend-good'}">${k.trend.dir === 'up' ? '▲' : '▼'} ${k.trend.text}</span>` : ''}
+        </div>
+        <span class="kpi-value" data-count>${k.value}</span>
+        <span class="kpi-label">${k.label}</span>
+        ${k.bar !== undefined ? `<span class="kpi-track"><span class="kpi-fill" data-w="${k.bar}"></span></span>` : ''}
+        ${k.note ? `<span class="kpi-note">${k.note}</span>` : ''}
+      </article>`).join('')}</section>`;
+  }
+  let cardIndex = 0;
+  function card(o, body) {
+    return `<section class="card anim ${o.cls || ''}" style="--i:${cardIndex++ + 2}">
+      <header class="card-head">
+        <div><h2>${ico(o.icon || 'grid', 'head-ico')}${o.title}</h2>${o.sub ? `<p>${o.sub}</p>` : ''}</div>
+        ${o.aside || ''}
+      </header>
+      ${body}
+    </section>`;
+  }
+  function chips(list, current, cls) {
+    return `<div class="chip-row">${list.map(c => `<button class="chip ${cls} ${current === c ? 'chip-on' : ''}" data-filter="${c}">${c}</button>`).join('')}</div>`;
+  }
+  function sparkline(data, color) {
+    const max = Math.max(...data), min = Math.min(...data), w = 120, h = 36;
+    const pts = data.map((v, i) => `${(i / (data.length - 1) * w).toFixed(1)},${(h - 4 - (v - min) / (max - min || 1) * (h - 8)).toFixed(1)}`).join(' ');
+    return `<svg class="spark" viewBox="0 0 ${w} ${h}" preserveAspectRatio="none">
+      <polyline points="0,${h} ${pts} ${w},${h}" fill="${color}" opacity=".12" stroke="none"/>
+      <polyline points="${pts}" fill="none" stroke="${color}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+    </svg>`;
+  }
+
+  /* After each render: fill bars, count up numbers */
+  function afterRender() {
+    requestAnimationFrame(() => {
+      document.querySelectorAll('[data-w]').forEach(el => el.style.width = el.dataset.w + '%');
+    });
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    document.querySelectorAll('[data-count]').forEach(el => {
+      const raw = el.textContent.trim();
+      const m = raw.match(/^([^\d]*)([\d,]+\.?\d*)(.*)$/);
+      if (!m) return;
+      const prefix = m[1], numStr = m[2].replace(/,/g, ''), suffix = m[3];
+      const target = parseFloat(numStr);
+      const decimals = numStr.includes('.') ? numStr.split('.')[1].length : 0;
+      const start = performance.now(), dur = 1100;
+      function tick(now) {
+        const p = Math.min(1, (now - start) / dur);
+        const eased = 1 - Math.pow(1 - p, 3);
+        const val = target * eased;
+        el.textContent = prefix + (decimals ? val.toFixed(decimals) : Math.round(val).toLocaleString()) + suffix;
+        if (p < 1) requestAnimationFrame(tick); else el.textContent = raw;
+      }
+      requestAnimationFrame(tick);
+    });
+  }
+
+  /* =========================================================
+     OVERVIEW
+     ========================================================= */
+  function greeting() {
+    const h = new Date().getHours();
+    return h < 12 ? 'Good morning' : h < 18 ? 'Good afternoon' : 'Good evening';
+  }
+
+  function revenueChart() {
+    const W = 600, H = 220, top = 180;
+    const x = i => (i / (months.length - 1)) * W;
+    const y = v => H - (v / top) * H;
+    const line = arr => arr.map((v, i) => `${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ');
+    const area = `0,${H} ${line(revenue)} ${W},${H}`;
+    const grid = [0, 60, 120, 180].map(v => `<span class="rc-grid" style="bottom:${v / top * 100}%"><em>$${v}k</em></span>`).join('');
+    const pos = i => (i / (months.length - 1) * 100).toFixed(2);
+    const cols = months.map((m, i) => `<div class="rc-col" style="left:${pos(i)}%" tabindex="0" data-tip="${m} · $${revenue[i]}k this year · $${lastYear[i]}k last year"><span class="rc-dot" style="bottom:${revenue[i] / top * 100}%"></span></div>`).join('');
+    const total = revenue.reduce((a, b) => a + b, 0), prev = lastYear.reduce((a, b) => a + b, 0);
+    return `<div class="rc-legend">
+        <span><i style="background:var(--primary)"></i>This year</span>
+        <span><i class="dashed"></i>Last year</span>
+      </div>
+      <div class="rc" role="img" aria-label="Monthly revenue this year versus last year">
+        <div class="rc-plot">
+          ${grid}
+          <svg class="rc-svg" viewBox="0 0 ${W} ${H}" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="rcFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#38bdf8" stop-opacity=".35"/>
+                <stop offset="1" stop-color="#6366f1" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="rcStroke" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0" stop-color="#22d3ee"/><stop offset="1" stop-color="#6366f1"/>
+              </linearGradient>
+            </defs>
+            <polygon class="rc-area" points="${area}" fill="url(#rcFill)"/>
+            <polyline class="rc-prev" points="${line(lastYear)}"/>
+            <polyline class="rc-line" points="${line(revenue)}"/>
+          </svg>
+          <div class="rc-cols">${cols}</div>
+        </div>
+        <div class="rc-x">${months.map((m, i) => `<span style="left:${pos(i)}%">${m}</span>`).join('')}</div>
+      </div>
+      <div class="rc-foot">
+        <span><b>$${fmt(total)}k</b> revenue this year</span>
+        <span class="trend-good">▲ ${Math.round((total - prev) / prev * 100)}% vs last year</span>
+      </div>`;
+  }
+
+  function trafficDonut() {
+    let acc = 0;
+    const stops = traffic.map(t => { const s = `${t.color} ${acc}% ${acc + t.v}%`; acc += t.v; return s; }).join(', ');
+    return `<div class="donut-wrap">
+        <div class="donut" style="--stops:${stops}" role="img" aria-label="Traffic by source">
+          <div class="donut-hole"><b data-count>48,200</b><span>visitors</span></div>
+        </div>
+        <ul class="donut-legend">${traffic.map(t => `
+          <li data-tip="${t.name}: ${t.v}% of visitors" tabindex="0"><i style="background:${t.color}"></i><span>${t.name}</span><b>${t.v}%</b></li>`).join('')}
+        </ul>
+      </div>`;
+  }
+
+  function funnelChart() {
+    const first = funnel[0].n;
+    return `<ul class="funnel">${funnel.map((f, i) => {
+      const pct = f.n / first * 100;
+      const stepConv = i ? Math.round(f.n / funnel[i - 1].n * 100) : 100;
+      return `<li class="row-anim" style="--r:${i}">
+        <div class="funnel-top"><span>${f.step}</span><span><b>${fmt(f.n)}</b>${i ? `<em>${stepConv}% of previous</em>` : ''}</span></div>
+        <span class="funnel-track"><span class="funnel-fill" data-w="${pct.toFixed(1)}"></span></span>
+      </li>`;
+    }).join('')}</ul>`;
+  }
+
+  function renderDashboard() {
+    const name = currentUsername || 'there';
+    const critical = alerts.filter(a => a.level === 'critical').length;
+    const hello = `<section class="hello anim" style="--i:0">
+        <div>
+          <p class="hello-kicker">${greeting()}, ${name} 👋</p>
+          <h2 class="hello-title">Revenue is up <span class="grad-text">12.4%</span> this month${critical ? `, and ${critical} alerts need your attention.` : '.'}</h2>
+        </div>
+        <div class="hello-actions">
+          <button class="btn btn-ghost" data-nav="alerts">${ico('bell')}View alerts</button>
+          <button class="btn btn-solid" onclick="go404()">${ico('plus')}New report</button>
+        </div>
+      </section>`;
+
+    const kpis = kpiRow([
+      { label: 'Revenue (30 days)',   value: '$164,280', icon: 'dollar', trend: { dir: 'up', text: '12.4%' }, bar: 82 },
+      { label: 'Active users',        value: '48,200',   icon: 'users',  trend: { dir: 'up', text: '8.1%' },  bar: 68, color: '#22d3ee' },
+      { label: 'Conversion rate',     value: '3.42%',    icon: 'target', trend: { dir: 'down', text: '0.3%', good: false }, bar: 34, color: '#a78bfa' },
+      { label: 'Avg. session',        value: '4m 51s',   icon: 'clock',  trend: { dir: 'up', text: '18s' },   bar: 58, color: '#fbbf24' }
+    ]);
+
+    const pages = topPages.map((p, i) => `
+      <li class="tp-row row-anim" style="--r:${i}" onclick="go404()">
+        <span class="tp-rank">${i + 1}</span>
+        <span class="tp-main">
+          <span class="tp-path">${p.path}</span>
+          <span class="mini-track"><span class="mini-fill good" data-w="${(p.views / topPages[0].views * 100).toFixed(1)}"></span></span>
+        </span>
+        <span class="tp-num"><b>${fmt(p.views)}</b><em>${p.conv}% conv.</em></span>
+      </li>`).join('');
+
+    const alertList = alerts.slice(0, 3).map((a, i) => `
+      <li class="esc esc-${a.level} row-anim" style="--r:${i}" onclick="go404()">
+        <span class="esc-ico">${ico('alert')}</span>
+        <span class="esc-main"><span class="esc-text">${a.text}</span><span class="esc-sub">${a.metric} · ${a.time}</span></span>
+      </li>`).join('');
+
+    const feed = activity.map((a, i) => `
+      <li class="feed-row row-anim" style="--r:${i}" onclick="go404()"><span class="feed-dot"></span><span class="feed-text">${a.text}</span><span class="feed-time">${a.time}</span></li>`).join('');
+
+    return `${hello}${kpis}
+      <div class="grid grid-a">
+        ${card({ title: 'Revenue trend', sub: 'Monthly, this year vs last year', icon: 'pulse', cls: 'span-2' }, revenueChart())}
+        ${card({ title: 'Traffic sources', sub: 'Share of visitors, last 30 days', icon: 'pie' }, trafficDonut())}
+      </div>
+      <div class="grid grid-b">
+        ${card({ title: 'Conversion funnel', sub: 'Visitor to paying customer', icon: 'filter' }, funnelChart())}
+        ${card({ title: 'Top pages', sub: 'By page views', icon: 'doc', aside: `<button class="link-btn" data-nav="dashboards">All dashboards →</button>` }, `<ul class="tp-list">${pages}</ul>`)}
+      </div>
+      <div class="grid grid-c">
+        ${card({ title: 'Alerts', sub: 'Most recent first', icon: 'bell', aside: `<button class="link-btn" data-nav="alerts">All alerts →</button>` }, `<ul class="esc-list">${alertList}</ul>`)}
+        ${card({ title: 'Activity', sub: 'Latest in your workspace', icon: 'pulse' }, `<ul class="feed">${feed}</ul>`)}
+      </div>`;
+  }
+
+  /* =========================================================
+     DASHBOARDS
+     ========================================================= */
+  function renderDashboards() {
+    const cats = ['All'].concat(Object.keys(categoryColor));
+    const list = state.dashCategory === 'All' ? dashboards : dashboards.filter(d => d.category === state.dashCategory);
+    const kpis = kpiRow([
+      { label: 'Dashboards',        value: String(dashboards.length), icon: 'layout' },
+      { label: 'Views this week',   value: fmt(dashboards.reduce((a, d) => a + d.views, 0)), icon: 'users', color: '#22d3ee' },
+      { label: 'Starred',           value: String(dashboards.filter(d => d.starred).length), icon: 'star', color: '#fbbf24' },
+      { label: 'Shared with teams', value: '14', icon: 'link', color: '#a78bfa', note: 'across 5 teams' }
+    ]);
+    const cards = list.map((d, i) => {
+      const c = categoryColor[d.category];
+      return `<article class="dash row-anim" style="--r:${i}" onclick="go404()">
+        <header>
+          <span class="tag" style="--c:${c}">${d.category}</span>
+          <span class="star ${d.starred ? 'on' : ''}" aria-label="${d.starred ? 'Starred' : 'Not starred'}">${ico('star')}</span>
+        </header>
+        <h3 class="dash-name">${d.name}</h3>
+        ${sparkline(d.spark, c)}
+        <footer><span>${d.owner}</span><span>${fmt(d.views)} views · ${d.updated}</span></footer>
+      </article>`;
+    }).join('');
+    return `${kpis}${card({ title: 'All dashboards', sub: `${list.length} shown`, icon: 'layout', aside: chips(cats, state.dashCategory, 'dash-filter') },
+      `<div class="dash-grid">${cards || '<p class="empty">No dashboards in that category.</p>'}</div>`)}`;
+  }
+
+  /* =========================================================
+     REPORTS
+     ========================================================= */
+  function renderReports() {
+    const kpis = kpiRow([
+      { label: 'Reports',        value: String(reports.length), icon: 'doc' },
+      { label: 'Ready to send',  value: String(reports.filter(r => r.status === 'Ready').length), icon: 'download', color: '#34d399' },
+      { label: 'In review',      value: String(reports.filter(r => r.status === 'In review').length), icon: 'star', color: '#fbbf24' },
+      { label: 'Scheduled runs', value: '24', icon: 'clock', note: 'each week', color: '#a78bfa' }
+    ]);
+    const rows = reports.map((r, i) => `
+      <article class="report row-anim" style="--r:${i}" onclick="go404()">
+        <span class="report-ico">${ico('doc')}</span>
+        <span class="report-main"><span class="report-title">${r.title}</span><span class="report-sub">${r.owner} · ${r.cadence} · last run ${r.last}</span></span>
+        <span class="badge" style="--c:${reportStatusColor[r.status]}">${r.status}</span>
+        <button class="chip" onclick="event.stopPropagation();go404()">Open</button>
+      </article>`).join('');
+    return `${kpis}${card({ title: 'Report library', sub: 'Scheduled and one-off reports', icon: 'doc' }, `<div class="report-list">${rows}</div>`)}`;
+  }
+
+  /* =========================================================
+     QUERIES — every word typed must match somewhere in the row
+     ========================================================= */
+  function queryMatches(q, terms) {
+    if (!terms.length) return true;
+    const hay = [q.id, q.name, q.source, q.owner, q.status, q.last].join(' ').toLowerCase();
+    return terms.every(w => hay.includes(w));
+  }
+  function renderQueries() {
+    const terms = state.querySearch.toLowerCase().split(/\s+/).filter(Boolean);
+    const list = queries.filter(q => queryMatches(q, terms));
+    const kpis = kpiRow([
+      { label: 'Saved queries',    value: String(queries.length), icon: 'code' },
+      { label: 'Runs today',       value: '1,284', icon: 'play', color: '#22d3ee' },
+      { label: 'Avg. runtime',     value: '3.1s', icon: 'clock', color: '#a78bfa' },
+      { label: 'Failed',           value: String(queries.filter(q => q.status === 'Failed').length), icon: 'alert', color: '#f87171', note: 'need a fix' }
+    ]);
+    const rows = list.map((q, i) => `
+      <tr class="row-anim" style="--r:${i}" onclick="go404()">
+        <td class="mono" data-label="ID">${q.id}</td>
+        <td class="stack" data-label="Query"><span class="t-name">${q.name}</span><span class="t-sub">${q.owner}</span></td>
+        <td data-label="Source">${q.source}</td>
+        <td class="mono" data-label="Runtime">${q.runtime}</td>
+        <td data-label="Last run">${q.last}</td>
+        <td data-label="Status"><span class="state state-${queryStatus[q.status]}">${q.status}</span></td>
+      </tr>`).join('');
+    return `${kpis}${card({ title: 'Saved queries', sub: terms.length ? `Showing ${list.length} of ${queries.length}` : 'Most recently run first', icon: 'code', cls: 'card-table',
+        aside: `<label class="finder finder-inline">
+          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4.2-4.2"/></svg>
+          <input id="query-search-input" placeholder="Name, source, owner, status…" value="${state.querySearch.replace(/"/g, '&quot;')}">
+        </label>` },
+      `<div class="table-wrap"><table class="table">
+        <thead><tr><th>ID</th><th>Query</th><th>Source</th><th>Runtime</th><th>Last run</th><th>Status</th></tr></thead>
+        <tbody>${rows || '<tr><td colspan="6" class="empty">Nothing matches that search.</td></tr>'}</tbody>
+      </table></div>`)}`;
+  }
+
+  /* =========================================================
+     DATA SOURCES
+     ========================================================= */
+  function renderSources() {
+    const filters = ['All', 'Connected', 'Syncing', 'Error', 'Paused'];
+    const list = state.sourceStatus === 'All' ? sources : sources.filter(s => s.status === state.sourceStatus);
+    const kpis = kpiRow([
+      { label: 'Connected sources', value: `${sources.filter(s => s.status === 'Connected').length}/${sources.length}`, icon: 'db' },
+      { label: 'Rows ingested today', value: '12.8M', icon: 'download', color: '#22d3ee' },
+      { label: 'Data freshness',    value: '98.6%', icon: 'refresh', color: '#34d399', bar: 98.6 },
+      { label: 'Sync errors',       value: String(sources.filter(s => s.status === 'Error').length), icon: 'alert', color: '#f87171', note: 'Stripe key expired' }
+    ]);
+    const rows = list.map((s, i) => `
+      <tr class="row-anim" style="--r:${i}" onclick="go404()">
+        <td class="stack" data-label="Source"><span class="t-name">${s.name}</span><span class="t-sub">${s.type}</span></td>
+        <td data-label="Status"><span class="state state-${sourceStatus[s.status]}">${s.status}</span></td>
+        <td class="mono" data-label="Rows">${s.rows}</td>
+        <td data-label="Last sync">${s.sync}</td>
+        <td data-label="Frequency">${s.freq}</td>
+        <td data-label=""><button class="chip" onclick="event.stopPropagation();go404()">${ico('refresh', 'chip-ico')}Sync</button></td>
+      </tr>`).join('');
+    return `${kpis}${card({ title: 'Connections', sub: 'Warehouses, apps and uploads', icon: 'db', cls: 'card-table', aside: chips(filters, state.sourceStatus, 'source-filter') },
+      `<div class="table-wrap"><table class="table">
+        <thead><tr><th>Source</th><th>Status</th><th>Rows</th><th>Last sync</th><th>Frequency</th><th></th></tr></thead>
+        <tbody>${rows || '<tr><td colspan="6" class="empty">No sources with that status.</td></tr>'}</tbody>
+      </table></div>`)}`;
+  }
+
+  /* =========================================================
+     ALERTS
+     ========================================================= */
+  function renderAlerts() {
+    const kpis = kpiRow([
+      { label: 'Open alerts',    value: String(alerts.length), icon: 'bell' },
+      { label: 'Critical',       value: String(alerts.filter(a => a.level === 'critical').length), icon: 'alert', color: '#f87171' },
+      { label: 'Warnings',       value: String(alerts.filter(a => a.level === 'warning').length), icon: 'alert', color: '#fbbf24' },
+      { label: 'Alert rules',    value: '32', icon: 'target', color: '#a78bfa', note: '6 paused' }
+    ]);
+    const rows = alerts.map((a, i) => `
+      <li class="esc esc-${a.level} row-anim" style="--r:${i}" onclick="go404()">
+        <span class="esc-ico">${ico('alert')}</span>
+        <span class="esc-main"><span class="esc-text">${a.text}</span><span class="esc-sub">${a.metric} · ${a.owner} · ${a.time}</span></span>
+        <span class="esc-level">${a.level}</span>
+      </li>`).join('');
+    return `${kpis}${card({ title: 'All alerts', sub: 'Critical first, then warnings and info', icon: 'bell' }, `<ul class="esc-list">${rows}</ul>`)}`;
+  }
+
+  /* =========================================================
+     SETTINGS
+     ========================================================= */
+  function switchHtml(id, value) {
+    return `<span class="switch ${value ? 'on' : ''}" data-toggle="${id}" role="switch" aria-checked="${value}" tabindex="0"><span class="switch-knob"></span></span>`;
+  }
+  function selectHtml(id, options, value) {
+    return `<select class="pref-select" id="${id}">${options.map(o => `<option ${value === o ? 'selected' : ''}>${o}</option>`).join('')}</select>`;
+  }
+  function renderSettings() {
+    const s = state.settings;
+    const displayName = currentUsername || 'Signed out';
+    const displayEmail = currentEmail || 'No account signed in';
+    return `<div class="grid grid-settings">
+      ${card({ title: 'Account', sub: 'The profile signed in on this device', icon: 'users' },
+        `<div class="account">
+          <span class="avatar lg">${currentInitial}</span>
+          <div>
+            <span class="account-name">${displayName}</span>
+            <span class="account-email">${displayEmail}</span>
+            <span class="account-role">${currentRole}</span>
+          </div>
+        </div>
+        <button class="chip" onclick="go404()">Edit profile</button>`)}
+
+      ${card({ title: 'Preferences', sub: 'Alerts and how your workspace reads', icon: 'gear' },
+        `<div class="pref"><div><span class="pref-title">Anomaly alerts</span><span class="pref-desc">Notify me when a metric moves unusually</span></div>${switchHtml('anomalyAlerts', s.anomalyAlerts)}</div>
+        <div class="pref"><div><span class="pref-title">Weekly digest email</span><span class="pref-desc">A summary of key metrics every Monday</span></div>${switchHtml('weeklyDigest', s.weeklyDigest)}</div>
+        <div class="pref"><div><span class="pref-title">Compact tables</span><span class="pref-desc">Tighter spacing in query and source tables</span></div>${switchHtml('compactRows', s.compactRows)}</div>
+        <div class="pref"><div><span class="pref-title">Currency</span><span class="pref-desc">Used for revenue metrics</span></div>${selectHtml('currency-select', ['USD ($)', 'EUR (€)', 'GBP (£)', 'INR (₹)'], s.currency)}</div>
+        <div class="pref pref-last"><div><span class="pref-title">Language</span><span class="pref-desc">Interface display language</span></div>${selectHtml('lang-select', ['English', 'French', 'Spanish', 'Hindi', 'Telugu'], s.language)}</div>`)}
+
+      ${card({ title: 'Session', sub: 'Sign out of this account on this device', icon: 'clock' },
+        `<div class="session"><p>Signed in as <strong>${displayEmail}</strong>. Signing out clears the session and returns you to the sign-in screen.</p>
+        <button class="chip chip-danger" id="settings-logout-btn">Sign out</button></div>`)}
+
+      ${card({ title: 'Account actions', sub: 'These cannot be undone', icon: 'alert' },
+        `<div class="danger-row"><button class="chip chip-danger" onclick="go404()">Reset password</button><button class="chip chip-danger" onclick="go404()">Delete workspace</button></div>`)}
+    </div>`;
+  }
+
+  const pageRenderers = {
+    dashboard: renderDashboard, dashboards: renderDashboards, reports: renderReports, queries: renderQueries,
+    sources: renderSources, alerts: renderAlerts, settings: renderSettings
+  };
+
+  /* =========================================================
+     SHELL
+     ========================================================= */
+  function renderNav() {
+    document.getElementById('nav-drawer').innerHTML = Object.keys(navGroups).map(g => `
+      <p class="dock-label">${groupLabels[g]}</p>
+      <nav class="dock-nav">${navGroups[g].map(i => {
+        const n = i.badge ? i.badge() : 0;
+        return `<button class="dock-item ${state.activeNav === i.id ? 'on' : ''}" data-nav="${i.id}">${ico(i.icon, 'dock-ico')}<span class="dock-text">${i.label}</span>${n ? `<span class="nav-badge">${n}</span>` : ''}</button>`;
+      }).join('')}</nav>`).join('');
+  }
+
+  function renderPage(animate) {
+    const page = pageMap[state.activeNav];
+    const group = Object.keys(navGroups).find(g => navGroups[g].some(i => i.id === state.activeNav));
+    document.getElementById('page-title-text').textContent = page.title;
+    document.getElementById('page-sub-text').textContent = page.sub;
+    document.getElementById('page-kicker').textContent = 'Analytics · ' + (groupLabels[group] || '');
+    document.getElementById('page-actions').innerHTML = pageActions[state.activeNav] || '';
+    document.title = page.title + ' – Data Analytics Platform';
+    cardIndex = 0;
+    const content = document.getElementById('content-area');
+    content.innerHTML = pageRenderers[state.activeNav]();
+    content.classList.toggle('no-anim', animate === false);
+    document.body.classList.toggle('compact', !!state.settings.compactRows);
+    renderNav();
+    const sBtn = document.getElementById('settings-logout-btn');
+    if (sBtn) sBtn.addEventListener('click', logout);
+    if (animate !== false) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+      const head = document.querySelector('.page-head');
+      head.classList.remove('anim'); void head.offsetWidth; head.classList.add('anim');
+      afterRender();
+    } else {
+      document.querySelectorAll('[data-w]').forEach(el => el.style.width = el.dataset.w + '%');
+    }
+  }
+
+  function navigateTo(id) {
+    if (!pageMap[id]) return;
+    state.activeNav = id;
+    writeStore('activeNav', id);
+    closeDrawer();
+    closeWhoami();
+    renderPage();
+  }
+
+  /* ---- sidebar: fixed on desktop, drawer at 1100px and below ---- */
+  const MENU_BREAK = 1100;
+  const sidebar = document.getElementById('sidebar');
+  const scrim = document.getElementById('scrim');
+  const burger = document.getElementById('hamburger-btn');
+
+  function openDrawer() {
+    sidebar.classList.add('open');
+    scrim.classList.add('show');
+    burger.classList.add('is-open');
+    burger.setAttribute('aria-expanded', 'true');
+    burger.setAttribute('aria-label', 'Close menu');
+    document.body.classList.add('nav-open');
+  }
+  function closeDrawer() {
+    if (!sidebar.classList.contains('open')) return;
+    sidebar.classList.remove('open');
+    scrim.classList.remove('show');
+    burger.classList.remove('is-open');
+    burger.setAttribute('aria-expanded', 'false');
+    burger.setAttribute('aria-label', 'Open menu');
+    document.body.classList.remove('nav-open');
+  }
+  function syncDock() {
+    const fixed = window.innerWidth > MENU_BREAK;
+    if (fixed) closeDrawer();
+    sidebar.setAttribute('aria-hidden', fixed || sidebar.classList.contains('open') ? 'false' : 'true');
+  }
+  burger.addEventListener('click', () => sidebar.classList.contains('open') ? closeDrawer() : openDrawer());
+  document.getElementById('dock-close').addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+  window.addEventListener('resize', syncDock);
+  syncDock();
+
+  /* ---- user menu ---- */
+  const whoami = document.getElementById('topbar-user');
+  const whoamiBtn = document.getElementById('topbar-user-btn');
+  function closeWhoami() { whoami.classList.remove('open'); whoamiBtn.setAttribute('aria-expanded', 'false'); }
+  whoamiBtn.addEventListener('click', e => {
+    e.stopPropagation();
+    const open = whoami.classList.toggle('open');
+    whoamiBtn.setAttribute('aria-expanded', String(open));
+  });
+  document.addEventListener('click', e => { if (!whoami.contains(e.target)) closeWhoami(); });
+
+  document.getElementById('notif-btn').addEventListener('click', () => navigateTo('alerts'));
+  document.getElementById('logout-btn').addEventListener('click', logout);
+  document.getElementById('topbar-logout-btn').addEventListener('click', logout);
+
+  /* ---- top bar search: on phones the magnifier opens the field first ---- */
+  const finder = document.getElementById('topbar-search');
+  const finderInput = document.getElementById('topbar-search-input');
+  function openFinder() { finder.classList.add('expanded'); finderInput.focus(); }
+  finder.addEventListener('submit', e => {
+    e.preventDefault();
+    if (window.innerWidth <= 720 && !finder.classList.contains('expanded')) { openFinder(); return; }
+    if (!finderInput.value.trim()) { finderInput.focus(); return; }
+    go404();
+  });
+  finderInput.addEventListener('blur', () => { if (!finderInput.value.trim()) finder.classList.remove('expanded'); });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeDrawer(); closeWhoami(); finderInput.blur(); }
+    const typing = e.target && /INPUT|TEXTAREA|SELECT/.test(e.target.tagName);
+    if (e.key === '/' && !typing) { e.preventDefault(); openFinder(); }
+  });
+
+  /* ---- chart tooltip ---- */
+  const tip = document.getElementById('chart-tip');
+  function showTip(el) {
+    tip.textContent = el.getAttribute('data-tip');
+    tip.classList.add('show');
+    const r = el.getBoundingClientRect();
+    const w = tip.offsetWidth;
+    let x = r.left + r.width / 2 - w / 2;
+    x = Math.max(8, Math.min(x, window.innerWidth - w - 8));
+    tip.style.left = x + 'px';
+    tip.style.top = Math.max(8, r.top - tip.offsetHeight - 10) + 'px';
+  }
+  function hideTip() { tip.classList.remove('show'); }
+  document.addEventListener('mouseover', e => { const t = e.target.closest('[data-tip]'); if (t) showTip(t); });
+  document.addEventListener('mouseout', e => { if (e.target.closest('[data-tip]')) hideTip(); });
+  document.addEventListener('focusin', e => { const t = e.target.closest && e.target.closest('[data-tip]'); if (t) showTip(t); });
+  document.addEventListener('focusout', hideTip);
+  window.addEventListener('scroll', hideTip, { passive: true });
+
+  /* ---- delegated clicks ---- */
+  document.addEventListener('click', e => {
+    const navBtn = e.target.closest('[data-nav]');
+    if (navBtn) { navigateTo(navBtn.getAttribute('data-nav')); return; }
+    const df = e.target.closest('.dash-filter');
+    if (df) { state.dashCategory = df.dataset.filter; renderPage(false); return; }
+    const sf = e.target.closest('.source-filter');
+    if (sf) { state.sourceStatus = sf.dataset.filter; renderPage(false); return; }
+    const toggle = e.target.closest('[data-toggle]');
+    if (toggle) { flipSwitch(toggle); return; }
+  });
+  document.addEventListener('keydown', e => {
+    const toggle = e.target.closest && e.target.closest('[data-toggle]');
+    if (toggle && (e.key === ' ' || e.key === 'Enter')) { e.preventDefault(); flipSwitch(toggle); }
+  });
+  function flipSwitch(toggle) {
+    const key = toggle.dataset.toggle;
+    state.settings[key] = !state.settings[key];
+    saveSettings();
+    toggle.classList.toggle('on', state.settings[key]);
+    toggle.setAttribute('aria-checked', String(state.settings[key]));
+    if (key === 'compactRows') document.body.classList.toggle('compact', state.settings[key]);
+  }
+
+  document.addEventListener('input', e => {
+    if (e.target && e.target.id === 'query-search-input') {
+      state.querySearch = e.target.value;
+      const caret = e.target.selectionStart;
+      renderPage(false);
+      const input = document.getElementById('query-search-input');
+      if (input) { input.focus(); input.setSelectionRange(caret, caret); }
+    }
+  });
+  document.addEventListener('change', e => {
+    if (!e.target) return;
+    if (e.target.id === 'lang-select')     { state.settings.language = e.target.value; saveSettings(); }
+    if (e.target.id === 'currency-select') { state.settings.currency = e.target.value; saveSettings(); }
+  });
+
+  /* ---- boot ---- */
+  paintUserChrome();
+  renderPage();
+  </script>
+</body>
+</html>

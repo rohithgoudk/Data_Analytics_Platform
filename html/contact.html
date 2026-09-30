@@ -1,0 +1,757 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us — Data Analytics Platform</title>
+<meta name="description" content="Talk to our data team — sales, support and partnerships. Visit us in Salem, call, or send a message and we'll reply within one working hour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://images.unsplash.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/contact.css">
+</head>
+<body class="is-loading">
+
+<!-- ============ PRELOADER — same as home ============ -->
+<div class="preloader" id="preloader" aria-hidden="true">
+  <div class="pl-inner">
+    <div class="pl-bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+    <div class="pl-word" aria-label="STACKLY">
+      <span>S</span><span>T</span><span>A</span><span>C</span><span>K</span><span>L</span><span>Y</span>
+    </div>
+    <div class="pl-text">Connecting <b id="plPct">0%</b></div>
+  </div>
+</div>
+
+<!-- ============ HEADER — same as home ============ -->
+<header class="site-header" id="siteHeader">
+  <nav class="nav wrap">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html" class="active">Contact</a>
+      <span class="nav-line" id="navLine" aria-hidden="true"></span>
+    </div>
+
+    <div class="nav-right">
+      <a href="login.html" class="nav-login">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+        Login
+      </a>
+      <a href="signup.html" class="btn btn-primary btn-sm nav-signup">
+        <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+        Sign Up
+      </a>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+  <div class="scroll-bar" id="scrollBar" aria-hidden="true"></div>
+</header>
+
+<!-- ============ MOBILE MENU ============ -->
+<div class="menu-scrim" id="menuScrim"></div>
+<aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Menu">
+  <div class="mm-top">
+    <a href="index.html" class="logo" aria-label="Home">
+      <img src="../assets/Logo.webp" alt="Company logo">
+    </a>
+    <button class="mm-close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
+  <nav class="mm-links">
+    <a href="index.html"><em>01</em>Home</a>
+    <a href="services.html"><em>02</em>Services</a>
+    <a href="about.html"><em>03</em>About</a>
+    <a href="blog.html"><em>04</em>Blog</a>
+    <a href="contact.html" class="active"><em>05</em>Contact</a>
+  </nav>
+  <div class="mm-actions">
+    <a href="login.html" class="btn btn-ghost">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+      Login
+    </a>
+    <a href="signup.html" class="btn btn-primary">
+      <svg viewBox="0 0 24 24"><circle cx="10" cy="8" r="3.5"/><path d="M3.5 20c1.2-3.4 4.2-5 6.5-5s5.3 1.6 6.5 5"/><path d="M19 8v6M22 11h-6"/></svg>
+      Sign Up
+    </a>
+  </div>
+  <p class="mm-note"><span class="live-dot"></span>All data pipelines live · 99.98% uptime</p>
+</aside>
+
+<main>
+
+<!-- ============ 1. CONTACT HERO — live chat conversation ============ -->
+<section class="c-hero" id="top">
+  <svg class="c-waves" viewBox="0 0 1440 320" preserveAspectRatio="none" aria-hidden="true">
+    <path class="wave w1" d="M0 200 C 180 140 360 260 540 200 S 900 140 1080 200 S 1440 260 1620 200 S 1980 140 2160 200 S 2520 260 2700 200 S 3060 140 3240 200"/>
+    <path class="wave w2" d="M0 240 C 180 190 360 290 540 240 S 900 190 1080 240 S 1440 290 1620 240 S 1980 190 2160 240 S 2520 290 2700 240 S 3060 190 3240 240"/>
+    <path class="wave w3" d="M0 160 C 180 120 360 210 540 160 S 900 120 1080 160 S 1440 210 1620 160 S 1980 120 2160 160 S 2520 210 2700 160 S 3060 120 3240 160"/>
+  </svg>
+  <div class="hero-glow g1" aria-hidden="true"></div>
+  <div class="hero-glow g2" aria-hidden="true"></div>
+
+  <div class="wrap c-hero-grid">
+    <div class="c-hero-copy">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="index.html">Home</a>
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+        <span>Contact</span>
+      </nav>
+      <div class="c-status">
+        <span class="live-dot" id="statusDot"></span>
+        <span id="statusText">Our team is online</span>
+        <span class="c-clock">Salem · <b id="salemTime">--:--</b> IST</span>
+      </div>
+      <h1 class="c-title">
+        <span class="c-line"><span>Let's talk about</span></span>
+        <span class="c-line"><span class="grad">your data.</span></span>
+      </h1>
+      <p class="c-sub">Questions about pricing, a tricky pipeline or a dashboard that just won't behave? Real people reply — usually within one working hour.</p>
+      <div class="c-quick">
+        <a href="#contact-form" class="btn btn-primary btn-lg">Send a message
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="tel:07123712345" class="btn btn-ghost btn-lg">
+          <svg viewBox="0 0 24 24"><path d="M4 5c0 8.8 6.2 15 15 15l2-3.5-5-2-1.5 2C11.5 15 9 12.5 8.5 9.5l2-1.5-2-5z"/></svg>
+          0712 371 2345
+        </a>
+      </div>
+      <ul class="c-stats">
+        <li><b>&lt; 1 hr</b><span>average reply</span></li>
+        <li><b>24/7</b><span>pipeline monitoring</span></li>
+        <li><b>98%</b><span>support satisfaction</span></li>
+      </ul>
+    </div>
+
+    <div class="chat" id="chat" aria-label="Example conversation with our support team">
+      <div class="chat-top">
+        <span class="chat-av">
+          <span class="ph"><img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=120&h=120&q=70" alt="" onerror="this.parentNode.classList.add('is-broken')"></span>
+          <i class="live-dot"></i>
+        </span>
+        <span class="chat-who"><b>Arjun · Stackly team</b><em>Typically replies in minutes</em></span>
+        <span class="chat-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+      <div class="chat-body">
+        <div class="msg me m1">Hi! Can we see Snowflake and HubSpot data in one dashboard?<span class="msg-time">10:02</span></div>
+        <div class="typing t1" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="msg them m2">Absolutely — most teams connect both on day one. Want a 20-minute walkthrough with your own data?<span class="msg-time">10:03</span></div>
+        <div class="msg me m3">Yes please, Thursday works for us.<span class="msg-time">10:04</span></div>
+        <div class="typing t2" aria-hidden="true"><i></i><i></i><i></i></div>
+        <div class="booked">
+          <span class="booked-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4M9 15l2 2 4-4"/></svg></span>
+          <span><b>Demo booked</b><em>Thursday · 11:00 IST · Google Meet</em></span>
+        </div>
+      </div>
+      <div class="chat-input" aria-hidden="true">
+        <span>Write a message…</span>
+        <span class="chat-send"><svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2-6z"/></svg></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2. CONTACT CHANNELS ============ -->
+<section class="section channels" id="channels">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Reach the right team</span>
+      <h2>Pick a channel, <span class="grad">get a real answer</span></h2>
+      <p>Every message goes straight to the people who can help — no ticket ping-pong.</p>
+    </div>
+    <div class="ch-grid">
+      <a href="mailto:hello@stackly.com?subject=Sales%20enquiry" class="ch-card">
+        <span class="ch-ico"><svg viewBox="0 0 24 24"><path d="M4 16l6-6 4 4 6-6M14 8h6v6"/></svg></span>
+        <h3>Sales</h3>
+        <p>Pricing, demos and choosing the right plan for your team.</p>
+        <span class="ch-link">hello@stackly.com</span>
+        <span class="ch-time"><span class="live-dot"></span>Replies in ~1 hr</span>
+      </a>
+      <a href="mailto:hello@stackly.com?subject=Support%20request" class="ch-card">
+        <span class="ch-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M5.6 5.6l3.6 3.6M14.8 14.8l3.6 3.6M18.4 5.6l-3.6 3.6M9.2 14.8l-3.6 3.6"/></svg></span>
+        <h3>Support</h3>
+        <p>Connectors, dashboards, alerts — anything not working as expected.</p>
+        <span class="ch-link">hello@stackly.com</span>
+        <span class="ch-time"><span class="live-dot"></span>24/7 for Enterprise</span>
+      </a>
+      <a href="mailto:hello@stackly.com?subject=Partnership" class="ch-card">
+        <span class="ch-ico"><svg viewBox="0 0 24 24"><path d="M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1"/></svg></span>
+        <h3>Partnerships</h3>
+        <p>Agencies, resellers and technology partners who want to build with us.</p>
+        <span class="ch-link">hello@stackly.com</span>
+        <span class="ch-time"><span class="live-dot"></span>Replies in 1 day</span>
+      </a>
+      <a href="tel:07123712345" class="ch-card">
+        <span class="ch-ico"><svg viewBox="0 0 24 24"><path d="M4 5c0 8.8 6.2 15 15 15l2-3.5-5-2-1.5 2C11.5 15 9 12.5 8.5 9.5l2-1.5-2-5z"/></svg></span>
+        <h3>Call us</h3>
+        <p>Prefer to talk? Our Salem team picks up Monday to Saturday.</p>
+        <span class="ch-link">0712 371 2345</span>
+        <span class="ch-time"><span class="live-dot"></span>9:00 – 19:00 IST</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3. CONTACT FORM ============ -->
+<section class="section form-sec" id="contact-form">
+  <div class="wrap form-grid">
+    <aside class="form-side">
+      <span class="kicker">Send a message</span>
+      <h2>Tell us what you're <span class="grad">working on</span></h2>
+      <p>Share a little about your data and goals. The more we know, the more useful our first reply will be.</p>
+      <ol class="next-steps">
+        <li><span class="ns-no">1</span><div><b>We read every message</b><span>A data specialist — not a bot — reviews your note.</span></div></li>
+        <li><span class="ns-no">2</span><div><b>Reply within one working hour</b><span>With answers, or times for a short call.</span></div></li>
+        <li><span class="ns-no">3</span><div><b>A walkthrough on your data</b><span>See your own numbers live, with no commitment.</span></div></li>
+      </ol>
+      <figure class="ph side-img">
+        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=800&q=70" alt="Our team reviewing a customer's dashboard" loading="lazy" onerror="this.parentNode.classList.add('is-broken')">
+        <figcaption><span class="live-dot"></span>14 people on the team today</figcaption>
+      </figure>
+    </aside>
+
+    <form class="c-form" id="contactForm" novalidate>
+      <div class="f-row">
+        <div class="field">
+          <label for="fName">Full name <em>*</em></label>
+          <input id="fName" name="name" type="text" placeholder="Priya Nair" autocomplete="name" required>
+          <span class="f-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="fEmail">Work email <em>*</em></label>
+          <input id="fEmail" name="email" type="email" placeholder="you@company.com" autocomplete="email" required>
+          <span class="f-err" aria-live="polite"></span>
+        </div>
+      </div>
+      <div class="f-row">
+        <div class="field">
+          <label for="fCompany">Company</label>
+          <input id="fCompany" name="company" type="text" placeholder="Company name" autocomplete="organization">
+          <span class="f-err" aria-live="polite"></span>
+        </div>
+        <div class="field">
+          <label for="fSize">Team size</label>
+          <div class="select">
+            <select id="fSize" name="size">
+              <option value="">Select team size</option>
+              <option>1 – 10</option>
+              <option>11 – 50</option>
+              <option>51 – 200</option>
+              <option>201 – 1,000</option>
+              <option>1,000+</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <fieldset class="field chips-field">
+        <legend>What can we help with?</legend>
+        <div class="chips">
+          <label class="chip"><input type="checkbox" name="topic" value="dashboards"><span>Dashboards &amp; BI</span></label>
+          <label class="chip"><input type="checkbox" name="topic" value="engineering"><span>Data engineering</span></label>
+          <label class="chip"><input type="checkbox" name="topic" value="ai"><span>Forecasting &amp; AI</span></label>
+          <label class="chip"><input type="checkbox" name="topic" value="governance"><span>Governance</span></label>
+          <label class="chip"><input type="checkbox" name="topic" value="pricing"><span>Pricing</span></label>
+          <label class="chip"><input type="checkbox" name="topic" value="other"><span>Something else</span></label>
+        </div>
+      </fieldset>
+      <div class="field">
+        <label for="fMsg">Message <em>*</em></label>
+        <textarea id="fMsg" name="message" rows="5" maxlength="1000" placeholder="Tell us about your data sources, your team and what you'd like to achieve…" required></textarea>
+        <div class="f-foot"><span class="f-err" aria-live="polite"></span><span class="f-count" id="msgCount">0 / 1000</span></div>
+      </div>
+      <div class="field">
+        <label class="check">
+          <input type="checkbox" id="fConsent" name="consent" required>
+          <span class="check-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 12l4 4 8-8"/></svg></span>
+          <span>I agree to be contacted about my enquiry. We never share your details.</span>
+        </label>
+        <span class="f-err" aria-live="polite"></span>
+      </div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block f-submit">
+        Send message
+        <svg viewBox="0 0 24 24"><path d="M4 12l16-8-6 16-2-6z"/></svg>
+      </button>
+    </form>
+  </div>
+</section>
+
+<!-- ============ 4. OFFICES ============ -->
+<section class="section offices" id="offices">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Our offices</span>
+      <h2>Close to our customers, <span class="grad">in three time zones</span></h2>
+    </div>
+    <div class="office-grid">
+      <article class="office">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=70" alt="Our Salem headquarters workspace" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><span class="office-tag">Headquarters</span></figure>
+        <div class="office-body">
+          <div class="office-top"><h3>Salem, India</h3><span class="office-clock" data-tz="Asia/Kolkata">--:--</span></div>
+          <p>MMR Complex, Periyakollappatty, Chinna Thirupathi, Salem, Tamil Nadu 636008</p>
+          <a href="#map" class="text-link">See on the map <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="office">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=900&q=70" alt="Team working in the Bengaluru office" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><span class="office-tag">Engineering hub</span></figure>
+        <div class="office-body">
+          <div class="office-top"><h3>Bengaluru, India</h3><span class="office-clock" data-tz="Asia/Kolkata">--:--</span></div>
+          <p>Our engineering and data science teams build and run the platform from here.</p>
+          <a href="mailto:hello@stackly.com?subject=Bengaluru%20office" class="text-link">Email the team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+      <article class="office">
+        <figure class="ph"><img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=900&q=70" alt="Meeting in the London office" loading="lazy" onerror="this.parentNode.classList.add('is-broken')"><span class="office-tag">Europe</span></figure>
+        <div class="office-body">
+          <div class="office-top"><h3>London, UK</h3><span class="office-clock" data-tz="Europe/London">--:--</span></div>
+          <p>Sales and customer success for our customers across Europe and the UK.</p>
+          <a href="mailto:hello@stackly.com?subject=London%20office" class="text-link">Email the team <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. MAP ============ -->
+<section class="section map-sec" id="map">
+  <div class="wrap">
+    <div class="sec-head" data-head>
+      <span class="kicker">Visit us</span>
+      <h2>Find our <span class="grad">Salem headquarters</span></h2>
+    </div>
+    <div class="map-wrap">
+      <div class="map-frame is-dark" id="mapFrame">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.1616097152896!2d78.1739798!3d11.682956599999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babefef7fd970bb%3A0xe11aef1a71994f9!2sStackly!5e0!3m2!1sen!2sin!4v1790756651137!5m2!1sen!2sin" title="Map showing the Stackly office in Salem" allowfullscreen="" loading="lazy" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <button type="button" class="map-toggle" id="mapToggle" aria-pressed="true">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+          <span>Light map</span>
+        </button>
+      </div>
+      <div class="map-card">
+        <span class="map-pin"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg></span>
+        <h3>Stackly HQ</h3>
+        <p>MMR Complex, Periyakollappatty,<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008</p>
+        <ul class="hours">
+          <li><span>Mon – Fri</span><b>9:00 – 19:00</b></li>
+          <li><span>Saturday</span><b>10:00 – 14:00</b></li>
+          <li><span>Sunday</span><b>Closed</b></li>
+        </ul>
+        <a href="https://www.google.com/maps/dir/?api=1&amp;destination=11.6829566,78.1739798" target="_blank" rel="noopener" class="btn btn-primary btn-block">Get directions
+          <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. FAQ ============ -->
+<section class="section faq" id="faq">
+  <div class="wrap faq-grid">
+    <div class="faq-copy">
+      <span class="kicker">FAQ</span>
+      <h2>Before you <span class="grad">get in touch</span></h2>
+      <p>Quick answers to the questions we hear most. Still stuck? Send us a message.</p>
+      <div class="faq-card">
+        <span class="faq-ico"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/><path d="M9 10h6M9 14h4"/></svg></span>
+        <div><b>Average first reply</b><span><strong>47 minutes</strong> on working days</span></div>
+      </div>
+      <a href="#contact-form" class="btn btn-ghost">Ask your own question</a>
+    </div>
+    <div class="acc">
+      <div class="acc-item is-open">
+        <button class="acc-q" aria-expanded="true">How quickly will you reply?<i></i></button>
+        <div class="acc-a"><div><p>Within one working hour, Monday to Saturday (IST). Messages sent overnight are answered first thing the next morning.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Can I book a demo with my own data?<i></i></button>
+        <div class="acc-a"><div><p>Yes. Connect a sample of your data before the call, or send us a CSV, and we'll build a live dashboard with it during the walkthrough.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">I'm already a customer. Where do I get support?<i></i></button>
+        <div class="acc-a"><div><p>Use the chat inside the app or email hello@stackly.com with "Support" in the subject. Enterprise customers also have a 24/7 phone line.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Can I visit your Salem office?<i></i></button>
+        <div class="acc-a"><div><p>Of course — we love meeting customers. Send a message first so the right people are there, and we'll have coffee ready.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Do you sign NDAs before we share data?<i></i></button>
+        <div class="acc-a"><div><p>Yes. We're happy to sign your NDA or use ours before any data is shared, and our processes are SOC 2 Type II certified.</p></div></div>
+      </div>
+      <div class="acc-item">
+        <button class="acc-q" aria-expanded="false">Are you hiring?<i></i></button>
+        <div class="acc-a"><div><p>We are. See the open roles on our <a href="about.html#careers">About page</a>, or send your CV with the role name in the subject.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ FOOTER — same as home ============ -->
+<footer class="footer">
+  <div class="footer-glow" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="footer-cta">
+      <h3>Ready to see your data clearly?</h3>
+      <a href="contact.html" class="btn btn-primary">Talk to our team
+        <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" aria-label="Home">
+          <img src="../assets/Logo.webp" alt="Company logo">
+        </a>
+        <p>Dashboards, forecasting and data pipelines — built for teams who want answers, not more spreadsheets.</p>
+        <div class="footer-social">
+          <a href="404.html" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1"/></svg></a>
+          <a href="404.html" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 21v-7h2.5l.5-3H14V9.2c0-.9.3-1.7 1.7-1.7H17V5c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2V11H8v3h2.6v7"/></svg></a>
+          <a href="404.html" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><rect x="3" y="9" width="4" height="10"/><circle cx="5" cy="5" r="1.6"/><path d="M11 19v-6.5a2.5 2.5 0 0 1 5 0V19M11 12.5V19"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <a href="404.html">Dashboards &amp; BI</a>
+        <a href="404.html">Data engineering</a>
+        <a href="404.html">Predictive analytics</a>
+        <a href="404.html">Data governance</a>
+        <a href="404.html">Embedded analytics</a>
+      </div>
+      <div class="footer-col">
+        <h4>Get In Touch</h4>
+        <ul class="footer-contact">
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M12 21s-7-6.1-7-11.5A7 7 0 0 1 19 9.5C19 14.9 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.4"/></svg>
+            <a href="404.html">MMR Complex, Periyakollappatty,<br>Chinna Thirupathi, Salem, Tamil<br>Nadu 636008</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><path d="M4 5c0 8.8 6.2 15 15 15l2-3.5-5-2-1.5 2C11.5 15 9 12.5 8.5 9.5l2-1.5-2-5z"/></svg>
+            <a href="404.html">0712 371 2345</a>
+          </li>
+          <li>
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <a href="404.html">hello@stackly.com</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 STACKLY SOLUTIONS</span>
+      <span class="status-dot"><span class="live-dot"></span>All systems operational</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Back to top -->
+<button class="to-top" id="toTop" aria-label="Back to top">
+  <svg class="tt-ring" viewBox="0 0 48 48"><circle cx="24" cy="24" r="21"/><circle class="tt-fill" id="ttFill" cx="24" cy="24" r="21"/></svg>
+  <svg class="tt-arrow" viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+</button>
+
+<!-- GSAP + ScrollTrigger -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+<script>
+(function () {
+  'use strict';
+  var REDUCED = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var CAN_HOVER = window.matchMedia('(hover: hover)').matches;
+  var $ = function (s, c) { return (c || document).querySelector(s); };
+  var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
+
+  var HAS_GSAP = !!(window.gsap && window.ScrollTrigger);
+  if (HAS_GSAP) gsap.registerPlugin(ScrollTrigger);
+  var ANIM = HAS_GSAP && !REDUCED;
+  if (ANIM) document.documentElement.classList.add('has-gsap');
+
+  /* ---------- Live clocks + "online" status (Salem, IST) ---------- */
+  function timeIn(tz) {
+    try { return new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: tz }).format(new Date()); }
+    catch (e) { return ''; }
+  }
+  function updateClocks() {
+    $('#salemTime').textContent = timeIn('Asia/Kolkata');
+    $$('.office-clock').forEach(function (el) { el.textContent = timeIn(el.dataset.tz) + ' local'; });
+    try {
+      var parts = new Intl.DateTimeFormat('en-GB', { weekday: 'short', hour: 'numeric', hourCycle: 'h23', timeZone: 'Asia/Kolkata' }).formatToParts(new Date());
+      var day = '', hour = 0;
+      parts.forEach(function (p) { if (p.type === 'weekday') day = p.value; if (p.type === 'hour') hour = +p.value; });
+      var open = day !== 'Sun' && (day === 'Sat' ? hour >= 10 && hour < 14 : hour >= 9 && hour < 19);
+      $('#statusText').textContent = open ? 'Our team is online' : "We're offline — we'll reply first thing";
+      $('#statusDot').classList.toggle('is-off', !open);
+    } catch (e) {}
+  }
+  updateClocks();
+  setInterval(updateClocks, 20000);
+
+  /* ---------- Hero: title lines rise, chat plays out with typing dots ---------- */
+  var heroTl = null;
+  if (ANIM) {
+    heroTl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
+    heroTl
+      .from('.c-hero .crumbs, .c-status', { y: 20, opacity: 0, duration: .6, stagger: .08 })
+      .from('.c-line > span', { yPercent: 110, skewY: 6, duration: 1, stagger: .12, ease: 'expo.out' }, '-=.3')
+      .from('.c-sub', { y: 24, opacity: 0, duration: .7 }, '-=.6')
+      .from('.c-quick .btn', { y: 20, opacity: 0, duration: .6, stagger: .1 }, '-=.5')
+      .from('.c-stats li', { y: 20, opacity: 0, duration: .6, stagger: .08 }, '-=.4')
+      .from('.chat', { y: 60, rotationX: 25, rotationY: -15, opacity: 0, transformPerspective: 1400, duration: 1.2, ease: 'expo.out' }, .3)
+      .from('.m1', { y: 20, scale: .9, opacity: 0, transformOrigin: '100% 100%', duration: .5, ease: 'back.out(1.6)' }, '+=.1')
+      .fromTo('.t1', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .3 }, '+=.2')
+      .to('.t1', { opacity: 0, height: 0, marginTop: 0, padding: 0, duration: .25 }, '+=1')
+      .from('.m2', { y: 20, scale: .9, opacity: 0, transformOrigin: '0% 100%', duration: .5, ease: 'back.out(1.6)' })
+      .from('.m3', { y: 20, scale: .9, opacity: 0, transformOrigin: '100% 100%', duration: .5, ease: 'back.out(1.6)' }, '+=.7')
+      .fromTo('.t2', { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: .3 }, '+=.2')
+      .to('.t2', { opacity: 0, height: 0, marginTop: 0, padding: 0, duration: .25 }, '+=.9')
+      .from('.booked', { y: 30, rotationX: -70, opacity: 0, transformPerspective: 800, transformOrigin: '50% 0%', duration: .8, ease: 'back.out(1.4)' })
+      .from('.booked-ico', { rotation: -30, scale: 0, duration: .5, ease: 'back.out(3)' }, '-=.4');
+  }
+
+  /* ---------- Preloader ---------- */
+  var pre = $('#preloader'), pct = $('#plPct'), p = 0, done = false, finished = false;
+  var tick = setInterval(function () {
+    p = Math.min(p + Math.random() * 18, done ? 100 : 92);
+    pct.textContent = Math.round(p) + '%';
+    if (p >= 100) finishLoad();
+  }, 120);
+  function finishLoad() {
+    if (finished) return;
+    finished = true;
+    clearInterval(tick);
+    pct.textContent = '100%';
+    pre.classList.add('is-done');
+    document.body.classList.remove('is-loading');
+    setTimeout(function () { pre.style.display = 'none'; }, 700);
+    if (heroTl) heroTl.play();
+    if (HAS_GSAP) setTimeout(function () { ScrollTrigger.refresh(); }, 720);
+  }
+  window.addEventListener('load', function () { done = true; });
+  setTimeout(function () { done = true; }, 1600);
+  setTimeout(finishLoad, 3500);
+
+  /* ---------- Header, progress bar, back-to-top ---------- */
+  var header = $('#siteHeader'), bar = $('#scrollBar');
+  var toTop = $('#toTop'), ttFill = $('#ttFill'), ringLen = 2 * Math.PI * 21;
+  ttFill.style.strokeDasharray = ringLen;
+  function onScroll() {
+    var y = window.scrollY, max = document.documentElement.scrollHeight - innerHeight;
+    var prog = max > 0 ? y / max : 0;
+    header.classList.toggle('is-solid', y > 20);
+    bar.style.transform = 'scaleX(' + prog + ')';
+    ttFill.style.strokeDashoffset = ringLen * (1 - prog);
+    toTop.classList.toggle('is-on', y > 600);
+  }
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () { onScroll(); ticking = false; });
+  }, { passive: true });
+  onScroll();
+  toTop.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: REDUCED ? 'auto' : 'smooth' }); });
+
+  /* ---------- Nav underline ---------- */
+  var navLinks = $('#navLinks'), navLine = $('#navLine');
+  function moveLine(a) {
+    if (!a) return;
+    navLine.style.width = a.offsetWidth + 'px';
+    navLine.style.transform = 'translateX(' + a.offsetLeft + 'px)';
+  }
+  $$('a', navLinks).forEach(function (a) { a.addEventListener('mouseenter', function () { moveLine(a); }); });
+  navLinks.addEventListener('mouseleave', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('load', function () { moveLine($('a.active', navLinks)); });
+  window.addEventListener('resize', function () { moveLine($('a.active', navLinks)); });
+  moveLine($('a.active', navLinks));
+
+  /* ---------- Mobile menu ---------- */
+  var menu = $('#mobileMenu'), scrim = $('#menuScrim'), burger = $('#hamburger');
+  function openMenu() {
+    menu.classList.add('is-open'); scrim.classList.add('is-on');
+    document.body.classList.add('menu-open');
+    burger.classList.add('is-open'); burger.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+  }
+  function closeMenu() {
+    menu.classList.remove('is-open'); scrim.classList.remove('is-on');
+    document.body.classList.remove('menu-open');
+    burger.classList.remove('is-open'); burger.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+  }
+  burger.addEventListener('click', function () { menu.classList.contains('is-open') ? closeMenu() : openMenu(); });
+  $('#mobileMenuClose').addEventListener('click', closeMenu);
+  scrim.addEventListener('click', closeMenu);
+  $$('a', menu).forEach(function (a) { a.addEventListener('click', closeMenu); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeMenu(); });
+  window.addEventListener('resize', function () { if (innerWidth > 1024) closeMenu(); });
+
+  /* ---------- Smooth in-page anchors ---------- */
+  $$('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var id = a.getAttribute('href');
+      var t = id.length > 1 && document.querySelector(id);
+      if (!t) return;
+      e.preventDefault();
+      window.scrollTo({ top: t.getBoundingClientRect().top + scrollY - 80, behavior: REDUCED ? 'auto' : 'smooth' });
+    });
+  });
+
+  /* ---------- Contact form: validate, then go to 404.html ---------- */
+  var form = $('#contactForm'), msg = $('#fMsg'), count = $('#msgCount');
+  msg.addEventListener('input', function () { count.textContent = msg.value.length + ' / 1000'; });
+  function errBox(input) { var f = input.closest('.field'); return f && $('.f-err', f); }
+  function setErr(input, text) {
+    var f = input.closest('.field'), box = errBox(input);
+    f.classList.toggle('has-err', !!text);
+    if (box) box.textContent = text || '';
+    if (input.type !== 'checkbox') input.setAttribute('aria-invalid', text ? 'true' : 'false');
+  }
+  /* Full name and company: letters and spaces only — numbers and symbols are removed as you type */
+  var LETTERS_ONLY = /^[\p{L} ]+$/u;
+  ['#fName', '#fCompany'].forEach(function (sel) {
+    var input = $(sel);
+    input.addEventListener('input', function () {
+      var clean = input.value.replace(/[^\p{L} ]/gu, '').replace(/ {2,}/g, ' ');
+      if (clean !== input.value) {
+        var pos = input.selectionStart - (input.value.length - clean.length);
+        input.value = clean;
+        input.setSelectionRange(Math.max(pos, 0), Math.max(pos, 0));
+        setErr(input, 'Only letters are allowed — no numbers or symbols.');
+      } else if (input.id === 'fCompany') {
+        setErr(input, '');
+      }
+    });
+  });
+  $('#fCompany').addEventListener('blur', function () { check($('#fCompany')); });
+
+  function check(input) {
+    var v = input.value.trim(), text = '';
+    if (input.id === 'fName' && v.length < 2) text = 'Please enter your name.';
+    else if (input.id === 'fName' && !LETTERS_ONLY.test(v)) text = 'Only letters are allowed — no numbers or symbols.';
+    if (input.id === 'fCompany' && v && !LETTERS_ONLY.test(v)) text = 'Only letters are allowed — no numbers or symbols.';
+    if (input.id === 'fEmail' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) text = 'Please enter a valid email address.';
+    if (input.id === 'fMsg' && v.length < 10) text = 'Tell us a little more (at least 10 characters).';
+    if (input.id === 'fConsent' && !input.checked) text = 'Please tick the box so we can reply.';
+    setErr(input, text);
+    return !text;
+  }
+  var required = ['#fName', '#fEmail', '#fCompany', '#fMsg', '#fConsent'].map(function (s) { return $(s); });
+  required.forEach(function (input) {
+    input.addEventListener(input.type === 'checkbox' ? 'change' : 'blur', function () { check(input); });
+    input.addEventListener('input', function () { if (input.closest('.field').classList.contains('has-err')) check(input); });
+  });
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var bad = required.filter(function (input) { return !check(input); });
+    if (!bad.length) { window.location.href = '404.html'; return; }
+    bad[0].focus();
+    if (ANIM) gsap.fromTo(bad.map(function (i) { return i.closest('.field'); }), { x: -8 }, { x: 0, duration: .5, ease: 'elastic.out(1, .3)', clearProps: 'transform' });
+  });
+
+  /* ---------- Map: dark / light toggle ---------- */
+  var mapFrame = $('#mapFrame'), mapToggle = $('#mapToggle');
+  mapToggle.addEventListener('click', function () {
+    var dark = mapFrame.classList.toggle('is-dark');
+    mapToggle.setAttribute('aria-pressed', String(dark));
+    $('span', mapToggle).textContent = dark ? 'Light map' : 'Dark map';
+  });
+
+  /* ---------- FAQ accordion ---------- */
+  $$('.acc-item').forEach(function (item) {
+    $('.acc-q', item).addEventListener('click', function () {
+      var open = item.classList.contains('is-open');
+      $$('.acc-item').forEach(function (x) { x.classList.remove('is-open'); $('.acc-q', x).setAttribute('aria-expanded', 'false'); });
+      if (!open) { item.classList.add('is-open'); $('.acc-q', item).setAttribute('aria-expanded', 'true'); }
+    });
+  });
+
+  if (!ANIM) return;
+
+  /* ---------- Channel cards tilt toward the mouse (desktop) ---------- */
+  if (CAN_HOVER) {
+    $$('.ch-card').forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left) / r.width - .5, y = (e.clientY - r.top) / r.height - .5;
+        card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+        card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+        gsap.to(card, { rotationY: x * 14, rotationX: -y * 14, transformPerspective: 900, duration: .5, ease: 'power2.out' });
+      });
+      card.addEventListener('mouseleave', function () { gsap.to(card, { rotationY: 0, rotationX: 0, duration: .8, ease: 'elastic.out(1, .5)' }); });
+    });
+  }
+
+  /* ---------- Scroll animations (rebuilt when switching desktop ↔ mobile) ---------- */
+  var mm = gsap.matchMedia();
+  mm.add({ desk: '(min-width: 901px)', mob: '(max-width: 900px)' }, function (ctx) {
+    var desk = ctx.conditions.desk;
+
+    // Hero waves drift, content lifts away on scroll
+    gsap.to('.c-waves', { yPercent: 25, ease: 'none', scrollTrigger: { trigger: '.c-hero', start: 'top top', end: 'bottom top', scrub: true } });
+    gsap.to('.c-hero-grid', { y: -50, opacity: .4, ease: 'none', scrollTrigger: { trigger: '.c-hero', start: 'center top', end: 'bottom top', scrub: true } });
+
+    // Section headings
+    $$('[data-head]').forEach(function (h) {
+      gsap.from(h.children, { y: 40, opacity: 0, duration: .9, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: h, start: 'top 85%' } });
+    });
+
+    // 2. Channel cards flip up
+    gsap.from('.ch-card', {
+      y: 60, rotationX: -60, opacity: 0, transformPerspective: 1000, transformOrigin: '50% 100%',
+      duration: 1, stagger: .1, ease: 'power3.out', clearProps: 'opacity',
+      scrollTrigger: { trigger: '.ch-grid', start: 'top 82%' }
+    });
+    gsap.from('.ch-ico', { scale: 0, rotation: -90, duration: .7, stagger: .1, delay: .3, ease: 'back.out(2)', scrollTrigger: { trigger: '.ch-grid', start: 'top 82%' } });
+
+    // 3. Form side steps + form card rises, fields cascade
+    gsap.from('.form-side > .kicker, .form-side > h2, .form-side > p', { y: 30, opacity: 0, duration: .8, stagger: .1, ease: 'power3.out', scrollTrigger: { trigger: '.form-side', start: 'top 80%' } });
+    gsap.from('.next-steps li', { x: -40, opacity: 0, duration: .7, stagger: .15, ease: 'power3.out', scrollTrigger: { trigger: '.next-steps', start: 'top 85%' } });
+    gsap.fromTo('.next-steps', { '--line': 0 }, { '--line': 1, duration: 1.2, ease: 'power2.out', scrollTrigger: { trigger: '.next-steps', start: 'top 85%' } });
+    gsap.fromTo('.side-img', { clipPath: 'inset(100% 0% 0% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, ease: 'expo.inOut', scrollTrigger: { trigger: '.side-img', start: 'top 88%' } });
+    gsap.from('.c-form', { y: 80, rotationX: desk ? 12 : 0, opacity: 0, transformPerspective: 1400, duration: 1.1, ease: 'expo.out', scrollTrigger: { trigger: '.c-form', start: 'top 85%' } });
+    gsap.from('.c-form .field, .c-form .f-row, .f-submit', { y: 24, opacity: 0, duration: .6, stagger: .06, delay: .25, ease: 'power3.out', clearProps: 'transform,opacity', scrollTrigger: { trigger: '.c-form', start: 'top 85%' } });
+
+    // 4. Offices: photos wipe in, cards lift, images drift
+    gsap.from('.office', { y: 60, opacity: 0, duration: .9, stagger: .12, ease: 'power3.out', scrollTrigger: { trigger: '.office-grid', start: 'top 82%' } });
+    gsap.fromTo('.office .ph', { clipPath: 'inset(0% 0% 100% 0%)' }, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.2, stagger: .12, ease: 'expo.inOut', scrollTrigger: { trigger: '.office-grid', start: 'top 82%' } });
+    if (desk) {
+      $$('.office .ph img').forEach(function (img) {
+        gsap.fromTo(img, { yPercent: -6 }, { yPercent: 6, ease: 'none', scrollTrigger: { trigger: img, start: 'top bottom', end: 'bottom top', scrub: true } });
+      });
+    }
+
+    // 5. Map opens as an expanding circle, info card slides over it
+    gsap.fromTo('.map-frame', { clipPath: 'circle(8% at 50% 50%)' }, { clipPath: 'circle(75% at 50% 50%)', duration: 1.6, ease: 'expo.inOut', scrollTrigger: { trigger: '.map-wrap', start: 'top 78%' } });
+    gsap.from('.map-card', { x: desk ? 80 : 0, y: desk ? 0 : 50, rotationY: desk ? -25 : 0, opacity: 0, transformPerspective: 1200, duration: 1, delay: .6, ease: 'power3.out', scrollTrigger: { trigger: '.map-wrap', start: 'top 78%' } });
+    gsap.from('.map-pin', { y: -40, scale: 0, duration: .8, delay: 1.1, ease: 'bounce.out', scrollTrigger: { trigger: '.map-wrap', start: 'top 78%' } });
+
+    // 6. FAQ
+    gsap.from('.faq-copy > *', { y: 30, opacity: 0, duration: .8, stagger: .08, ease: 'power3.out', scrollTrigger: { trigger: '.faq-copy', start: 'top 85%' } });
+    gsap.from('.acc-item', { y: 30, rotationX: -30, opacity: 0, transformPerspective: 800, duration: .7, stagger: .08, ease: 'power3.out', clearProps: 'transform', scrollTrigger: { trigger: '.acc', start: 'top 85%' } });
+
+    // Footer CTA
+    gsap.from('.footer-cta', { y: 40, scale: .96, opacity: 0, duration: .9, ease: 'power3.out', scrollTrigger: { trigger: '.footer-cta', start: 'top 90%' } });
+  });
+
+  window.addEventListener('load', function () { ScrollTrigger.refresh(); });
+})();
+</script>
+</body>
+</html>

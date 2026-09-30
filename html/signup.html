@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account – Data Analytics Platform</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+
+  <!-- ========== Background ========== -->
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--one" aria-hidden="true"></div>
+  <div class="bg-glow bg-glow--two" aria-hidden="true"></div>
+  <div class="particles" aria-hidden="true">
+    <span style="--x: 6%;  --d: 15s; --delay: 0s; --s: 5px"></span>
+    <span style="--x: 20%; --d: 19s; --delay: 4s; --s: 3px"></span>
+    <span style="--x: 34%; --d: 13s; --delay: 7s; --s: 4px"></span>
+    <span style="--x: 50%; --d: 21s; --delay: 2s; --s: 3px"></span>
+    <span style="--x: 64%; --d: 16s; --delay: 9s; --s: 5px"></span>
+    <span style="--x: 78%; --d: 18s; --delay: 5s; --s: 4px"></span>
+    <span style="--x: 92%; --d: 14s; --delay: 1s; --s: 3px"></span>
+  </div>
+
+  <!-- ========== Top bar ========== -->
+  <header class="topbar">
+    <a href="index.html" class="back-home">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5"/><path d="M11 18l-6-6 6-6"/></svg>
+      <span>Back to home</span>
+    </a>
+  </header>
+
+  <main class="login-layout">
+
+    <!-- ========== Left: showcase ========== -->
+    <section class="showcase" aria-hidden="true">
+      <p class="showcase__tag"><span class="live-dot"></span> Setup in minutes</p>
+      <h2 class="showcase__title">Your data, <span class="grad-text">ready to explore.</span></h2>
+      <p class="showcase__text">Create your workspace and your first dashboard is live before the onboarding call.</p>
+
+      <ol class="steps">
+        <li class="step">
+          <span class="step__num">1</span>
+          <div>
+            <span class="step__title">Connect your sources</span>
+            <span class="step__text">Databases, spreadsheets, CRMs and 100+ integrations.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num">2</span>
+          <div>
+            <span class="step__title">Build dashboards</span>
+            <span class="step__text">Drag-and-drop charts, KPIs and live filters.</span>
+          </div>
+        </li>
+        <li class="step">
+          <span class="step__num">3</span>
+          <div>
+            <span class="step__title">Share insights</span>
+            <span class="step__text">Scheduled reports and role-based access for your team.</span>
+          </div>
+        </li>
+      </ol>
+
+      <div class="panel">
+        <div class="panel__head">
+          <span class="dot dot--red"></span><span class="dot dot--yellow"></span><span class="dot dot--green"></span>
+          <span class="panel__label">workspace_preview</span>
+        </div>
+        <div class="panel__body">
+          <div class="bars">
+            <span style="--h: 38%"></span><span style="--h: 52%"></span><span style="--h: 47%"></span>
+            <span style="--h: 64%"></span><span style="--h: 72%"></span><span style="--h: 69%"></span>
+            <span style="--h: 86%"></span><span style="--h: 94%"></span>
+          </div>
+          <svg class="line" viewBox="0 0 300 100" preserveAspectRatio="none">
+            <polyline points="0,78 43,64 86,68 129,48 172,36 215,40 258,20 300,10"/>
+          </svg>
+          <div class="scanline"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== Right: sign-up card ========== -->
+    <section class="card-wrap">
+      <div class="card">
+
+        <!-- progress bar: fills as the form is completed -->
+        <span class="card-progress" aria-hidden="true"><span class="card-progress__fill" id="progressFill"></span></span>
+
+        <!-- Logo placeholder — replace src with your logo, e.g. images/logo.png -->
+        <a href="index.html" class="logo" aria-label="Go to homepage">
+          <img src="../assets/Logo.webp" alt="Company logo">
+        </a>
+
+        <p class="kicker">New account</p>
+        <h1 class="card__title">Create your account</h1>
+        <p class="card__sub">Already registered? <a href="login.html">Sign in</a></p>
+
+        <!-- Role toggle -->
+        <div class="role-toggle" id="roleToggle" role="tablist" aria-label="Account type">
+          <span class="role-ind" id="roleInd"></span>
+          <button type="button" class="role-btn active" data-role="user" role="tab" aria-selected="true">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+            User sign up
+          </button>
+          <button type="button" class="role-btn" data-role="admin" role="tab" aria-selected="false">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/></svg>
+            Admin sign up
+          </button>
+        </div>
+        <p class="role-note" id="roleNote">A user account holds your own dashboards, reports and saved queries.</p>
+
+        <form class="form" id="signupForm" novalidate>
+
+          <div class="form-row">
+            <div class="field" id="f-first">
+              <label for="firstName">First name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+                <input type="text" id="firstName" placeholder="Jordan" autocomplete="given-name">
+              </div>
+              <span class="field-error">Letters only, at least 2.</span>
+            </div>
+            <div class="field" id="f-last">
+              <label for="lastName">Last name</label>
+              <div class="input-wrap">
+                <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"/><path d="M4.5 20c1.5-4 5-6 7.5-6s6 2 7.5 6"/></svg>
+                <input type="text" id="lastName" placeholder="Reyes" autocomplete="family-name">
+              </div>
+              <span class="field-error">Letters only, at least 2.</span>
+            </div>
+          </div>
+
+          <div class="field" id="f-email">
+            <label for="email">Work email</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              <input type="email" id="email" placeholder="name@company.com" autocomplete="email">
+            </div>
+            <span class="field-error">Enter a valid work email address.</span>
+          </div>
+
+          <div class="field" id="f-company">
+            <label for="company">Company</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M9 7h1M14 7h1M9 11h1M14 11h1M9 15h1M14 15h1"/></svg>
+              <input type="text" id="company" placeholder="Company name" autocomplete="organization">
+            </div>
+            <span class="field-error">Tell us where you work.</span>
+          </div>
+
+          <div class="field" id="f-password">
+            <label for="password">Password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              <input type="password" id="password" placeholder="Minimum 10 characters" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-target="password" aria-label="Show password">
+                <svg class="eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.6 21.6 0 0 1 5.06-6.06M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 7 11 7a21.6 21.6 0 0 1-2.66 3.79"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+              </button>
+            </div>
+            <div class="strength" id="strength" data-level="0">
+              <span></span><span></span><span></span><span></span>
+              <em id="strengthText">Use 10+ characters with a mix of letters, numbers & symbols</em>
+            </div>
+            <span class="field-error">Password must be at least 10 characters.</span>
+          </div>
+
+          <div class="field" id="f-confirm">
+            <label for="confirm">Confirm password</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+              <input type="password" id="confirm" placeholder="Re-enter your password" autocomplete="new-password">
+              <button type="button" class="pw-toggle" data-target="confirm" aria-label="Show password">
+                <svg class="eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                <svg class="eye-off" viewBox="0 0 24 24"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.6 21.6 0 0 1 5.06-6.06M9.9 4.24A10.94 10.94 0 0 1 12 4c7 0 11 7 11 7a21.6 21.6 0 0 1-2.66 3.79"/><path d="M14.12 14.12a3 3 0 1 1-4.24-4.24"/><path d="M1 1l22 22"/></svg>
+              </button>
+            </div>
+            <span class="field-error">Passwords do not match.</span>
+          </div>
+
+          <!-- Only shown for an admin account -->
+          <div class="field admin-only" id="f-admin" hidden>
+            <label for="adminCode">Admin authorisation code</label>
+            <div class="input-wrap">
+              <svg class="input-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l7 3v6c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V6l7-3z"/><path d="M9 12l2 2 4-4"/></svg>
+              <input type="text" id="adminCode" placeholder="Issued by your account manager" autocomplete="off">
+            </div>
+            <span class="field-error">An authorisation code is required for an admin account.</span>
+          </div>
+
+          <div class="field" id="f-terms">
+            <label class="check">
+              <input type="checkbox" id="terms">
+              <span class="check__box"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>
+              <span>I accept the <a href="404.html">terms of service</a> and <a href="404.html">privacy policy</a>.</span>
+            </label>
+            <span class="field-error">Accept the terms before creating your account.</span>
+          </div>
+
+          <button type="submit" class="btn-submit" id="submitBtn">
+            <span class="btn-submit__fill"></span>
+            <span class="btn-submit__label" id="submitLabel">Create my account</span>
+            <svg class="btn-submit__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg>
+            <span class="spinner" aria-hidden="true"></span>
+          </button>
+        </form>
+
+        <p class="card__foot">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>
+          Your data is encrypted and never shared.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      var role = 'user';
+
+      /* ---------- Role toggle ---------- */
+      var toggle = document.getElementById('roleToggle');
+      var ind = document.getElementById('roleInd');
+      var buttons = toggle.querySelectorAll('.role-btn');
+      var note = document.getElementById('roleNote');
+      var submitLabel = document.getElementById('submitLabel');
+      var adminField = document.getElementById('f-admin');
+      var NOTES = {
+        user:  'A user account holds your own dashboards, reports and saved queries.',
+        admin: 'An admin account manages users, permissions, data sources and every workspace in the organisation.'
+      };
+
+      function placeIndicator() {
+        var active = toggle.querySelector('.role-btn.active');
+        ind.style.width = active.offsetWidth + 'px';
+        ind.style.transform = 'translateX(' + (active.offsetLeft - 4) + 'px)';
+      }
+      placeIndicator();
+      window.addEventListener('resize', placeIndicator);
+
+      function replay(el, cls) { el.classList.remove(cls); void el.offsetWidth; el.classList.add(cls); }
+
+      buttons.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (btn.classList.contains('active')) return;
+          buttons.forEach(function (b) { b.classList.remove('active'); b.setAttribute('aria-selected', 'false'); });
+          btn.classList.add('active');
+          btn.setAttribute('aria-selected', 'true');
+          role = btn.dataset.role;
+          placeIndicator();
+
+          note.textContent = NOTES[role];
+          submitLabel.textContent = role === 'admin' ? 'Create admin account' : 'Create my account';
+          replay(note, 'swap'); replay(submitLabel, 'swap');
+
+          if (role === 'admin') {
+            adminField.hidden = false;
+            replay(adminField, 'reveal');
+          } else {
+            adminField.hidden = true;
+            document.getElementById('adminCode').value = '';
+            adminField.classList.remove('has-error');
+          }
+          updateProgress();
+        });
+      });
+
+      /* ---------- Show / hide password ---------- */
+      document.querySelectorAll('.pw-toggle').forEach(function (btn) {
+        var input = document.getElementById(btn.dataset.target);
+        btn.addEventListener('click', function () {
+          var show = input.type === 'password';
+          input.type = show ? 'text' : 'password';
+          btn.classList.toggle('is-showing', show);
+          btn.setAttribute('aria-label', show ? 'Hide password' : 'Show password');
+        });
+      });
+
+      /* ---------- Password strength meter ----------
+         Score = kinds of characters used (lower, upper, number, symbol)
+               + bonus for length (14+ and 20+ characters).
+         Under 10 characters or very repetitive = Weak. */
+      var pw = document.getElementById('password');
+      var strength = document.getElementById('strength');
+      var strengthText = document.getElementById('strengthText');
+      var HINT = 'Use 10+ characters with a mix of letters, numbers & symbols';
+      var LABELS = ['', 'Weak', 'Fair', 'Good', 'Strong'];
+
+      function rate(v) {
+        var kinds = {
+          lower:  /[a-z]/.test(v),
+          upper:  /[A-Z]/.test(v),
+          number: /\d/.test(v),
+          symbol: /[^A-Za-z0-9]/.test(v)
+        };
+        var variety = Object.keys(kinds).filter(function (k) { return kinds[k]; }).length;
+        var unique = new Set(v.split('')).size;
+
+        if (v.length < 10) return { level: 1, tip: (10 - v.length) + ' more character' + (10 - v.length === 1 ? '' : 's') + ' needed' };
+        if (unique < 5)    return { level: 1, tip: 'Too repetitive — use more different characters' };
+
+        var score = variety;
+        if (v.length >= 14) score++;
+        if (v.length >= 20) score++;
+        var level = Math.max(1, Math.min(4, score));
+
+        var tip = '';
+        if (level < 4) {
+          if (!kinds.upper)       tip = 'add an uppercase letter';
+          else if (!kinds.number) tip = 'add a number';
+          else if (!kinds.symbol) tip = 'add a symbol (!@#$…)';
+          else if (!kinds.lower)  tip = 'add a lowercase letter';
+          else                    tip = 'make it longer';
+          tip = 'Tip: ' + tip;
+        }
+        return { level: level, tip: tip };
+      }
+
+      pw.addEventListener('input', function () {
+        var v = pw.value;
+        if (!v) { strength.dataset.level = 0; strengthText.textContent = HINT; return; }
+        var r = rate(v);
+        strength.dataset.level = r.level;
+        strengthText.textContent = LABELS[r.level] + (r.tip ? ' · ' + r.tip : '');
+      });
+
+      /* ---------- Validation ---------- */
+      var F = {
+        'f-first':    { input: 'firstName', test: function (v) { return /^[A-Za-z\s'-]{2,}$/.test(v.trim()); } },
+        'f-last':     { input: 'lastName',  test: function (v) { return /^[A-Za-z\s'-]{2,}$/.test(v.trim()); } },
+        'f-email':    { input: 'email',     test: function (v) { return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9-]+(\.[a-zA-Z0-9-]+)*\.[a-zA-Z]{2,}$/.test(v.trim()); } },
+        'f-company':  { input: 'company',   test: function (v) { return v.trim().length > 0; } },
+        'f-password': { input: 'password',  test: function (v) { return v.length >= 10; } },
+        'f-confirm':  { input: 'confirm',   test: function (v) { return v.length > 0 && v === pw.value; } },
+        'f-admin':    { input: 'adminCode', test: function (v) { return role !== 'admin' || v.trim().length >= 4; } }
+      };
+      var terms = document.getElementById('terms');
+      var progressFill = document.getElementById('progressFill');
+
+      function activeIds() {
+        return Object.keys(F).filter(function (id) { return id !== 'f-admin' || role === 'admin'; });
+      }
+      function isOk(id) { return F[id].test(document.getElementById(F[id].input).value); }
+      function flag(id, show) {
+        var el = document.getElementById(id);
+        el.classList.remove('has-error');
+        if (show) { void el.offsetWidth; el.classList.add('has-error'); }
+      }
+      function updateProgress() {
+        var ids = activeIds(), done = 0;
+        ids.forEach(function (id) { if (isOk(id)) done++; });
+        if (terms.checked) done++;
+        progressFill.style.width = (done / (ids.length + 1) * 100) + '%';
+      }
+
+      Object.keys(F).forEach(function (id) {
+        document.getElementById(F[id].input).addEventListener('input', function () {
+          flag(id, false);
+          if (id === 'f-password') flag('f-confirm', false);
+          updateProgress();
+        });
+      });
+      terms.addEventListener('change', function () { flag('f-terms', false); updateProgress(); });
+      updateProgress();
+
+      /* ---------- Submit ---------- */
+      var form = document.getElementById('signupForm');
+      var submitBtn = document.getElementById('submitBtn');
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var ok = true;
+        activeIds().forEach(function (id) { if (!isOk(id)) { flag(id, true); ok = false; } });
+        if (!terms.checked) { flag('f-terms', true); ok = false; }
+        if (!ok) {
+          var first = form.querySelector('.has-error input');
+          if (first) first.focus({ preventScroll: true });
+          form.querySelector('.has-error').scrollIntoView({ behavior: 'smooth', block: 'center' });
+          return;
+        }
+
+        submitBtn.classList.add('loading');
+        submitBtn.disabled = true;
+        submitLabel.textContent = role === 'admin' ? 'Creating your admin account…' : 'Creating your account…';
+
+        // Demo-only: remember the role so the sign-in page can preselect it.
+        try { localStorage.setItem('signupRole', role); } catch (err) {}
+
+        setTimeout(function () {
+          submitBtn.classList.add('success');
+          submitLabel.textContent = 'Taking you to sign in…';
+          setTimeout(function () { window.location.href = 'login.html?role=' + role; }, 500);
+        }, 1200);
+      });
+    })();
+  </script>
+</body>
+</html>
