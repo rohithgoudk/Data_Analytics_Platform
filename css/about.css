@@ -1020,3 +1020,118 @@
     html { scrollbar-color: #38bdf8 #0b1120; scrollbar-width: thin; }
   }
   ::selection { background: rgba(56, 189, 248, .35); color: #fff; }
+/* =========================================================
+   12-IMAGE VERSION — initials, icon milestones, stat tiles,
+   designed careers background
+   ========================================================= */
+.av-in { display: grid; place-items: center; font-size: 17px; font-weight: 800; color: #fff; background: linear-gradient(135deg, var(--primary), var(--primary-2)); }
+
+/* milestones: icon + big outlined year instead of a photo */
+.ms-art {
+  position: relative;
+  height: 190px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 22px 24px;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(99, 102, 241, .35), transparent 55%),
+    radial-gradient(circle at 10% 100%, rgba(34, 211, 238, .22), transparent 55%),
+    var(--surface-2);
+  border-bottom: 1px solid var(--border);
+}
+.ms-card:nth-child(even) .ms-art { background: radial-gradient(circle at 85% 20%, rgba(34, 211, 238, .3), transparent 55%), radial-gradient(circle at 10% 100%, rgba(167, 139, 250, .25), transparent 55%), var(--surface-2); }
+.ms-big {
+  position: absolute;
+  right: -6px; bottom: -22px;
+  font-size: 118px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.05em;
+  color: transparent;
+  -webkit-text-stroke: 1.5px rgba(56, 189, 248, .35);
+  pointer-events: none;
+}
+.ms-ico {
+  position: relative;
+  width: 56px; height: 56px;
+  display: grid; place-items: center;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary), var(--primary-2));
+  box-shadow: 0 12px 28px rgba(99, 102, 241, .45);
+  transition: transform .45s var(--ease);
+}
+.ms-ico svg { width: 26px; height: 26px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ms-card:hover .ms-ico { transform: rotate(-8deg) scale(1.08); }
+
+/* team: initials panel instead of a portrait */
+.m-ini {
+  position: relative;
+  aspect-ratio: 10 / 8;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 80% 15%, rgba(99, 102, 241, .4), transparent 55%),
+    radial-gradient(circle at 15% 90%, rgba(34, 211, 238, .25), transparent 55%),
+    var(--surface-2);
+}
+.member:nth-child(2) .m-ini { background: radial-gradient(circle at 80% 15%, rgba(34, 211, 238, .35), transparent 55%), radial-gradient(circle at 15% 90%, rgba(99, 102, 241, .3), transparent 55%), var(--surface-2); }
+.member:nth-child(3) .m-ini { background: radial-gradient(circle at 80% 15%, rgba(167, 139, 250, .38), transparent 55%), radial-gradient(circle at 15% 90%, rgba(56, 189, 248, .25), transparent 55%), var(--surface-2); }
+.member:nth-child(4) .m-ini { background: radial-gradient(circle at 80% 15%, rgba(52, 211, 153, .28), transparent 55%), radial-gradient(circle at 15% 90%, rgba(99, 102, 241, .3), transparent 55%), var(--surface-2); }
+.m-ini::after { display: none; }
+.m-letters {
+  font-size: clamp(56px, 6vw, 84px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  background: linear-gradient(135deg, #fff, var(--accent) 55%, var(--primary-2));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: transform .6s var(--ease);
+}
+.member:hover .m-letters { transform: scale(1.08); }
+
+/* gallery stat tiles */
+.g-tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 6px;
+  padding: 26px;
+  border-radius: 20px;
+  border: 1px solid var(--border-2);
+  background:
+    radial-gradient(circle at 10% 100%, rgba(34, 211, 238, .45), transparent 55%),
+    linear-gradient(135deg, var(--primary), var(--primary-2));
+}
+.g-tile-alt { background: radial-gradient(circle at 100% 0%, rgba(99, 102, 241, .35), transparent 55%), var(--surface); }
+.g-tile b { font-size: 56px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+.g-tile span { font-size: 15px; line-height: 1.5; color: rgba(255, 255, 255, .88); }
+.g-tile-alt span { color: var(--muted); }
+
+/* careers: designed background instead of a photo */
+.join-bg {
+  background:
+    radial-gradient(circle at 85% 30%, rgba(99, 102, 241, .45), transparent 45%),
+    radial-gradient(circle at 10% 90%, rgba(34, 211, 238, .2), transparent 45%),
+    linear-gradient(rgba(56, 189, 248, .06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(56, 189, 248, .06) 1px, transparent 1px),
+    var(--bg-2);
+  background-size: auto, auto, 48px 48px, 48px 48px, auto;
+}
+.join-bg::after { display: none; }
+
+@media (max-width: 900px) {
+  .ms-art { height: 170px; }
+}
+@media (max-width: 640px) {
+  .ms-art { height: 150px; padding: 18px; }
+  .ms-big { font-size: 92px; }
+  .ms-ico { width: 48px; height: 48px; border-radius: 14px; }
+  .g-tile { padding: 16px; border-radius: 14px; }
+  .g-tile b { font-size: 38px; }
+  .g-tile span { font-size: 12.5px; }
+  .m-letters { font-size: 52px; }
+}
